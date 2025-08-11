@@ -41,6 +41,42 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     
     setInteractionGroups(interactionTypes);
     
+    // Adaptive sizing based on screen size
+    const adjustROISize = () => {
+      const container = document.querySelector('.roi-selector-container');
+      if (container) {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        const screenDiagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
+        
+        // Calculate scale based on screen diagonal (approximate)
+        let scale = 1.0;
+        if (screenDiagonal > 3000) { // 32-inch and larger
+          scale = 0.7;
+        } else if (screenDiagonal > 2500) { // 27-inch
+          scale = 0.75;
+        } else if (screenDiagonal > 2000) { // 24-inch
+          scale = 1.0;
+        } else if (screenDiagonal > 1500) { // 16-inch laptop
+          scale = 0.8;
+        } else if (screenDiagonal > 1200) { // 13-inch laptop
+          scale = 0.7;
+        } else { // Tablet and smaller
+          scale = 0.65;
+        }
+        
+        container.style.transform = `scale(${scale})`;
+        console.log(`ROI Navigator adjusted: screen diagonal ${screenDiagonal.toFixed(0)}px, scale ${scale}`);
+      }
+    };
+    
+    // Adjust size on mount and resize
+    adjustROISize();
+    window.addEventListener('resize', adjustROISize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', adjustROISize);
+    
     // Don't load ROI data initially - wait for user selection
     console.log('ROISelector: Interaction types loaded, waiting for user selection');
   }, []);
