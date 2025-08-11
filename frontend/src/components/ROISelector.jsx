@@ -50,19 +50,19 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
         const screenDiagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
         
         // Calculate scale based on screen diagonal (approximate)
-        let scale = 1.4;
+        let scale = 1.3;
         if (screenDiagonal > 3000) { // 32-inch and larger
-          scale = 1.2;
-        } else if (screenDiagonal > 2500) { // 27-inch
-          scale = 1.3;
-        } else if (screenDiagonal > 2000) { // 24-inch
-          scale = 1.4;
-        } else if (screenDiagonal > 1500) { // 16-inch laptop
-          scale = 1.2;
-        } else if (screenDiagonal > 1200) { // 13-inch laptop
           scale = 1.1;
-        } else { // Tablet and smaller
+        } else if (screenDiagonal > 2500) { // 27-inch
+          scale = 1.2;
+        } else if (screenDiagonal > 2000) { // 24-inch
+          scale = 1.3;
+        } else if (screenDiagonal > 1500) { // 16-inch laptop
+          scale = 1.1;
+        } else if (screenDiagonal > 1200) { // 13-inch laptop
           scale = 1.0;
+        } else { // Tablet and smaller
+          scale = 0.9;
         }
         
         container.style.transform = `scale(${scale})`;
