@@ -3,6 +3,7 @@ import { Vitessce, CoordinationType } from 'vitessce';
 import ROISelector from './ROISelector';
 import Plot from 'react-plotly.js';
 import HeatmapResults from './HeatmapResults';
+import InteractionHeatmap from './InteractionHeatmap';
 
 // Interaction types configuration
 const INTERACTION_TYPES = {
@@ -220,7 +221,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
           'spatialSegmentationStrokeWidth': Object.keys(coordination_space['spatialSegmentationStrokeWidth']),
           [CoordinationType.TOOLTIPS_VISIBLE]: Object.keys(coordination_space[CoordinationType.TOOLTIPS_VISIBLE])
         },
-        'x': 2, 'y': 0, 'w': 10, 'h': 8
+        'x': 3, 'y': 0, 'w': 9, 'h': 8
       },
       {
         'component': 'layerControllerBeta',
@@ -243,7 +244,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
           'spatialSegmentationStrokeWidth': Object.keys(coordination_space['spatialSegmentationStrokeWidth']),
           [CoordinationType.TOOLTIPS_VISIBLE]: Object.keys(coordination_space[CoordinationType.TOOLTIPS_VISIBLE])
         },
-        'x': 0, 'y': 0, 'w': 2, 'h': 8
+        'x': 0, 'y': 0, 'w': 3, 'h':6
       }
     ]
   };
@@ -258,6 +259,7 @@ const MainView = ({ onSetView }) => {
 
   const [heatmapResults, setHeatmapResults] = useState({});
   const [interactionHeatmapResult, setInteractionHeatmapResult] = useState(null);
+  const [channelHeatmapResults, setChannelHeatmapResults] = useState(null);
   const [activeGroups, setActiveGroups] = useState({
     1: true,
     2: true,
@@ -501,35 +503,40 @@ const MainView = ({ onSetView }) => {
   const handleHeatmapResults = (results) => {
     console.log('Received heatmap results:', results);
     
-    // Check if results contain interaction heatmaps (group_1, group_2, etc.)
-    const hasInteractionHeatmaps = results.heatmaps && 
-      Object.keys(results.heatmaps).some(key => key.startsWith('group_'));
+    // Don't reset interaction heatmap state - allow both to be visible
     
-    if (hasInteractionHeatmaps) {
-      // Extract interaction heatmaps
-      const interactionHeatmaps = {};
-      const regularHeatmaps = {};
-      
-      Object.entries(results.heatmaps).forEach(([key, value]) => {
-        if (key.startsWith('group_')) {
-          interactionHeatmaps[key] = value;
-        } else {
-          regularHeatmaps[key] = value;
-        }
-      });
-      
-      // Set both regular and interaction heatmaps
-      setHeatmapResults(Object.keys(regularHeatmaps).length > 0 ? { heatmaps: regularHeatmaps } : {});
-      setInteractionHeatmapResult(Object.keys(interactionHeatmaps).length > 0 ? { heatmaps: interactionHeatmaps } : null);
+    // Check if results contain channel_heatmaps
+    if (results.channel_heatmaps) {
+      // Set channel heatmaps for the Heatmaps button
+      setChannelHeatmapResults({ channel_heatmaps: results.channel_heatmaps });
     } else {
-      // Only regular heatmaps
-      setHeatmapResults(results);
-      setInteractionHeatmapResult(null);
+      // Fallback: check if results contain interaction heatmaps
+      const hasInteractionHeatmaps = results.heatmaps && 
+        Object.keys(results.heatmaps).some(key => key.startsWith('group_'));
+      
+      if (hasInteractionHeatmaps) {
+        const interactionHeatmaps = {};
+        const channelHeatmaps = {};
+        
+        Object.entries(results.heatmaps).forEach(([key, value]) => {
+          if (key.startsWith('group_')) {
+            interactionHeatmaps[key] = value;
+          } else {
+            channelHeatmaps[key] = value;
+          }
+        });
+        
+        setChannelHeatmapResults(Object.keys(channelHeatmaps).length > 0 ? { channel_heatmaps: channelHeatmaps } : null);
+      } else {
+        // Only channel heatmaps
+        setChannelHeatmapResults(results);
+      }
     }
   };
 
   const handleInteractionResults = (results) => {
     console.log('Received interaction results:', results);
+    // Don't reset channel heatmaps - allow both to be visible
     setInteractionHeatmapResult(results);
   };
 
@@ -582,28 +589,9 @@ const MainView = ({ onSetView }) => {
   }
 
   return (
-    <div className="left-panel">
-      {/* HeatmapResults component will be rendered separately - only when there are results */}
-      {(Object.keys(heatmapResults).length > 0 || interactionHeatmapResult) && (
-        <HeatmapResults
-          heatmapResults={heatmapResults}
-          interactionHeatmapResult={interactionHeatmapResult}
-          activeGroups={activeGroups}
-          groupColors={groupColors}
-          groupNames={groupNames}
-          imageChannels={IMAGE_CHANNELS}
-          onClose={() => {
-            setHeatmapResults({});
-            setInteractionHeatmapResult(null);
-          }}
-          onHeatmapClick={() => {}}
-          onGroupToggle={handleGroupToggle}
-        />
-      )}
-
-      <div className="fullscreen-vitessce" style={{ position: 'relative', width: '100%', height: '100vh' }}>
-
-        
+    <div className="main-container" style={{ display: 'flex', height: '100vh', width: '100%' }}>
+      {/* Main Vitessce Viewer - Takes most of the space */}
+      <div className="vitessce-container" style={{ flex: '1 1 auto', position: 'relative' }}>
         <Vitessce
           ref={vitessceRef}
           key={`${configKey}-${JSON.stringify(config?.datasets?.[0]?.files?.map(f => f.url))}`}
@@ -621,21 +609,68 @@ const MainView = ({ onSetView }) => {
             '--vitessce-layer-control-transform-origin': 'top left'
           }}
         />
-        
-
-        
-        <div className="roi-selector-container">
-          <ROISelector 
-            onSetView={handleSetView} 
-            onHeatmapResults={handleHeatmapResults}
-            onInteractionResults={handleInteractionResults}
-            onGroupSelection={(groups) => {
-              console.log('ROISelector onGroupSelection called with:', groups);
-              setSelectedGroups(groups);
-            }}
-          />
-        </div>
       </div>
+
+             {/* ROI Navigator - Fixed position at bottom left */}
+       <div className="roi-navigator-fixed" style={{ 
+         position: 'fixed', 
+         bottom: '20px', 
+         left: '50px', 
+         zIndex: 1000,
+         width: '375px',
+         transform: 'scale(1.08)',
+         transformOrigin: 'bottom left'
+       }}>
+        <ROISelector 
+          onSetView={handleSetView} 
+          onHeatmapResults={handleHeatmapResults}
+          onInteractionResults={handleInteractionResults}
+          onGroupSelection={(groups) => {
+            console.log('ROISelector onGroupSelection called with:', groups);
+            setSelectedGroups(groups);
+          }}
+        />
+      </div>
+
+                                                                                                                                                                                                                                           {/* Channel Heatmap Results - Only show when there are results */}
+            {channelHeatmapResults && channelHeatmapResults.channel_heatmaps && Object.keys(channelHeatmapResults.channel_heatmaps).length > 0 && (
+                <HeatmapResults
+                  heatmapResults={channelHeatmapResults}
+                  interactionHeatmapResult={null}
+                  activeGroups={activeGroups}
+                  groupColors={groupColors}
+                  groupNames={groupNames}
+                  imageChannels={IMAGE_CHANNELS}
+                  onClose={() => {
+                    setChannelHeatmapResults(null);
+                  }}
+                  onHeatmapClick={() => {}}
+                  onGroupToggle={handleGroupToggle}
+                />
+            )}
+
+            {/* Interaction Heatmap Results - Only show when there are results */}
+            {interactionHeatmapResult && interactionHeatmapResult !== null && Object.keys(interactionHeatmapResult).length > 0 && (
+              <div className="heatmap-results-fixed" style={{ 
+                position: 'fixed', 
+                bottom: '20px', 
+                right: '20px',
+                zIndex: 1,
+                transform: 'scale(0.75)',
+                transformOrigin: 'bottom right'
+              }}>
+                <InteractionHeatmap
+                  interactionHeatmapResult={interactionHeatmapResult}
+                  activeGroups={activeGroups}
+                  groupColors={groupColors}
+                  groupNames={groupNames}
+                  onClose={() => {
+                    setInteractionHeatmapResult(null);
+                  }}
+                  onGroupToggle={handleGroupToggle}
+                />
+              </div>
+            )}
     </div>
   );
 };

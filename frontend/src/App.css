@@ -22,6 +22,8 @@ body {
   position: relative;
 }
 
+
+
 /* Main App Container */
 .App {
   width: 100%;
@@ -30,12 +32,42 @@ body {
   background-color: #111;
 }
 
-/* Left Panel - Main Content */
-.left-panel {
-  width: 100%;
+/* Main Container */
+.main-container {
+  display: flex;
   height: 100vh;
+  width: 100%;
+  background-color: #111;
+  position: relative;
+}
+
+/* Vitessce Container - Takes full space */
+.vitessce-container {
+  flex: 1 1 auto;
   position: relative;
   background-color: #111;
+  width: 100%;
+  height: 100%;
+}
+
+/* ROI Navigator Fixed Position */
+.roi-navigator-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 350px;
+}
+
+/* Heatmap Results Fixed Position */
+.heatmap-results-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  max-width: 500px;
+  max-height: 60%;
+  overflow: auto;
 }
 
 /* Fullscreen Vitessce Container */
@@ -53,63 +85,99 @@ body {
   background-color: #111;
 }
 
-/* ROI Selector Container */
+/* ROI Navigator - Clean and Simple */
 .roi-selector-container {
-  position: fixed;
-  bottom: 15px;
-  left: 4px;
-  z-index: 10;
+  position: relative;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 4px;
-  padding: 1px;
+  padding: 8px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 200px;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   color: #000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.2);
-  transform-origin: bottom left;
+  line-height: 1.2;
+}
+
+/* ROI Info Row */
+.roi-selector-container .text-center:first-of-type {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* Navigation and Buttons Row */
+.roi-selector-container .text-center:last-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Analysis Buttons Container */
+.roi-selector-container .text-center:last-child > div:last-child {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+
+/* Button Styles */
+.btn {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 9px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 /* Heatmap Results Container */
 .heatmap-results-container {
-  position: fixed !important;
-  bottom: 20px !important;
-  left: 400px !important;
-  z-index: 11 !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  border-radius: 8px !important;
-  padding: 15px !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  backdrop-filter: blur(10px) !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: scale(0.75) !important;
-  transform-origin: bottom left !important;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin: 10px;
+  max-height: 50%;
+  overflow: auto;
 }
 
 /* Interaction Heatmap Container */
 .interaction-heatmap-container {
-  position: fixed !important;
-  bottom: 20px !important;
-  right: -350px !important;
-  z-index: 12 !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  border-radius: 8px !important;
-  padding: 15px !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
-  max-width: 450px !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  transform-origin: bottom right !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+  position: fixed;
+  bottom: 20px;
+  right: -350px;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 450px;
+  transform: scale(1);
+  transform-origin: bottom right;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Heatmap Grid */
@@ -153,27 +221,7 @@ body {
   cursor: pointer;
 }
 
-/* Button Styles */
-.btn {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 4px 8px;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 9px;
-  transition: all 0.2s ease;
-}
-
-.btn:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-color: rgba(0, 0, 0, 0.3);
-}
-
-.btn:active {
-  transform: translateY(1px);
-}
-
+/* Button Close */
 .btn-close {
   position: absolute;
   top: 5px;
@@ -241,62 +289,42 @@ body {
 }
 
 /* Responsive Design */
-/* Adaptive scaling based on viewport size */
-.roi-selector-container {
-  /* Base size for 24-inch displays (1920x1080) */
-  transform: scale(1.2);
-  width: 200px;
-}
-
-/* For 32-inch displays and larger */
 @media (min-width: 2560px) {
   .roi-selector-container {
     transform: scale(1.0);
-    width: 200px;
   }
 }
 
-/* For 27-inch displays (2560x1440) */
-@media (min-width: 2560px) and (max-width: 3000px) {
+@media (min-width: 2560px) and (max-width: 3200px) {
   .roi-selector-container {
     transform: scale(1.1);
-    width: 200px;
   }
 }
 
-/* For 24-inch displays (1920x1080) - default */
 @media (min-width: 1920px) and (max-width: 2559px) {
   .roi-selector-container {
     transform: scale(1.2);
-    width: 200px;
   }
 }
 
-/* For 16-inch laptop displays (1366x768, 1920x1080) */
 @media (min-width: 1366px) and (max-width: 1919px) {
   .roi-selector-container {
     transform: scale(1.1);
-    width: 200px;
   }
 }
 
-/* For smaller laptop displays (1024x768) */
 @media (min-width: 1024px) and (max-width: 1365px) {
   .roi-selector-container {
     transform: scale(1.0);
-    width: 190px;
   }
 }
 
-/* For tablet displays */
 @media (min-width: 768px) and (max-width: 1023px) {
   .roi-selector-container {
     transform: scale(0.9);
-    width: 180px;
   }
 }
 
-/* For mobile screens */
 @media (max-width: 768px) {
   .roi-selector-container {
     bottom: 10px;
@@ -346,20 +374,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
-}
-
-/* Vitessce Custom Variables */
-:root {
-  --vitessce-layer-control-bg: rgba(0, 0, 0, 0.8);
-  --vitessce-layer-control-border: 1px solid rgba(255, 255, 255, 0.2);
-  --vitessce-layer-control-color: #fff;
-  --vitessce-spatial-beta-bg: #000;
-}
-
-/* Spatial Layer Control Scaling */
-.vitessce-spatial-layer-control {
-  transform: scale(0.8) !important;
-  transform-origin: top left !important;
 }
 
 /* Animation Classes */
@@ -439,4 +453,128 @@ body {
 
 .backdrop-blur {
   backdrop-filter: blur(10px) !important;
+} 
+
+/* Instruction Button - Top Right */
+.instruction-button {
+  position: fixed;
+  top: 8px;
+  right: 160px;
+  z-index: 1000;
+  background-color: #FFD700;
+  color: #000;
+  border: 1px solid #FFA500;
+  border-radius: 6px;
+  padding: 4px 16px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.instruction-button:hover {
+  background-color: #FFED4E;
+  border-color: #FF8C00;
+  transform: translateY(-1px);
+}
+
+/* Instruction Window - Top Right */
+.instruction-window {
+  position: fixed;
+  top: 50px;
+  right: 15px;
+  z-index: 1001;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  width: 320px;
+  max-height: 300px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Instruction Header */
+.instruction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f8f8;
+}
+
+.instruction-header span {
+  color: #4CAF50;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.instruction-close {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.instruction-close:hover {
+  background-color: #e0e0e0;
+}
+
+/* Instruction Content */
+.instruction-content {
+  padding: 15px;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.instruction-content h4 {
+  color: #4CAF50;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.instruction-content h5 {
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 15px 0 8px 0;
+}
+
+.instruction-content ol {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
+}
+
+.instruction-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.instruction-content li {
+  margin-bottom: 6px;
+  color: #000;
+}
+
+.instruction-content li:last-child {
+  margin-bottom: 0;
+}
+
+.instruction-content strong {
+  color: #000;
+  font-weight: 600;
 } 

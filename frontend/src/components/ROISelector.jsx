@@ -316,7 +316,6 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     return (
       <div className="roi-selector-container">
         <h4 style={{ fontSize: '14px', marginBottom: '8px', fontWeight: '600', color: '#000' }}>ROI Navigator</h4>
-        <p style={{ fontSize: '11px', marginBottom: '8px', color: '#000' }}>Please select an interaction type to view ROIs:</p>
         <p style={{ fontSize: '11px', marginBottom: '8px', color: '#000' }}>Available interaction types:</p>
         {interactionGroups.map(group => (
           <label key={group} className="checkbox-item" style={{ fontSize: '11px', marginBottom: '4px', color: '#000' }}>
@@ -380,56 +379,54 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       <hr style={{ borderColor: "rgba(255, 255, 255, 0.2)" }} />
       {selectedGroups.length > 0 ? (
         <>
-          <div className="text-center" style={{ marginBottom: "3px", display: "flex", justifyContent: "center", alignItems: "center", gap: "6px" }}>
-            <span style={{ fontSize: "11px", fontWeight: "600", color: "#000" }}>
-              {currentROI.roi_id ? `ROI ${currentROI.roi_id}` : `ROI ${currentIndex + 1}`}
-            </span>
-            <span style={{ fontSize: "10px", fontWeight: "bold", color: "#000" }}>
-              Score: {currentROI.score ? currentROI.score.toFixed(3) : "0.000"}
-            </span>
-          </div>
+                     <div className="text-center" style={{ marginBottom: "3px", display: "flex", justifyContent: "center", alignItems: "center", gap: "6px" }}>
+             <span style={{ fontSize: "11px", fontWeight: "600", color: "#000" }}>
+               {currentROI.roi_id ? `ROI ${currentROI.roi_id}` : `ROI ${currentIndex + 1}`}
+             </span>
+             <span style={{ fontSize: "10px", fontWeight: "bold", color: "#000" }}>
+               Score: {currentROI.score ? currentROI.score.toFixed(3) : "0.000"}
+             </span>
+           </div>
 
-
-
-          <div className="text-center" style={{ marginBottom: "1px" }}>
-            <button 
-              onClick={prev}
-              className="btn"
-              style={{ marginRight: "3px", padding: "3px 6px", fontSize: "11px" }}
-            >
-              ←
-            </button>
-            <button 
-              onClick={() => handleSetView()}
-              className="btn"
-              style={{ marginRight: "3px", padding: "4px 10px", fontSize: "11px" }}
-            >
-              Set View
-            </button>
-            <button 
-              onClick={next}
-              className="btn"
-              style={{ padding: "3px 6px", fontSize: "11px" }}
-            >
-              →
-            </button>
-          </div>
-
-          {/* Analysis Buttons - Only show in local development */}
-          {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && (
-            <div className="text-center" style={{ marginTop: "1px", display: "flex", justifyContent: "center", gap: "1px" }}>
-              <Heatmaps 
-                currentROI={currentROI}
-                onHeatmapResults={onHeatmapResults}
-                selectedInteractionType={selectedGroups[0]}
-                selectedROIIndex={currentIndex}
-              />
-              <InteractionHeatmaps 
-                currentROI={currentROI}
-                onInteractionResults={onInteractionResults}
-              />
-            </div>
-          )}
+           <div className="text-center" style={{ marginBottom: "1px", display: "flex", justifyContent: "center", alignItems: "center", gap: "5px", marginLeft: "10px" }}>
+             <button 
+               onClick={prev}
+               className="btn"
+               style={{ padding: "3px 6px", fontSize: "11px" }}
+             >
+               ←
+             </button>
+             <button 
+               onClick={() => handleSetView()}
+               className="btn"
+               style={{ padding: "4px 10px", fontSize: "11px" }}
+             >
+               Set View
+             </button>
+             <button 
+               onClick={next}
+               className="btn"
+               style={{ padding: "3px 6px", fontSize: "11px" }}
+             >
+               →
+             </button>
+             
+             {/* Analysis Buttons - Only show in local development */}
+             {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && (
+               <>
+                 <Heatmaps 
+                   currentROI={currentROI}
+                   onHeatmapResults={onHeatmapResults}
+                   selectedInteractionType={selectedGroups[0]}
+                   selectedROIIndex={currentIndex}
+                 />
+                 <InteractionHeatmaps 
+                   currentROI={currentROI}
+                   onInteractionResults={onInteractionResults}
+                 />
+               </>
+             )}
+           </div>
                 </>
       ) : null}
     </div>

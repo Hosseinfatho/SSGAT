@@ -77,7 +77,7 @@ function Heatmaps({ currentROI, onHeatmapResults }) {
           borderRadius: '4px',
           padding: '6px 12px',
           fontSize: '12px',
-          marginRight: '4px',
+          marginInlineStart: '60px',
           cursor: isAnalyzingHeatmaps ? 'not-allowed' : 'pointer'
         }}
       >

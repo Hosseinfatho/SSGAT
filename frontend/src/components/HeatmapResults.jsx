@@ -1,13 +1,14 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-// Function to convert RGB color to Plotly colorscale with black transparent
+// Function to convert RGB color to Plotly colorscale with emphasis on small values
 const rgbToColorscale = (rgbColor) => {
   const [r, g, b] = rgbColor;
   return [
     [0, 'rgba(0, 0, 0, 0)'],  // Black transparent
-    [0.3, `rgba(${r/3}, ${g/3}, ${b/3}, 0.3)`],
-    [0.6, `rgba(${r/2}, ${g/2}, ${b/2}, 0.6)`],
+    [0.1, `rgba(${r/2}, ${g/2}, ${b/2}, 0.4)`],  // Emphasize small values
+    [0.3, `rgba(${r/1.5}, ${g/1.5}, ${b/1.5}, 0.6)`],
+    [0.6, `rgba(${r/1.2}, ${g/1.2}, ${b/1.2}, 0.8)`],
     [1, `rgba(${r}, ${g}, ${b}, 1)`]
   ];
 };
@@ -23,27 +24,55 @@ const HeatmapResults = ({
   onHeatmapClick,
   onGroupToggle
 }) => {
-  console.log('HeatmapResults render:', { heatmapResults, interactionHeatmapResult, activeGroups });
-  if (!heatmapResults && !interactionHeatmapResult) return null;
+  if (!heatmapResults) return null;
 
   return (
-    <div className="heatmap-results-container" style={{ position: 'relative', zIndex: 1001 }}>
+    <>
       <button 
         onClick={onClose}
         className="btn-close"
+        style={{
+          position: 'absolute',
+          top: '-30px',
+          right: '0px',
+          zIndex: 1002,
+          background: 'red',
+          color: 'white',
+          border: 'none',
+          borderRadius: '50%',
+          width: '25px',
+          height: '25px',
+          cursor: 'pointer',
+          fontSize: '16px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
       >
         ×
       </button>
 
       {/* Regular Heatmaps - Horizontal Layout */}
       {heatmapResults && heatmapResults.channel_heatmaps && Object.keys(heatmapResults.channel_heatmaps).length > 0 && (
-        <div className="heatmap-grid" style={{ position: 'relative', zIndex: 1000 }}>
-
+                 <div className="heatmap-grid" style={{ 
+           position: 'fixed', 
+           bottom: '10px', 
+           left: '600px', 
+           zIndex: 1001, 
+           backgroundColor: 'transparent', 
+           width: '1000px', 
+           overflow: 'visible',
+           display: 'flex',
+           flexDirection: 'row',
+           gap: '0px',
+           flexWrap: 'nowrap',
+           alignItems: 'flex-start'
+         }}>
           
-          {Object.entries(heatmapResults.channel_heatmaps).map(([channelName, channelData]) => (
-            <div key={channelName} style={{ 
+          {Object.entries(heatmapResults.channel_heatmaps).map(([channelName, channelData], index) => (
+            <div key={`${channelName}-${index}`} style={{ 
               position: 'relative',
-              minWidth: '280px',
+              minWidth: '180px',
               flexShrink: 0,
               background: 'transparent'
             }}>
@@ -53,32 +82,40 @@ const HeatmapResults = ({
                   z: channelData.slice().reverse(),
                   type: 'heatmap',
                   colorscale: imageChannels && imageChannels[channelName] ? 
-                    rgbToColorscale(imageChannels[channelName].color) : 'Viridis',
+                    rgbToColorscale(imageChannels[channelName].color) : [
+                      [0, 'rgba(0, 0, 0, 0)'],
+                      [0.1, 'rgba(68, 1, 84, 0.4)'],
+                      [0.3, 'rgba(59, 82, 139, 0.6)'],
+                      [0.6, 'rgba(33, 145, 140, 0.8)'],
+                      [1, 'rgba(94, 201, 98, 1)']
+                    ],
                   hoverongaps: false,
                   hovertemplate: 'X: %{x}<br>Y: %{y}<br>Intensity: %{z:.3f}<extra></extra>'
                 }]}
-                layout={{
-                  width: 280,
-                  height: 200,
-                  margin: { t: 25, b: 25, l: 25, r: 25 },
-                  paper_bgcolor: 'rgba(0, 0, 0, 0.1)',
-                                    plot_bgcolor: 'rgba(0, 0, 0, 0.1)',
-                  title: {
-                    text: channelName,
-                    font: { color: 'white', size: 16 },
-                    x: 0.5
-                  },
-                  xaxis: {
-                    title: 'X',
-                    titlefont: { color: 'white', size: 12 },
-                    tickfont: { color: 'white', size: 10 }
-                  },
-                  yaxis: {
-                    title: 'Y',
-                    titlefont: { color: 'white', size: 12 },
-                    tickfont: { color: 'white', size: 10 }
-                  }
-                }}
+                                 layout={{
+                   width: 180,
+                   height: 150,
+                   margin: { t: 25, b: 5, l: 2, r: 2 },
+                   paper_bgcolor: 'rgba(0, 0, 0, 0.1)',
+                   plot_bgcolor: 'rgba(0, 0, 0, 0.1)',
+                   title: {
+                     text: channelName,
+                     font: { color: 'white', size: 14 },
+                     x: 0.5
+                   },
+                   xaxis: {
+                     title: 'X',
+                     titlefont: { color: 'white', size: 10 },
+                     tickfont: { color: 'white', size: 8 },
+                     showgrid: false
+                   },
+                   yaxis: {
+                     title: 'Y',
+                     titlefont: { color: 'white', size: 10 },
+                     tickfont: { color: 'white', size: 8 },
+                     showgrid: false
+                   }
+                 }}
                 config={{ 
                   displayModeBar: false,
                   responsive: true
@@ -92,145 +129,7 @@ const HeatmapResults = ({
           ))}
         </div>
       )}
-
-      {/* Interaction Heatmap - Simple Checkboxes */}
-      {interactionHeatmapResult && (
-        <div className="interaction-heatmap-container" style={{ marginLeft: '20px', position: 'relative', zIndex: 999 }}>
-          {/* Title */}
-          <h3 style={{ 
-            color: 'white', 
-            margin: '0 0 10px 0', 
-            fontSize: '16px',
-            textAlign: 'center',
-            fontWeight: 'bold'
-          }}>
-            Interaction Heatmap
-          </h3>
-          
-          {/* Interaction Checkboxes */}
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column',
-            gap: '4px',
-            background: 'transparent'
-          }}>
-            {Object.entries(groupNames).map(([group, name]) => (
-              <label key={group} style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '6px',
-                color: 'white',
-                background: 'transparent',
-                padding: '4px 8px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                transition: 'background-color 0.2s',
-                border: '1px solid rgba(255, 255, 255, 0.2)'
-              }}>
-                <input
-                  type="checkbox"
-                  checked={activeGroups[group]}
-                  onChange={() => onGroupToggle(group)}
-                  style={{ margin: 0, transform: 'scale(1.1)' }}
-                />
-                <span style={{ color: groupColors[group], fontWeight: 'bold', fontSize: '14px' }}>{name}</span>
-              </label>
-            ))}
-          </div>
-
-          {/* Selected Interaction Heatmaps Overlay */}
-          {(() => {
-            const activeGroupsList = Object.entries(activeGroups).filter(([group, isActive]) => isActive);
-            if (activeGroupsList.length === 0) return null;
-            
-            // Create overlay data for all active groups with normalization
-            const overlayData = activeGroupsList.map(([groupId], index) => {
-              const groupKey = `group_${groupId}`;
-              const groupData = interactionHeatmapResult.heatmaps[groupKey];
-              if (!groupData) return null;
-              
-              // Normalize the data to 0-1 range with better visibility for small values
-              const flatData = groupData.flat();
-              const minVal = Math.min(...flatData);
-              const maxVal = Math.max(...flatData);
-              const range = maxVal - minVal;
-              
-              // Apply square root transformation to enhance small values
-              const normalizedData = groupData.slice().reverse().map(row => 
-                row.map(val => {
-                  if (range <= 0) return 0;
-                  const normalized = (val - minVal) / range;
-                  // Apply square root transformation to make small values more visible
-                  return Math.sqrt(normalized);
-                })
-              );
-              
-              return {
-                z: normalizedData,
-                type: 'heatmap',
-                colorscale: [
-                  [0, 'rgba(0, 0, 0, 0)'],  // Black transparent
-                  [0.3, groupColors[groupId] + '30'], // 30% opacity
-                  [0.6, groupColors[groupId] + '60'], // 60% opacity
-                  [1, groupColors[groupId]] // Full opacity
-                ],
-                showscale: false,
-                opacity: 1.0,
-                name: groupNames[groupId]
-              };
-            }).filter(Boolean);
-            
-            if (overlayData.length === 0) return null;
-            
-            return (
-              <div style={{ 
-                position: 'relative',
-                background: 'transparent',
-                display: 'flex',
-                justifyContent: 'center'
-              }}>
-                
-                
-                                 <Plot
-                   data={overlayData}
-                   layout={{
-                     width: 300,
-                     height: 150,
-                     margin: { t: 20, b: 20, l: 20, r: 20 },
-                     paper_bgcolor: 'rgba(0, 0, 0, 0.1)',
-                     plot_bgcolor: 'rgba(0, 0, 0, 0.1)',
-                     xaxis: {
-                       title: 'X',
-                       titlefont: { color: 'white', size: 8 },
-                       tickfont: { color: 'white', size: 6 },
-                       showgrid: false,
-                       showticklabels: true,
-                       zeroline: false
-                     },
-                     yaxis: {
-                       title: 'Y',
-                       titlefont: { color: 'white', size: 8 },
-                       tickfont: { color: 'white', size: 6 },
-                       showgrid: false,
-                       showticklabels: true,
-                       zeroline: false
-                     }
-                   }}
-                  config={{ 
-                    displayModeBar: false,
-                    responsive: true
-                  }}
-                  onClick={onHeatmapClick}
-                  style={{
-                    background: 'transparent'
-                  }}
-                />
-              </div>
-            );
-          })()}
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

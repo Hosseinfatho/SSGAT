@@ -45,46 +45,29 @@ def get_channel_names():
 def open_target_zarr_array():
     """Opens and returns the target Zarr array from local file. Returns None on failure."""
     target_image_arr = None
-
     try:
-        # Use local Zarr file - open as group first
+        # Use the original Zarr file downloaded with download00.py
         zarr_path = Path(__file__).parent / "input" / "selected_channels.zarr"
         
-        logger.info(f"Attempting to open local Zarr group from: {zarr_path}")
+        logger.info(f"Attempting to open Zarr array from: {zarr_path}")
+        logger.info(f"Absolute path: {zarr_path.absolute()}")
         
         # Check if path exists
         if not zarr_path.exists():
             logger.error(f"Zarr path does not exist: {zarr_path}")
             return None
         
-        # Open the Zarr group
-        zarr_group = zarr.open_group(str(zarr_path), mode='r')
-        logger.info(f"Zarr group keys: {list(zarr_group.keys())}")
+        # Open the Zarr group and access the data array
+        zarr_group = zarr.open_group(str(zarr_path.absolute()), mode='r')
+        target_image_arr = zarr_group['data']
         
-        # Look for the data array - handle nested structure
-        if 'data' in zarr_group:
-            data_group = zarr_group['data']
-            logger.info(f"Found 'data' group. Type: {type(data_group)}")
-            
-            # Check if data_group is directly an array
-            if hasattr(data_group, 'shape'):
-                target_image_arr = data_group
-                logger.info(f"✅ Successfully opened target Zarr array directly from 'data' group")
-                logger.info(f"Array shape: {target_image_arr.shape}")
-                logger.info(f"Array dtype: {target_image_arr.dtype}")
-                return target_image_arr
-            else:
-                logger.info(f"Found 'data' group. Keys: {list(data_group.keys())}")
-                # If it's a group, continue with the nested structure...
-                # (This part can be removed if data_group is always an array)
-                logger.error("Data group is not an array, but we expect it to be")
-                return None
-        else:
-                    logger.error(f"No 'data' group found in Zarr group. Available keys: {list(zarr_group.keys())}")
-        return None
-        
+        logger.info(f"✅ Successfully opened target Zarr array from local file")
+        logger.info(f"Array shape: {target_image_arr.shape}")
+        logger.info(f"Array dtype: {target_image_arr.dtype}")
+        return target_image_arr
+
     except Exception as e:
-        logger.error(f"Error opening Zarr array: {e}")
+        logger.error(f"Failed to open target Zarr array: {e}", exc_info=True)
         return None
 
 def generate_vitessce_config():
