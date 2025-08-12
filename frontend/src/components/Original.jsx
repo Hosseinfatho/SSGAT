@@ -148,13 +148,13 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
       const obs_type = roi_info['obsType'];
       
               // Simple coordination settings
-        coordination_space['spatialSegmentationFilled'][obs_type] = false; // ROIs are hollow
+        coordination_space['spatialSegmentationFilled'][obs_type] = true; // ROIs are filled for better visibility
         coordination_space['spatialSegmentationStrokeWidth'][obs_type] = roi_info['strokeWidth'];
-        coordination_space['spatialLayerOpacity'][obs_type] = 1; // Set opacity to 0.5 for ROIs
+        coordination_space['spatialLayerOpacity'][obs_type] = 0.3; // Set opacity to 0.3 for ROIs as overlays
         coordination_space['spatialLayerVisible'][obs_type] = true; // Make ROIs visible in layer controller
         coordination_space[CoordinationType.TOOLTIPS_VISIBLE][obs_type] = true; // Enable tooltips for ROIs
         
-        // Add ROI color to spatialChannelColor
+        // Add ROI color to spatialChannelColor with transparency
         coordination_space['spatialChannelColor'][obs_type] = roi_info['color'];
       
               // Add to meta coordination scopes (simplified)
@@ -201,6 +201,17 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
     'coordinationSpace': coordination_space,
     'layout': [
       {
+        "component": "description",
+        "props": {
+          "description": " ",
+          "descriptionType": "markdown"
+        },
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 4
+      },
+      {
         'component': 'spatialBeta',
         'coordinationScopes': {
           'metaCoordinationScopes': ["metaA"],
@@ -221,7 +232,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
           'spatialSegmentationStrokeWidth': Object.keys(coordination_space['spatialSegmentationStrokeWidth']),
           [CoordinationType.TOOLTIPS_VISIBLE]: Object.keys(coordination_space[CoordinationType.TOOLTIPS_VISIBLE])
         },
-        'x': 3, 'y': 0, 'w': 9, 'h': 8
+        'x': 3, 'y': 0, 'w': 9, 'h': 12
       },
       {
         'component': 'layerControllerBeta',
@@ -244,7 +255,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
           'spatialSegmentationStrokeWidth': Object.keys(coordination_space['spatialSegmentationStrokeWidth']),
           [CoordinationType.TOOLTIPS_VISIBLE]: Object.keys(coordination_space[CoordinationType.TOOLTIPS_VISIBLE])
         },
-        'x': 0, 'y': 0, 'w': 3, 'h':6
+        'x': 0, 'y': 4, 'w': 3, 'h':8
       }
     ]
   };
@@ -589,9 +600,31 @@ const MainView = ({ onSetView }) => {
   }
 
   return (
-    <div className="main-container" style={{ display: 'flex', height: '100vh', width: '100%' }}>
+    <>
+      {/* Instruction Banner */}
+      <div style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        backgroundColor: '#FFD700',
+        color: '#000',
+        padding: '10px 20px',
+        fontSize: '14px',
+        fontWeight: '600',
+        textAlign: 'center',
+        zIndex: 1000,
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+        lineHeight: '1.4'
+      }}>
+        To view and explore all automatically detected ROIs, please first select an interaction type in the ROI Navigator panel.
+        <br />
+        Then, to inspect a specific ROI: in the volume image, hover over that marker to show the specific region's ID, then use the arrows in the ROI Navigator panel to select that specific ROI to zoom into, and click Set View.
+      </div>
+      
+      <div className="main-container" style={{ display: 'flex', height: '100vh', width: '100%', margin: '0', padding: '0', border: '0', background: '#000' }}>
       {/* Main Vitessce Viewer - Takes most of the space */}
-      <div className="vitessce-container" style={{ flex: '1 1 auto', position: 'relative' }}>
+      <div className="vitessce-container" style={{ flex: '1 1 auto', position: 'relative', margin: '0', padding: '0', border: '0', background: '#000' }}>
         <Vitessce
           ref={vitessceRef}
           key={`${configKey}-${JSON.stringify(config?.datasets?.[0]?.files?.map(f => f.url))}`}
@@ -604,22 +637,18 @@ const MainView = ({ onSetView }) => {
           theme="light"
           height={null}
           width={null}
-          style={{
-            '--vitessce-layer-control-transform': 'scale(0.8)',
-            '--vitessce-layer-control-transform-origin': 'top left'
-          }}
         />
       </div>
 
-             {/* ROI Navigator - Fixed position at bottom left */}
+             {/* ROI Navigator - Fixed position at top left */}
        <div className="roi-navigator-fixed" style={{ 
          position: 'fixed', 
-         bottom: '20px', 
+         top: '80px', 
          left: '50px', 
          zIndex: 1000,
          width: '375px',
          transform: 'scale(1.08)',
-         transformOrigin: 'bottom left'
+         transformOrigin: 'top left'
        }}>
         <ROISelector 
           onSetView={handleSetView} 
@@ -671,7 +700,8 @@ const MainView = ({ onSetView }) => {
                 />
               </div>
             )}
-    </div>
+      </div>
+    </>
   );
 };
 
