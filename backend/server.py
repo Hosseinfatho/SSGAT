@@ -418,199 +418,199 @@ def analyze_heatmaps():
         logger.error(f"Error in analyze_heatmaps: {e}", exc_info=True)
         return jsonify({'error': f'Error analyzing heatmaps: {e}'}), 500
 
-def generate_vitessce_config():
-    """Generate Vitessce configuration in Python"""
+# def generate_vitessce_config():
+#     """Generate Vitessce configuration in Python"""
     
-    # Channel configuration
-    channels = [
-        {'id': 0, 'name': "CD31", 'color': [0, 255, 0], 'window': [300, 20000], 'targetC': 19},      # Green
-        {'id': 1, 'name': "CD20", 'color': [255, 255, 0], 'window': [1000, 7000], 'targetC': 27},    # Yellow
-        {'id': 2, 'name': "CD11b", 'color': [255, 0, 255], 'window': [700, 6000], 'targetC': 37},    # Magenta
-        {'id': 3, 'name': "CD4", 'color': [0, 255, 255], 'window': [1638, 10000], 'targetC': 25},    # Cyan
-        {'id': 4, 'name': "CD11c", 'color': [128, 0, 128], 'window': [370, 1432], 'targetC': 42}     # Purple
-    ]
+#     # Channel configuration
+#     channels = [
+#         {'id': 0, 'name': "CD31", 'color': [0, 255, 0], 'window': [300, 20000], 'targetC': 19},      # Green
+#         {'id': 1, 'name': "CD20", 'color': [255, 255, 0], 'window': [1000, 7000], 'targetC': 27},    # Yellow
+#         {'id': 2, 'name': "CD11b", 'color': [255, 0, 255], 'window': [700, 6000], 'targetC': 37},    # Magenta
+#         {'id': 3, 'name': "CD4", 'color': [0, 255, 255], 'window': [1638, 10000], 'targetC': 25},    # Cyan
+#         {'id': 4, 'name': "CD11c", 'color': [128, 0, 128], 'window': [370, 1432], 'targetC': 42}     # Purple
+#     ]
 
-    # Build coordination space
-    coordination_space = {
-        'dataset': {"A": "bv"},
-        'imageChannel': {},
-        'imageLayer': {"init_bv_image_0": "__dummy__"},
-        'metaCoordinationScopes': {
-            "A": {'obsType': "A"},
-            "init_bv_image_0": {
-                'imageLayer': ["init_bv_image_0"],
-                'spatialRenderingMode': "init_bv_image_0",
-                'spatialTargetT': "init_bv_image_0",
-                'spatialTargetX': "init_bv_image_0",
-                'spatialTargetY': "init_bv_image_0",
-                'spatialTargetZ': "init_bv_image_0",
-                'spatialZoom': "init_bv_image_0"
-            }
-        },
-        'metaCoordinationScopesBy': {
-            "A": {},
-            "init_bv_image_0": {
-                'imageChannel': {
-                    'spatialChannelColor': {},
-                    'spatialChannelOpacity': {},
-                    'spatialChannelVisible': {},
-                    'spatialChannelWindow': {},
-                    'spatialTargetC': {}
-                },
-                'imageLayer': {
-                    'imageChannel': {"init_bv_image_0": []},
-                    'photometricInterpretation': {"init_bv_image_0": "init_bv_image_0"},
-                    'spatialLayerOpacity': {"init_bv_image_0": "init_bv_image_0"},
-                    'spatialLayerVisible': {"init_bv_image_0": "init_bv_image_0"},
-                    'spatialTargetResolution': {"init_bv_image_0": "init_bv_image_0"}
-                }
-            }
-        },
-        'obsType': {
-            "A": "ROI_B-cell",
-            "B": "ROI_Inflammatory", 
-            "C": "ROI_T-cell",
-            "D": "ROI_Oxidative"
-        },
-        'obsColorEncoding': {
-            "A": "cellSetSelection",
-            "B": "cellSetSelection",
-            "C": "cellSetSelection",
-            "D": "cellSetSelection"
-        },
-        'photometricInterpretation': {"init_bv_image_0": "BlackIsZero"},
-        'spatialChannelColor': {},
-        'spatialChannelOpacity': {},
-        'spatialChannelVisible': {},
-        'spatialChannelWindow': {},
-        'spatialLayerOpacity': {"init_bv_image_0": 1.0},
-        'spatialLayerVisible': {"init_bv_image_0": True},
-        'spatialRenderingMode': {"init_bv_image_0": "3D"},
-        'spatialTargetC': {},
-        'spatialTargetResolution': {"init_bv_image_0": 3},
-        'spatialTargetT': {"init_bv_image_0": 0},
-        'spatialTargetX': {"init_bv_image_0": 5454},
-        'spatialTargetY': {"init_bv_image_0": 2754},
-        'spatialTargetZ': {"init_bv_image_0": 0},
-        'spatialZoom': {"init_bv_image_0": -3.5},
-        'spatialSegmentationLayer': {
-            "A": {
-                "radius": 200,
-                "stroked": True,
-                "visible": True,
-                "opacity": 0.2,
-                "color": [255, 100, 100]  # Red for B-cell infiltration
-            },
-            "B": {
-                "radius": 200,
-                "stroked": True,
-                "visible": True,
-                "opacity": 0.2,
-                "color": [0, 255, 0]  # Green for Inflammatory zone
-            },
-            "C": {
-                "radius": 200,
-                "stroked": True,
-                "visible": True,
-                "opacity": 0.2,
-                "color": [0, 0, 255]  # Blue for T-cell entry site
-            },
-            "D": {
-                "radius": 200,
-                "stroked": True,
-                "visible": True,
-                "opacity": 0.2,
-                "color": [255, 255, 0]  # Yellow for Oxidative stress niche
-            }
-        }
-    }
+#     # Build coordination space
+#     coordination_space = {
+#         'dataset': {"A": "bv"},
+#         'imageChannel': {},
+#         'imageLayer': {"init_bv_image_0": "__dummy__"},
+#         'metaCoordinationScopes': {
+#             "A": {'obsType': "A"},
+#             "init_bv_image_0": {
+#                 'imageLayer': ["init_bv_image_0"],
+#                 'spatialRenderingMode': "init_bv_image_0",
+#                 'spatialTargetT': "init_bv_image_0",
+#                 'spatialTargetX': "init_bv_image_0",
+#                 'spatialTargetY': "init_bv_image_0",
+#                 'spatialTargetZ': "init_bv_image_0",
+#                 'spatialZoom': "init_bv_image_0"
+#             }
+#         },
+#         'metaCoordinationScopesBy': {
+#             "A": {},
+#             "init_bv_image_0": {
+#                 'imageChannel': {
+#                     'spatialChannelColor': {},
+#                     'spatialChannelOpacity': {},
+#                     'spatialChannelVisible': {},
+#                     'spatialChannelWindow': {},
+#                     'spatialTargetC': {}
+#                 },
+#                 'imageLayer': {
+#                     'imageChannel': {"init_bv_image_0": []},
+#                     'photometricInterpretation': {"init_bv_image_0": "init_bv_image_0"},
+#                     'spatialLayerOpacity': {"init_bv_image_0": "init_bv_image_0"},
+#                     'spatialLayerVisible': {"init_bv_image_0": "init_bv_image_0"},
+#                     'spatialTargetResolution': {"init_bv_image_0": "init_bv_image_0"}
+#                 }
+#             }
+#         },
+#         'obsType': {
+#             "A": "ROI_B-cell",
+#             "B": "ROI_Inflammatory", 
+#             "C": "ROI_T-cell",
+#             "D": "ROI_Oxidative"
+#         },
+#         'obsColorEncoding': {
+#             "A": "cellSetSelection",
+#             "B": "cellSetSelection",
+#             "C": "cellSetSelection",
+#             "D": "cellSetSelection"
+#         },
+#         'photometricInterpretation': {"init_bv_image_0": "BlackIsZero"},
+#         'spatialChannelColor': {},
+#         'spatialChannelOpacity': {},
+#         'spatialChannelVisible': {},
+#         'spatialChannelWindow': {},
+#         'spatialLayerOpacity': {"init_bv_image_0": 1.0},
+#         'spatialLayerVisible': {"init_bv_image_0": True},
+#         'spatialRenderingMode': {"init_bv_image_0": "3D"},
+#         'spatialTargetC': {},
+#         'spatialTargetResolution': {"init_bv_image_0": 3},
+#         'spatialTargetT': {"init_bv_image_0": 0},
+#         'spatialTargetX': {"init_bv_image_0": 5454},
+#         'spatialTargetY': {"init_bv_image_0": 2754},
+#         'spatialTargetZ': {"init_bv_image_0": 0},
+#         'spatialZoom': {"init_bv_image_0": -3.5},
+#         'spatialSegmentationLayer': {
+#             "A": {
+#                 "radius": 200,
+#                 "stroked": True,
+#                 "visible": True,
+#                 "opacity": 0.2,
+#                 "color": [255, 100, 100]  # Red for B-cell infiltration
+#             },
+#             "B": {
+#                 "radius": 200,
+#                 "stroked": True,
+#                 "visible": True,
+#                 "opacity": 0.2,
+#                 "color": [0, 255, 0]  # Green for Inflammatory zone
+#             },
+#             "C": {
+#                 "radius": 200,
+#                 "stroked": True,
+#                 "visible": True,
+#                 "opacity": 0.2,
+#                 "color": [0, 0, 255]  # Blue for T-cell entry site
+#             },
+#             "D": {
+#                 "radius": 200,
+#                 "stroked": True,
+#                 "visible": True,
+#                 "opacity": 0.2,
+#                 "color": [255, 255, 0]  # Yellow for Oxidative stress niche
+#             }
+#         }
+#     }
 
-    # Add channel-specific coordination values
-    for i, channel in enumerate(channels):
-        ch_id = f'init_bv_image_{i}'
-        coordination_space['imageChannel'][ch_id] = "__dummy__"
-        coordination_space['spatialChannelColor'][ch_id] = channel['color']
-        coordination_space['spatialChannelOpacity'][ch_id] = 1.0
-        coordination_space['spatialChannelVisible'][ch_id] = True
-        coordination_space['spatialChannelWindow'][ch_id] = channel['window']
-        coordination_space['spatialTargetC'][ch_id] = channel['targetC']
+#     # Add channel-specific coordination values
+#     for i, channel in enumerate(channels):
+#         ch_id = f'init_bv_image_{i}'
+#         coordination_space['imageChannel'][ch_id] = "__dummy__"
+#         coordination_space['spatialChannelColor'][ch_id] = channel['color']
+#         coordination_space['spatialChannelOpacity'][ch_id] = 1.0
+#         coordination_space['spatialChannelVisible'][ch_id] = True
+#         coordination_space['spatialChannelWindow'][ch_id] = channel['window']
+#         coordination_space['spatialTargetC'][ch_id] = channel['targetC']
         
-        # Add to meta coordination scopes
-        for key in ['spatialChannelColor', 'spatialChannelOpacity', 'spatialChannelVisible', 'spatialChannelWindow', 'spatialTargetC']:
-            coordination_space['metaCoordinationScopesBy']['init_bv_image_0']['imageChannel'][key][ch_id] = ch_id
+#         # Add to meta coordination scopes
+#         for key in ['spatialChannelColor', 'spatialChannelOpacity', 'spatialChannelVisible', 'spatialChannelWindow', 'spatialTargetC']:
+#             coordination_space['metaCoordinationScopesBy']['init_bv_image_0']['imageChannel'][key][ch_id] = ch_id
 
-    config = {
-        'version': '1.0.16',
-        'name': 'BioMedVis Challenge',
-        'description': 'ROI annotations for the BioMedVis Challenge',
-        'datasets': [{
-            'uid': 'bv',
-            'name': 'Blood Vessel',
-            'files': [
-                {
-                    'fileType': 'image.ome-zarr',
-                    'url': 'https://lsp-public-data.s3.amazonaws.com/biomedvis-challenge-2025/Dataset1-LSP13626-melanoma-in-situ/0',
-                },
-                {
-                    'fileType': 'obsSegmentations.json',
-                    'url': 'http://localhost:5000/api/roi_segmentation_B-cell_infiltration.json',
-                    'coordinationValues': {
-                        'obsType': 'ROI_B-cell',
-                    },
-                },
-                {
-                    'fileType': 'obsSegmentations.json',
-                    'url': 'http://localhost:5000/api/roi_segmentation_Inflammatory_zone.json',
-                    'coordinationValues': {
-                        'obsType': 'ROI_Inflammatory',
-                    },
-                },
-                {
-                    'fileType': 'obsSegmentations.json',
-                    'url': 'http://localhost:5000/api/roi_segmentation_T-cell_entry_site.json',
-                    'coordinationValues': {
-                        'obsType': 'ROI_T-cell',
-                    },
-                },
-                {
-                    'fileType': 'obsSegmentations.json',
-                    'url': 'http://localhost:5000/api/roi_segmentation_Oxidative_stress_niche.json',
-                    'coordinationValues': {
-                        'obsType': 'ROI_Oxidative',
-                    },
-                }
-            ]
-        }],
-        'initStrategy': 'auto',
-        'coordinationSpace': coordination_space,
-        'layout': [
-            {
-                'component': 'spatialBeta',
-                'coordinationScopes': {
-                    'dataset': "A",
-                    'metaCoordinationScopes': ["init_bv_image_0", "A"],
-                    'metaCoordinationScopesBy': ["init_bv_image_0", "A"],
-                    'spatialSegmentationLayer': ["A", "B", "C", "D"],
-                    'obsType': ["A", "B", "C", "D"],
-                    'obsColorEncoding': ["A", "B", "C", "D"]
-                },
-                'x': 0, 'y': 0, 'w': 6, 'h': 12
-            },
-            {
-                'component': 'layerControllerBeta',
-                'coordinationScopes': {
-                    'dataset': "A",
-                    'metaCoordinationScopes': ["init_bv_image_0", "A"],
-                    'metaCoordinationScopesBy': ["init_bv_image_0", "A"],
-                    'spatialSegmentationLayer': ["A", "B", "C", "D"],
-                    'obsType': ["A", "B", "C", "D"]
-                },
-                'x': 6, 'y': 0, 'w': 6, 'h': 12
-            }
-        ]
-    }
+#     config = {
+#         'version': '1.0.16',
+#         'name': 'BioMedVis Challenge',
+#         'description': 'ROI annotations for the BioMedVis Challenge',
+#         'datasets': [{
+#             'uid': 'bv',
+#             'name': 'Blood Vessel',
+#             'files': [
+#                 {
+#                     'fileType': 'image.ome-zarr',
+#                     'url': 'https://lsp-public-data.s3.amazonaws.com/biomedvis-challenge-2025/Dataset1-LSP13626-melanoma-in-situ/0',
+#                 },
+#                 {
+#                     'fileType': 'obsSegmentations.json',
+#                     'url': 'http://localhost:5000/api/roi_segmentation_B-cell_infiltration.json',
+#                     'coordinationValues': {
+#                         'obsType': 'ROI_B-cell',
+#                     },
+#                 },
+#                 {
+#                     'fileType': 'obsSegmentations.json',
+#                     'url': 'http://localhost:5000/api/roi_segmentation_Inflammatory_zone.json',
+#                     'coordinationValues': {
+#                         'obsType': 'ROI_Inflammatory',
+#                     },
+#                 },
+#                 {
+#                     'fileType': 'obsSegmentations.json',
+#                     'url': 'http://localhost:5000/api/roi_segmentation_T-cell_entry_site.json',
+#                     'coordinationValues': {
+#                         'obsType': 'ROI_T-cell',
+#                     },
+#                 },
+#                 {
+#                     'fileType': 'obsSegmentations.json',
+#                     'url': 'http://localhost:5000/api/roi_segmentation_Oxidative_stress_niche.json',
+#                     'coordinationValues': {
+#                         'obsType': 'ROI_Oxidative',
+#                     },
+#                 }
+#             ]
+#         }],
+#         'initStrategy': 'auto',
+#         'coordinationSpace': coordination_space,
+#         'layout': [
+#             {
+#                 'component': 'spatialBeta',
+#                 'coordinationScopes': {
+#                     'dataset': "A",
+#                     'metaCoordinationScopes': ["init_bv_image_0", "A"],
+#                     'metaCoordinationScopesBy': ["init_bv_image_0", "A"],
+#                     'spatialSegmentationLayer': ["A", "B", "C", "D"],
+#                     'obsType': ["A", "B", "C", "D"],
+#                     'obsColorEncoding': ["A", "B", "C", "D"]
+#                 },
+#                 'x': 0, 'y': 0, 'w': 6, 'h': 12
+#             },
+#             {
+#                 'component': 'layerControllerBeta',
+#                 'coordinationScopes': {
+#                     'dataset': "A",
+#                     'metaCoordinationScopes': ["init_bv_image_0", "A"],
+#                     'metaCoordinationScopesBy': ["init_bv_image_0", "A"],
+#                     'spatialSegmentationLayer': ["A", "B", "C", "D"],
+#                     'obsType': ["A", "B", "C", "D"]
+#                 },
+#                 'x': 6, 'y': 0, 'w': 6, 'h': 12
+#             }
+#         ]
+#     }
 
-    return config
+#     return config
 
 @app.route('/api/config', methods=['GET'])
 def get_config():

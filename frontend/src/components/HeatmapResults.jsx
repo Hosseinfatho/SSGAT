@@ -28,30 +28,6 @@ const HeatmapResults = ({
 
   return (
     <>
-      <button 
-        onClick={onClose}
-        className="btn-close"
-        style={{
-          position: 'absolute',
-          top: '-30px',
-          right: '0px',
-          zIndex: 1002,
-          background: 'red',
-          color: 'white',
-          border: 'none',
-          borderRadius: '50%',
-          width: '25px',
-          height: '25px',
-          cursor: 'pointer',
-          fontSize: '16px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        ×
-      </button>
-
       {/* Regular Heatmaps - Horizontal Layout */}
       {heatmapResults && heatmapResults.channel_heatmaps && Object.keys(heatmapResults.channel_heatmaps).length > 0 && (
                  <div className="heatmap-grid" style={{ 
@@ -68,6 +44,25 @@ const HeatmapResults = ({
            flexWrap: 'nowrap',
            alignItems: 'flex-start'
          }}>
+           <button 
+             onClick={onClose}
+             style={{
+               position: 'absolute',
+               top: '-30px',
+               right: '0px',
+               zIndex: 1002,
+               background: 'red',
+               color: 'white',
+               border: 'none',
+               borderRadius: '50%',
+               width: '25px',
+               height: '25px',
+               cursor: 'pointer',
+               fontSize: '16px'
+             }}
+           >
+             ×
+           </button>
           
           {Object.entries(heatmapResults.channel_heatmaps).map(([channelName, channelData], index) => (
             <div key={`${channelName}-${index}`} style={{ 
