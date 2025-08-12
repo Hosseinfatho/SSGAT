@@ -643,11 +643,11 @@ const MainView = ({ onSetView }) => {
              {/* ROI Navigator - Fixed position at top left */}
        <div className="roi-navigator-fixed" style={{ 
          position: 'fixed', 
-         top: '80px', 
-         left: '50px', 
+         top: window.location.hostname === 'hosseinfatho.github.io' ? '70px' : '80px', 
+         left: window.location.hostname === 'hosseinfatho.github.io' ? '30px' : '50px', 
          zIndex: 1000,
          width: '375px',
-         transform: 'scale(1.08)',
+         transform: window.location.hostname === 'hosseinfatho.github.io' ? 'scale(0.9)' : 'scale(1.08)',
          transformOrigin: 'top left'
        }}>
         <ROISelector 
