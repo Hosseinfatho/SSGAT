@@ -608,7 +608,7 @@ const MainView = ({ onSetView }) => {
         backgroundColor: '#FFD700',
         color: '#000',
         padding: '10px 20px',
-        fontSize: '22px',
+        fontSize: '18px',
         fontWeight: '600',
         textAlign: 'center',
         zIndex: 1000,
