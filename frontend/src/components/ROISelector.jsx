@@ -7,7 +7,7 @@ import InteractionHeatmaps from './InteractionHeatmaps';
 function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGroupSelection }) {
   const [rois, setRois] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedGroups, setSelectedGroups] = useState([]);
+  const [selectedGroups, setSelectedGroups] = useState(['B-cell infiltration']);
   const [interactionGroups, setInteractionGroups] = useState([]);
 
   // Notify parent component when selectedGroups changes
@@ -19,7 +19,7 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       onGroupSelection(selectedGroups);
     }
     
-    // Config is now generated directly in frontend - no need to send to backend
+    // Don't trigger config refresh here - only when Set View is pressed
   }, [selectedGroups, onGroupSelection]);
 
   const computeCentroid = (allCoords) => {
@@ -44,30 +44,6 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     // Adaptive sizing based on screen size
     const adjustROISize = () => {
       const container = document.querySelector('.roi-selector-container');
-      if (container) {
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
-        const screenDiagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
-        
-        // Calculate scale based on screen diagonal (approximate)
-        let scale = 1.3;
-        if (screenDiagonal > 3000) { // 32-inch and larger
-          scale = 1.1;
-        } else if (screenDiagonal > 2500) { // 27-inch
-          scale = 1.2;
-        } else if (screenDiagonal > 2000) { // 24-inch
-          scale = 1.3;
-        } else if (screenDiagonal > 1500) { // 16-inch laptop
-          scale = 1.1;
-        } else if (screenDiagonal > 1200) { // 13-inch laptop
-          scale = 1.0;
-        } else { // Tablet and smaller
-          scale = 0.9;
-        }
-        
-        container.style.transform = `scale(${scale})`;
-        console.log(`ROI Navigator adjusted: screen diagonal ${screenDiagonal.toFixed(0)}px, scale ${scale}`);
-      }
     };
     
     // Adjust size on mount and resize
@@ -76,10 +52,14 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     
     // Cleanup
     return () => window.removeEventListener('resize', adjustROISize);
-    
-    // Don't load ROI data initially - wait for user selection
-    console.log('ROISelector: Interaction types loaded, waiting for user selection');
   }, []);
+
+  // Separate useEffect to load initial ROI data
+  useEffect(() => {
+    if (selectedGroups.length > 0) {
+      loadROIData(selectedGroups[0]);
+    }
+  }, [selectedGroups]);
   
   const loadROIData = (interactionType) => {
     console.log('ROISelector: ===== loadROIData START =====');
@@ -117,12 +97,25 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
         console.log("ROISelector: Received ROI data for", interactionType, ":", data);
         console.log("ROISelector: Data keys:", Object.keys(data));
         
-        // Handle top5_roi format (top_rois array)
-        const roisArray = data.top_rois || [];
+        // Handle different possible data structures
+        let roisArray = [];
+        if (data.top_rois && Array.isArray(data.top_rois)) {
+          roisArray = data.top_rois;
+        } else if (Array.isArray(data)) {
+          roisArray = data;
+        } else if (data.features && Array.isArray(data.features)) {
+          roisArray = data.features;
+        } else {
+          console.error("ROISelector: Invalid ROI data structure:", data);
+          console.log("ROISelector: Available keys:", Object.keys(data));
+          return;
+        }
+        
         console.log("ROISelector: roisArray:", roisArray);
         
-        if (!Array.isArray(roisArray)) {
-          console.error("ROISelector: Invalid ROI data structure:", data);
+        if (roisArray.length === 0) {
+          console.warn("ROISelector: No ROI data found");
+          setRois([]);
           return;
         }
 
@@ -135,20 +128,26 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
         
         const extracted = sortedRois.map((roi, index) => {
           const roiId = roi.roi_id || (index + 1); // Use roi_id from file or fallback to index
-          console.log("ROISelector: Processing ROI", roiId, "with score:", roi.scores.combined_score);
+          console.log("ROISelector: Processing ROI", roiId, "with score:", roi.scores?.combined_score);
           console.log("ROISelector: Full ROI object:", roi);
-          console.log("ROISelector: ROI position x:", roi.position.x, "y:", roi.position.y);
-          const newTooltipName = `ROI_${roiId} Score: ${roi.scores.combined_score.toFixed(3)}`;
+          console.log("ROISelector: ROI position x:", roi.position?.x, "y:", roi.position?.y);
+          
+          // Add safety checks for missing data
+          const score = roi.scores?.combined_score || 0;
+          const x = roi.position?.x || 0;
+          const y = roi.position?.y || 0;
+          
+          const newTooltipName = `ROI_${roiId} Score: ${score.toFixed(3)}`;
           
           // Calculate centroid from ROI position
-          const centroid = [roi.position.x, roi.position.y];
+          const centroid = [x, y];
           
           const extractedRoi = {
             id: newTooltipName,
             x: centroid[0],
             y: centroid[1],
-            z: roi.position.z || 0, // Use z from file or default to 0
-            score: roi.scores.combined_score, // Use actual score from file
+            z: roi.position?.z || 0, // Use z from file or default to 0
+            score: score, // Use actual score from file
             interactions: [interactionType], // Use the current interaction type
             tooltip_name: newTooltipName,
             roi_id: roiId, // Use roi_id from file
@@ -165,6 +164,7 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       })
       .catch((err) => {
         console.error("ROISelector: Failed to load ROI data for", interactionType, ":", err);
+        console.error("ROISelector: URL attempted:", url);
         setRois([]);
       });
   };
@@ -194,44 +194,48 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
 
   const currentROI = filteredRois[currentIndex] || {};
   
-  // Debug: Log currentROI to see what data we have
-        console.log('ROISelector Debug - currentROI:', currentROI);
-      console.log('ROISelector Debug - currentROI.score:', currentROI.score);
-      console.log('ROISelector Debug - currentROI.x:', currentROI.x);
-      console.log('ROISelector Debug - currentROI.y:', currentROI.y);
-      console.log('ROISelector Debug - currentROI.roi_id:', currentROI.roi_id);
-      console.log('ROISelector Debug - filteredRois length:', filteredRois.length);
-      console.log('ROISelector Debug - currentIndex:', currentIndex);
-      console.log('ROISelector Debug - all filteredRois:', filteredRois);
-      console.log('ROISelector Debug - selectedGroups:', selectedGroups);
+  // Debug logging for current ROI
+  console.log('ROISelector: Current ROI debug:', {
+    currentIndex,
+    totalRois: filteredRois.length,
+    currentROI,
+    roi_id: currentROI.roi_id,
+    score: currentROI.score
+  });
+  
+
 
   const handleSetView = () => {
     if (currentROI && currentROI.x !== undefined && currentROI.y !== undefined) {
       // Transform coordinates: X = x*8, Y = (5508 - y*8) (flipped)
       const roiX = currentROI.x * 8;
-      const roiY = 5508 - (currentROI.y * 8);
+      const roiY = (currentROI.y * 8);
       
       // Find the interaction group for the current ROI
       const currentROIGroup = currentROI.interactions && currentROI.interactions.length > 0 
         ? currentROI.interactions[0] 
         : null;
       
+      console.log('ROISelector: Set View for ROI:', {
+        roi_id: currentROI.roi_id,
+        x: currentROI.x,
+        y: currentROI.y,
+        transformedX: roiX,
+        transformedY: roiY,
+        interactionType: currentROIGroup
+      });
+      
       const viewConfig = {
         spatialTargetX: roiX,
         spatialTargetY: roiY,
         spatialZoom: -1.0,  // Moderate zoom to show ROI with range x±200, y±200
-        refreshConfig: true,
+        refreshConfig: true,  // Only refresh config when Set View is pressed
         currentROIGroup: currentROIGroup, // Pass the current ROI group
-        useSegmentationFile: true // Flag to indicate we want to use segmentation file
+        useSegmentationFile: true, // Flag to indicate we want to use segmentation file
+        selectedROI: currentROI  // Pass the full ROI data for interaction calculations
       };
       
-      console.log('=== SET VIEW CALCULATION ===');
-      console.log('Original coordinates from file:', currentROI.x, currentROI.y);
-      console.log('X calculation:', currentROI.x, '* 8 =', roiX);
-      console.log('Y calculation:', '5508 - (', currentROI.y, '* 8) = 5508 -', (currentROI.y * 8), '=', roiY);
-      console.log('Setting view to ROI:', currentROI.id, 'at position:', roiX, roiY, 'with group:', currentROIGroup);
-      console.log('Using segmentation file for ROI display');
-      console.log('=== END SET VIEW CALCULATION ===');
+
       onSetView(viewConfig);
     } else {
       console.warn('No valid ROI selected for Set View');
@@ -241,10 +245,6 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
 
 
   const toggleGroup = (group) => {
-    console.log('ROISelector: ===== toggleGroup START =====');
-    console.log('ROISelector: toggleGroup called with:', group);
-    console.log('ROISelector: Current selectedGroups:', selectedGroups);
-    console.log('ROISelector: Group already selected?', selectedGroups.includes(group));
     
     let newSelectedGroups;
     
@@ -270,24 +270,14 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       console.log('ROISelector: No groups selected, not calling loadROIData');
     }
     
-    // Notify parent component about the change with refreshConfig to update view
-    console.log('ROISelector: Calling onSetView with:', {
-      selectedGroups: newSelectedGroups,
-      refreshConfig: true,
-      spatialTargetX: 5454,
-      spatialTargetY: 2600,
-      spatialZoom: -3.0
-    });
+    // Only notify parent about group selection change, don't refresh config
+    console.log('ROISelector: Calling onSetView with group selection only');
     
     onSetView({
       selectedGroups: newSelectedGroups,
-      refreshConfig: true,
-      spatialTargetX: 5454,  // Default center X
-      spatialTargetY: 2600,  // Default center Y
-      spatialZoom: -3.0      // Default zoom
+      refreshConfig: false  // Don't refresh config when changing interaction type
     });
     
-    console.log('ROISelector: ===== toggleGroup END =====');
   };
 
   const next = () => {
@@ -334,28 +324,25 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
   }
 
   return (
-    <div className="roi-selector-container">
-      <h4 style={{ fontSize: '14px', marginBottom: '2px', fontWeight: '600', color: '#000' }}>ROI Navigator</h4>
-             <p style={{ fontSize: '11px', marginBottom: '2px', color: '#000' }}>Select Interaction Type </p>
+    <div className="roi-selector-container" style={{ width: '100%', height: '100%' }}>
+      <h4 style={{ fontSize: '16px', marginBottom: '2px', fontWeight: '600', color: '#000' }}>ROI Navigator</h4>
+             <p style={{ fontSize: '14px', marginBottom: '2px', color: '#000' }}>Select Interaction Type </p>
              {interactionGroups.map(group => {
-               console.log('ROISelector: Rendering radio button for:', group, 'checked:', selectedGroups.includes(group));
-               console.log('ROISelector: About to render div for:', group);
+  
                return (
          <div 
            key={group} 
            onClick={() => {
-             console.log('ROISelector: ===== DIV CLICK START =====');
-             console.log('ROISelector: Div clicked for:', group);
-             console.log('ROISelector: About to call toggleGroup with:', group);
+
              toggleGroup(group);
-             console.log('ROISelector: ===== DIV CLICK END =====');
+             console.log('ROISelector: ===== DIV CLICK ND =====');
            }}
            style={{ 
-             fontSize: '11px', 
+             fontSize: '14px', 
              marginBottom: '1px', 
              color: '#000',
              cursor: 'pointer',
-             padding: '2px 4px',
+             padding: '1px 4px',
              backgroundColor: selectedGroups.includes(group) ? '#e0e0e0' : 'transparent',
              border: selectedGroups.includes(group) ? '1px solid #999' : '1px solid transparent',
              borderRadius: '3px'
@@ -380,10 +367,10 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       {selectedGroups.length > 0 ? (
         <>
                      <div className="text-center" style={{ marginBottom: "3px", display: "flex", justifyContent: "center", alignItems: "center", gap: "6px" }}>
-             <span style={{ fontSize: "11px", fontWeight: "600", color: "#000" }}>
+             <span style={{ fontSize: "14px", fontWeight: "600", color: "#000" }}>
                {currentROI.roi_id ? `ROI ${currentROI.roi_id}` : `ROI ${currentIndex + 1}`}
              </span>
-             <span style={{ fontSize: "10px", fontWeight: "bold", color: "#000" }}>
+             <span style={{ fontSize: "12px", fontWeight: "bold", color: "#000" }}>
                Score: {currentROI.score ? currentROI.score.toFixed(3) : "0.000"}
              </span>
            </div>
@@ -392,21 +379,21 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
              <button 
                onClick={prev}
                className="btn"
-               style={{ padding: "3px 6px", fontSize: "11px" }}
+               style={{ padding: "3px 6px", fontSize: "14px" }}
              >
                ←
              </button>
              <button 
                onClick={() => handleSetView()}
                className="btn"
-               style={{ padding: "4px 10px", fontSize: "11px" }}
+               style={{ padding: "4px 10px", fontSize: "14px" }}
              >
                Set View
              </button>
              <button 
                onClick={next}
                className="btn"
-               style={{ padding: "3px 6px", fontSize: "11px" }}
+               style={{ padding: "3px 6px", fontSize: "14px" }}
              >
                →
              </button>

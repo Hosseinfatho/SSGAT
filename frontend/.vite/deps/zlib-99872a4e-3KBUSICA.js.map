@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/vitessce/dist/zlib-99872a4e.js"],
-  "sourcesContent": ["var n = Object.defineProperty;\nvar o = (l, e, t) => e in l ? n(l, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : l[e] = t;\nvar i = (l, e, t) => (o(l, typeof e != \"symbol\" ? e + \"\" : e, t), t);\nimport { z as s, u as a } from \"./browser-554eb095.js\";\nvar r, c = (r = class {\n  constructor(e = 1) {\n    i(this, \"level\");\n    if (e < -1 || e > 9)\n      throw new Error(\"Invalid zlib compression level, it should be between -1 and 9\");\n    this.level = e;\n  }\n  static fromConfig({ level: e }) {\n    return new r(e);\n  }\n  encode(e) {\n    return s(e, { level: this.level });\n  }\n  decode(e) {\n    return a(e);\n  }\n}, i(r, \"codecId\", \"zlib\"), r), u = c;\nexport {\n  u as default\n};\n"],
-  "mappings": ";;;;;;;AAAA,IAAI,IAAI,OAAO;AACf,IAAI,IAAI,CAAC,GAAG,GAAG,MAAM,KAAK,IAAI,EAAE,GAAG,GAAG,EAAE,YAAY,MAAI,cAAc,MAAI,UAAU,MAAI,OAAO,EAAE,CAAC,IAAI,EAAE,CAAC,IAAI;AAC7G,IAAI,IAAI,CAAC,GAAG,GAAG,OAAO,EAAE,GAAG,OAAO,KAAK,WAAW,IAAI,KAAK,GAAG,CAAC,GAAG;AAElE,IAAI;AAAJ,IAAO,KAAK,IAAI,MAAM;AAAA,EACpB,YAAY,IAAI,GAAG;AACjB,MAAE,MAAM,OAAO;AACf,QAAI,IAAI,MAAM,IAAI;AAChB,YAAM,IAAI,MAAM,+DAA+D;AACjF,SAAK,QAAQ;AAAA,EACf;AAAA,EACA,OAAO,WAAW,EAAE,OAAO,EAAE,GAAG;AAC9B,WAAO,IAAI,EAAE,CAAC;AAAA,EAChB;AAAA,EACA,OAAO,GAAG;AACR,WAAO,GAAE,GAAG,EAAE,OAAO,KAAK,MAAM,CAAC;AAAA,EACnC;AAAA,EACA,OAAO,GAAG;AACR,WAAO,GAAE,CAAC;AAAA,EACZ;AACF,GAAG,EAAE,GAAG,WAAW,MAAM,GAAG;AAhB5B,IAgBgC,IAAI;",
-  "names": []
-}

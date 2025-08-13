@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/vitessce/dist/deflate-b472a529.js"],
-  "sourcesContent": ["import { i as r } from \"./pako.esm-a0be47a3.js\";\nimport { aQ as o } from \"./index-a280757a.js\";\nimport \"react\";\nimport \"react-dom\";\nclass d extends o {\n  decodeBlock(e) {\n    return r(new Uint8Array(e)).buffer;\n  }\n}\nexport {\n  d as default\n};\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;AAEA,mBAAO;AACP,uBAAO;AACP,IAAM,IAAN,cAAgB,IAAE;AAAA,EAChB,YAAY,GAAG;AACb,WAAO,GAAE,IAAI,WAAW,CAAC,CAAC,EAAE;AAAA,EAC9B;AACF;",
-  "names": []
-}

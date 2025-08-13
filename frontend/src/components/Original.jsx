@@ -70,7 +70,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
     'spatialTargetX': { "A": 5454 },
     'spatialTargetY': { "A": 2600 },
     'spatialTargetZ': { "A": 0 },
-    'spatialZoom': { "A": -2.7 },
+    'spatialZoom': { "A": -3.5 },
     'spatialTargetResolution': { "image": 3 },
     'spatialTargetT': { "image": 0 },
     'photometricInterpretation': { "image": "BlackIsZero" },
@@ -175,14 +175,12 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
         // Use local JSON files for GitHub Pages
                     roiUrl = `./data/${roi_info["file"]}`;
       }
-      
-      console.log('Adding ROI file:', roiUrl, 'for group:', group, 'useSegmentationFiles:', useSegmentationFiles);
-      
+            
       files.push({
         'fileType': 'obsSegmentations.json',
         'url': roiUrl,
         'coordinationValues': {
-          'obsType': roi_info['obsType']
+          'obsType': roi_info['obsType'],
         }
       });
     }
@@ -225,12 +223,8 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
         'x': 3, 'y': 0, 'w': 9, 'h': 12
       },
       {
-        "component": "status",
-
-        "x": 0,
-        "y": 0,
-        "w": 3,
-        "h": 4
+        'component': 'description',
+        'x': 0, 'y': 0, 'w': 3, 'h': 4
       },
       {
         'component': 'layerControllerBeta',
@@ -265,25 +259,9 @@ const MainView = ({ onSetView }) => {
   const [config, setConfig] = useState(null);
   const [error, setError] = useState(null);
   const [prevCellSetSelection, setPrevCellSetSelection] = useState(null);
+  const [showInstructions, setShowInstructions] = useState(false);
 
-  // Function to get responsive scaling for both local and online versions
-  const getResponsiveScaling = () => {
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-    
-    // Calculate scaling based on screen size for both local and online
-    if (screenWidth >= 2560) {
-      return 1.5; // 4K and larger displays
-    } else if (screenWidth >= 1920) {
-      return 1.25; // Full HD displays
-    } else if (screenWidth >= 1366) {
-      return 0.9; // Laptop displays (13-15 inch)
-    } else if (screenWidth >= 1024) {
-      return 0.75; // Small laptop displays
-    } else {
-      return 0.65; // Very small screens
-    }
-  };
+
 
   const [heatmapResults, setHeatmapResults] = useState({});
   const [interactionHeatmapResult, setInteractionHeatmapResult] = useState(null);
@@ -297,7 +275,7 @@ const MainView = ({ onSetView }) => {
   const [configKey, setConfigKey] = useState(0);
   const [rois, setRois] = useState([]);
   const [selectedCircle, setSelectedCircle] = useState(null);
-  const [selectedGroups, setSelectedGroups] = useState([]);
+  const [selectedGroups, setSelectedGroups] = useState(['B-cell infiltration']);
   const vitessceRef = useRef(null);
 
   const groupColors = {
@@ -363,6 +341,12 @@ const MainView = ({ onSetView }) => {
     // Store config globally for debugging
     window.lastConfig = initialConfig;
     console.log('Generated initial config:', initialConfig);
+    
+    // Show instructions popup on first visit
+    const hasSeenInstructions = localStorage.getItem('hasSeenInstructions');
+    if (!hasSeenInstructions) {
+      setShowInstructions(true);
+    }
   }, []);
 
   // Regenerate config when selectedGroups changes - but preserve current view
@@ -416,7 +400,7 @@ const MainView = ({ onSetView }) => {
 
               const [cx, cy] = allCoords.flat().reduce((acc, [x, y]) => [acc[0] + x, acc[1] + y], [0, 0]);
               const count = allCoords.flat().length;
-              const centroid = [cx / count, 688 - (cy / count)]; // Flip Y coordinate
+              const centroid = [cx / count,  (cy / count)]; // Flip Y coordinate
 
               return {
                 id: feature.properties.name || `ROI_${index}`,
@@ -602,6 +586,15 @@ const MainView = ({ onSetView }) => {
     }));
   };
 
+  const handleCloseInstructions = () => {
+    setShowInstructions(false);
+    localStorage.setItem('hasSeenInstructions', 'true');
+  };
+
+  const handleShowInstructions = () => {
+    setShowInstructions(true);
+  };
+
 
 
   if (error) {
@@ -618,32 +611,107 @@ const MainView = ({ onSetView }) => {
 
   return (
     <>
-      {/* Instruction Banner */}
-      <div style={{
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        right: '0',
-        backgroundColor: '#FFD700',
-        color: '#000',
-        padding: window.location.hostname === 'hosseinfatho.github.io' ? '8px 15px' : '10px 20px',
-        fontSize: window.location.hostname === 'hosseinfatho.github.io' ? 
-          (window.innerWidth >= 1920 ? '15px' : window.innerWidth >= 1366 ? '13px' : '11px') : '15px',
-        fontWeight: '600',
-        textAlign: 'center',
-        zIndex: 1000,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-        lineHeight: '1.4'
-      }}>
-        To view and explore all automatically detected ROIs, please first select an interaction type in the ROI Navigator panel.
-        <br />
-        Then, to inspect a specific ROI: in the volume image, hover over that marker to show the specific region's ID, then use the arrows in the ROI Navigator panel to select that specific ROI to zoom into, and click Set View.
-      </div>
+      {/* Instructions Popup */}
+      {showInstructions && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          zIndex: 9999,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
+        }}>
+          <div style={{
+            backgroundColor: 'white',
+            borderRadius: '12px',
+            padding: '30px',
+            maxWidth: '600px',
+            maxHeight: '80vh',
+            overflow: 'auto',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+            position: 'relative'
+          }}>
+            <button
+              onClick={handleCloseInstructions}
+              style={{
+                position: 'absolute',
+                top: '15px',
+                right: '20px',
+                background: 'none',
+                border: 'none',
+                fontSize: '24px',
+                cursor: 'pointer',
+                color: '#666',
+                fontWeight: 'bold'
+              }}
+            >
+              ×
+            </button>
+            
+            <h2 style={{ 
+              color: '#333', 
+              marginBottom: '20px', 
+              fontSize: '24px',
+              fontWeight: '600'
+            }}>
+              Welcome to SSGAT Viewer!
+            </h2>
+            
+                         <div style={{ fontSize: '16px', lineHeight: '1.6', color: '#555' }}>
+               <p style={{ marginBottom: '20px' }}>
+                 To view and explore all automatically detected ROIs, please first select an interaction type in the ROI Navigator panel.
+               </p>
+               
+               <p style={{ marginBottom: '20px' }}>
+                 Then, to inspect a specific ROI: in the volume image, hover over that marker to show the specific region's ID, then use the arrows in the ROI Navigator panel to select that specific ROI to zoom into, and click Set View.
+               </p>
+               
+               <div style={{ 
+                 backgroundColor: '#f8f9fa', 
+                 padding: '15px', 
+                 borderRadius: '8px', 
+                 borderLeft: '4px solid #2b83ba',
+                 marginBottom: '20px'
+               }}>
+                 <strong> Available Interactions:</strong>
+                 <ul style={{ margin: '10px 0 0 20px', padding: 0 }}>
+                   <li>B-cell infiltration</li>
+                   <li>T-cell maturation</li>
+                   <li>Inflammatory zone</li>
+                   <li>Oxidative stress regulation</li>
+                 </ul>
+               </div>
+             </div>
+            
+            <button
+              onClick={handleCloseInstructions}
+              style={{
+                backgroundColor: '#2b83ba',
+                color: 'white',
+                border: 'none',
+                padding: '12px 24px',
+                borderRadius: '6px',
+                fontSize: '16px',
+                cursor: 'pointer',
+                fontWeight: '500',
+                marginTop: '10px'
+              }}
+            >
+              Got it! Let's start exploring
+            </button>
+          </div>
+        </div>
+      )}
+             
       
       <div className="main-container" style={{ display: 'flex', height: '100vh', width: '100%', margin: '0', padding: '0', border: '0', background: '#000' }}>
       {/* Main Vitessce Viewer - Takes most of the space */}
       <div className="vitessce-container" style={{ flex: '1 1 auto', position: 'relative', margin: '0', padding: '0', border: '0', background: '#000' }}>
-      zIndex: 0,
 
         <Vitessce
           ref={vitessceRef}
@@ -660,15 +728,36 @@ const MainView = ({ onSetView }) => {
         />
       </div>
 
-       <div className="roi-navigator-fixed" style={{ 
-         position: 'fixed', 
-         top: window.location.hostname === 'hosseinfatho.github.io' ? '70px' : '80px', 
-         left: window.location.hostname === 'hosseinfatho.github.io' ? '30px' : '50px', 
-         zIndex: 10,
-         width: '375px',
-         transform: `scale(${getResponsiveScaling()})`,
-         transformOrigin: 'top left'
-       }}>
+             {/* Instruction Button */}
+       <button
+         onClick={handleShowInstructions}
+         style={{
+           position: 'fixed',
+           top: '10px',
+           right: '55px',
+           zIndex: 1000,
+           backgroundColor: 'white',
+           color: 'black',
+           border: '1px solid #ccc',
+           padding: '6px 12px',
+           borderRadius: '4px',
+           fontSize: '14px',
+           cursor: 'pointer',
+           fontWeight: '400',
+           boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+         }}
+       >
+         Instructions
+       </button>
+
+       <div style={{ 
+           position: 'fixed', 
+           top: '15px', 
+           left: '10px', 
+           zIndex: 10,
+           width: '24%',
+           height: '30%'
+         }}>
         <ROISelector 
           onSetView={handleSetView} 
           onHeatmapResults={handleHeatmapResults}
@@ -682,29 +771,38 @@ const MainView = ({ onSetView }) => {
 
                                                                                                                                                                                                                                            {/* Channel Heatmap Results - Only show when there are results */}
             {channelHeatmapResults && channelHeatmapResults.channel_heatmaps && Object.keys(channelHeatmapResults.channel_heatmaps).length > 0 && (
-                <HeatmapResults
-                  heatmapResults={channelHeatmapResults}
-                  interactionHeatmapResult={null}
-                  activeGroups={activeGroups}
-                  groupColors={groupColors}
-                  groupNames={groupNames}
-                  imageChannels={IMAGE_CHANNELS}
-                  onClose={() => {
-                    setChannelHeatmapResults(null);
-                  }}
-                  onHeatmapClick={() => {}}
-                  onGroupToggle={handleGroupToggle}
-                />
+                <div style={{ 
+                  position: 'fixed', 
+                  bottom: '1px', 
+                  left: '150px',
+                  zIndex: 1,
+                  transform: 'scale(0.6)',
+                  transformOrigin: 'bottom left'
+                }}>
+                  <HeatmapResults
+                    heatmapResults={channelHeatmapResults}
+                    interactionHeatmapResult={null}
+                    activeGroups={activeGroups}
+                    groupColors={groupColors}
+                    groupNames={groupNames}
+                    imageChannels={IMAGE_CHANNELS}
+                    onClose={() => {
+                      setChannelHeatmapResults(null);
+                    }}
+                    onHeatmapClick={() => {}}
+                    onGroupToggle={handleGroupToggle}
+                  />
+                </div>
             )}
 
             {/* Interaction Heatmap Results - Only show when there are results */}
             {interactionHeatmapResult && interactionHeatmapResult !== null && Object.keys(interactionHeatmapResult).length > 0 && (
               <div className="heatmap-results-fixed" style={{ 
                 position: 'fixed', 
-                bottom: '20px', 
-                right: '120px',
+                bottom: '10px', 
+                right: '25px',
                 zIndex: 1,
-                transform: 'scale(0.75)',
+                transform: 'scale(0.6)',
                 transformOrigin: 'bottom right'
               }}>
                 <InteractionHeatmap
