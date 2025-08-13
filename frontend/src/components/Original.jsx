@@ -266,6 +266,25 @@ const MainView = ({ onSetView }) => {
   const [error, setError] = useState(null);
   const [prevCellSetSelection, setPrevCellSetSelection] = useState(null);
 
+  // Function to get responsive scaling for both local and online versions
+  const getResponsiveScaling = () => {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    
+    // Calculate scaling based on screen size for both local and online
+    if (screenWidth >= 2560) {
+      return 1.5; // 4K and larger displays
+    } else if (screenWidth >= 1920) {
+      return 1.25; // Full HD displays
+    } else if (screenWidth >= 1366) {
+      return 0.9; // Laptop displays (13-15 inch)
+    } else if (screenWidth >= 1024) {
+      return 0.75; // Small laptop displays
+    } else {
+      return 0.65; // Very small screens
+    }
+  };
+
   const [heatmapResults, setHeatmapResults] = useState({});
   const [interactionHeatmapResult, setInteractionHeatmapResult] = useState(null);
   const [channelHeatmapResults, setChannelHeatmapResults] = useState(null);
@@ -607,8 +626,9 @@ const MainView = ({ onSetView }) => {
         right: '0',
         backgroundColor: '#FFD700',
         color: '#000',
-        padding: '10px 20px',
-        fontSize: '15px',
+        padding: window.location.hostname === 'hosseinfatho.github.io' ? '8px 15px' : '10px 20px',
+        fontSize: window.location.hostname === 'hosseinfatho.github.io' ? 
+          (window.innerWidth >= 1920 ? '15px' : window.innerWidth >= 1366 ? '13px' : '11px') : '15px',
         fontWeight: '600',
         textAlign: 'center',
         zIndex: 1000,
@@ -646,7 +666,7 @@ const MainView = ({ onSetView }) => {
          left: window.location.hostname === 'hosseinfatho.github.io' ? '30px' : '50px', 
          zIndex: 10,
          width: '375px',
-         transform: window.location.hostname === 'hosseinfatho.github.io' ? 'scale(0.9)' : 'scale(1.08)',
+         transform: `scale(${getResponsiveScaling()})`,
          transformOrigin: 'top left'
        }}>
         <ROISelector 
@@ -682,7 +702,7 @@ const MainView = ({ onSetView }) => {
               <div className="heatmap-results-fixed" style={{ 
                 position: 'fixed', 
                 bottom: '20px', 
-                right: '20px',
+                right: '120px',
                 zIndex: 1,
                 transform: 'scale(0.75)',
                 transformOrigin: 'bottom right'

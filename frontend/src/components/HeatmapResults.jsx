@@ -33,7 +33,7 @@ const HeatmapResults = ({
                  <div className="heatmap-grid" style={{ 
            position: 'fixed', 
            bottom: '10px', 
-           left: '600px', 
+           left: '700px', 
            zIndex: 1001, 
            backgroundColor: 'transparent', 
            width: '1000px', 
