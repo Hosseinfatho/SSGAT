@@ -1,6 +1,0 @@
-roi_id,interaction,interaction_coarse,score_category,pred_interaction,pred_score
-B-cell infiltration_1_Score:0.736,B-cell infiltration,B-cell,High,B-cell infiltration,0.7355500012636185
-B-cell infiltration_2_Score:0.666,B-cell infiltration,B-cell,High,B-cell infiltration,0.6657499969005585
-B-cell infiltration_3_Score:0.651,B-cell infiltration,B-cell,High,B-cell infiltration,0.6508499979972839
-B-cell infiltration_4_Score:0.432,B-cell infiltration,B-cell,Medium,B-cell infiltration,0.4324750006198883
-B-cell infiltration_5_Score:0.421,B-cell infiltration,B-cell,Medium,B-cell infiltration,0.420912504196167

@@ -1,7 +1,0 @@
-roi_id,interaction,interaction_coarse,score_category,pred_interaction,pred_score
-T-cell maturation_1_Score:0.661,T-cell maturation,T-cell,High,T-cell maturation,0.6608999967575073
-T-cell maturation_2_Score:0.640,T-cell maturation,T-cell,High,T-cell maturation,0.6403499990701675
-T-cell maturation_3_Score:0.622,T-cell maturation,T-cell,High,T-cell maturation,0.6221249997615814
-T-cell maturation_4_Score:0.562,T-cell maturation,T-cell,High,T-cell maturation,0.5622749999165535
-T-cell maturation_5_Score:0.560,T-cell maturation,T-cell,High,T-cell maturation,0.5595999993383884
-T-cell maturation_6_Score:0.422,T-cell maturation,T-cell,Medium,T-cell maturation,0.42179998755455017

@@ -1,5 +1,0 @@
-roi_id,interaction,interaction_coarse,score_category,pred_interaction,pred_score
-Inflammatory zone_1_Score:0.659,Inflammatory zone,Inflammatory,High,Inflammatory zone,0.6592250019311905
-Inflammatory zone_2_Score:0.412,Inflammatory zone,Inflammatory,Medium,Inflammatory zone,0.411812499165535
-Inflammatory zone_3_Score:0.344,Inflammatory zone,Inflammatory,Medium,Inflammatory zone,0.3443104177713394
-Inflammatory zone_4_Score:0.343,Inflammatory zone,Inflammatory,Medium,Inflammatory zone,0.3428273946046829
