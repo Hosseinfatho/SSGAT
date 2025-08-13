@@ -455,4 +455,10 @@ body {
   backdrop-filter: blur(10px) !important;
 } 
 
- 
+/* Scale ROI navigator to 1.4 for online version */
+@media screen and (min-width: 1px) {
+  .roi-navigator-fixed {
+    transform: scale(1.4) !important;
+    transform-origin: top left;
+  }
+}
