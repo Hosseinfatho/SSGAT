@@ -10,7 +10,7 @@ function InteractionHeatmaps({ currentROI, onInteractionResults }) {
       const roiSize = 200;
 
       const x = Number(currentROI.x) || 0;
-      const y = 688 - Number(currentROI.y) || 0;
+      const y = Number(currentROI.y) || 0;
 
       const roi = {
         xMin: Math.max(0, Math.floor((x - roiSize/2) / factor)),

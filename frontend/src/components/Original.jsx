@@ -29,25 +29,29 @@ const INTERACTION_TO_ROI = {
     'file': 'roi_segmentation_B-cell_infiltration.json',
     'obsType': 'ROI_B-cell',
     'color': [255, 180, 180],  // Light Red
-    'strokeWidth': 16
+    'strokeWidth': 16,
+    'defaultOpacity': 0.5
   },
   'T-cell maturation': {
     'file': 'roi_segmentation_T-cell_maturation.json',
     'obsType': 'ROI_T-cell',
     'color': [180, 180, 255],  // Light Blue
-    'strokeWidth': 16
+    'strokeWidth': 16,
+    'defaultOpacity': 0.5
   },
   'Inflammatory zone': {
     'file': 'roi_segmentation_Inflammatory_zone.json',
     'obsType': 'ROI_Inflammatory',
     'color': [180, 255, 180],  // Light Green
-    'strokeWidth': 16
+    'strokeWidth': 16,
+    'defaultOpacity': 0.5
   },
   'Oxidative stress regulation': {
     'file': 'roi_segmentation_Oxidative_stress_regulation.json',
     'obsType': 'ROI_Oxidative',
     'color': [255, 255, 180],  // Light Yellow
-    'strokeWidth': 16
+    'strokeWidth': 16,
+    'defaultOpacity': 0.5
   }
 };
 
@@ -60,7 +64,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
     'imageLayer': { "image": "image" },
     'imageChannel': {},
     'spatialChannelColor': {"A": [255, 100, 100]},
-    'spatialChannelOpacity': {"image": 1 },
+    'spatialChannelOpacity': {"obsType": .11 },
     'spatialChannelVisible': {},
     'spatialChannelWindow': {},
     'spatialTargetC': {},
@@ -117,7 +121,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
   Object.entries(IMAGE_CHANNELS).forEach(([chName, chProps]) => {
     coordination_space['imageChannel'][chName] = "__dummy__";
     coordination_space['spatialChannelColor'][chName] = chProps['color'];
-    coordination_space['spatialChannelOpacity'][chName] = 1.0;
+    coordination_space['spatialChannelOpacity'][chName] = 0.5;
     coordination_space['spatialChannelVisible'][chName] = true;
     coordination_space['spatialChannelWindow'][chName] = chProps['window'];
     coordination_space['spatialTargetC'][chName] = chProps['targetC'];
@@ -150,7 +154,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
               // Simple coordination settings
         coordination_space['spatialSegmentationFilled'][obs_type] = true; // ROIs are filled for better visibility
         coordination_space['spatialSegmentationStrokeWidth'][obs_type] = roi_info['strokeWidth'];
-        coordination_space['spatialLayerOpacity'][obs_type] = 0.3; // Set opacity to 0.3 for ROIs as overlays
+        coordination_space['spatialLayerOpacity'][obs_type] = roi_info['defaultOpacity']; // Set opacity from ROI config
         coordination_space['spatialLayerVisible'][obs_type] = true; // Make ROIs visible in layer controller
         coordination_space[CoordinationType.TOOLTIPS_VISIBLE][obs_type] = true; // Enable tooltips for ROIs
         
@@ -180,7 +184,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
         'fileType': 'obsSegmentations.json',
         'url': roiUrl,
         'coordinationValues': {
-          'obsType': roi_info['obsType'],
+          'obsType': roi_info['obsType']
         }
       });
     }
