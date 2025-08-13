@@ -200,17 +200,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
     'initStrategy': 'auto',
     'coordinationSpace': coordination_space,
     'layout': [
-      {
-        "component": "description",
-        "props": {
-          "description": " ",
-          "descriptionType": "markdown"
-        },
-        "x": 0,
-        "y": 0,
-        "w": 3,
-        "h": 4
-      },
+
       {
         'component': 'spatialBeta',
         'coordinationScopes': {
@@ -233,6 +223,14 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
           [CoordinationType.TOOLTIPS_VISIBLE]: Object.keys(coordination_space[CoordinationType.TOOLTIPS_VISIBLE])
         },
         'x': 3, 'y': 0, 'w': 9, 'h': 12
+      },
+      {
+        "component": "status",
+
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 4
       },
       {
         'component': 'layerControllerBeta',
@@ -610,7 +608,7 @@ const MainView = ({ onSetView }) => {
         backgroundColor: '#FFD700',
         color: '#000',
         padding: '10px 20px',
-        fontSize: '14px',
+        fontSize: '22px',
         fontWeight: '600',
         textAlign: 'center',
         zIndex: 1000,
@@ -625,6 +623,8 @@ const MainView = ({ onSetView }) => {
       <div className="main-container" style={{ display: 'flex', height: '100vh', width: '100%', margin: '0', padding: '0', border: '0', background: '#000' }}>
       {/* Main Vitessce Viewer - Takes most of the space */}
       <div className="vitessce-container" style={{ flex: '1 1 auto', position: 'relative', margin: '0', padding: '0', border: '0', background: '#000' }}>
+      zIndex: 0,
+
         <Vitessce
           ref={vitessceRef}
           key={`${configKey}-${JSON.stringify(config?.datasets?.[0]?.files?.map(f => f.url))}`}
@@ -640,12 +640,11 @@ const MainView = ({ onSetView }) => {
         />
       </div>
 
-             {/* ROI Navigator - Fixed position at top left */}
        <div className="roi-navigator-fixed" style={{ 
          position: 'fixed', 
          top: window.location.hostname === 'hosseinfatho.github.io' ? '70px' : '80px', 
          left: window.location.hostname === 'hosseinfatho.github.io' ? '30px' : '50px', 
-         zIndex: 1000,
+         zIndex: 10,
          width: '375px',
          transform: window.location.hostname === 'hosseinfatho.github.io' ? 'scale(0.9)' : 'scale(1.08)',
          transformOrigin: 'top left'
