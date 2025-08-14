@@ -172,8 +172,8 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
       const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       let roiUrl;
       if (isLocalhost) {
-        // Use API for local development
-        roiUrl = `http://localhost:5000/api/${roi_info["file"]}`;
+        // Use API for local development with cache-busting
+        roiUrl = `http://localhost:5000/api/${roi_info["file"]}?t=${Date.now()}`;
       } else {
         // Use local JSON files for GitHub Pages
                     roiUrl = `./data/${roi_info["file"]}`;

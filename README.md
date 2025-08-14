@@ -1,4 +1,4 @@
-# 🧬 SSGAT: Spatial Feature Graph Attention Network
+#  SSGAT: Spatial Feature Graph Attention Network
 
 > **Advanced spatial biology analysis using Graph Attention Networks for cellular interaction discovery**
 
@@ -6,10 +6,10 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![React](https://img.shields.io/badge/React-18+-61dafb.svg)](https://reactjs.org)
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Live Demo
-**🌐 [Try it online](https://hosseinfatho.github.io/SSGAT/)**
+** [Try it online](https://hosseinfatho.github.io/SSGAT/)**
 
 ### Local Development
 ```bash
@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 
-## 🎯 What it does
+##  What it does
 
 SSGAT analyzes spatial biological data to discover cellular interactions using:
 
@@ -43,21 +43,21 @@ SSGAT analyzes spatial biological data to discover cellular interactions using:
 - **Score-based Filtering** - Find high-scoring regions automatically
 - **Multi-dimensional Data** - Handle complex spatial datasets
 
-## 📊 Supported Interactions
+##  Supported Interactions
 
 - **B-cell infiltration**
 - **T-cell maturation** 
 - **Inflammatory zones**
 - **Oxidative stress regulation**
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Backend**: Python, PyTorch, Graph Attention Networks
 - **Frontend**: React, Vitessce, D3.js
 - **Data**: OME-Zarr format
 - **Deployment**: GitHub Pages
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 SSGAT/
@@ -85,4 +85,4 @@ SSGAT/
 
 ---
 
-**🔬 Built for spatial biology research | 🚀 Deployed on GitHub Pages**
+** Built for spatial biology research | 🚀 Deployed on GitHub Pages**

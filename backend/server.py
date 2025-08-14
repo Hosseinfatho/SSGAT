@@ -70,7 +70,7 @@ def open_target_zarr_array():
         logger.error(f"Failed to open target Zarr array: {e}", exc_info=True)
         return None
 
-def generate_vitessce_config():
+# def generate_vitessce_config():
     """Generate Vitessce configuration in Python"""
     
     # Channel configuration
@@ -86,7 +86,7 @@ def generate_vitessce_config():
     coordination_space = {
         'dataset': {"A": "bv"},
         'imageChannel': {},
-        'imageLayer': {"init_bv_image_0": "__dummy__"},
+        'imageLayer': {"init_bv_image_0": ""},
         'metaCoordinationScopes': {
             "A": {'obsType': "A"},
             "init_bv_image_0": {
@@ -612,37 +612,37 @@ def analyze_heatmaps():
 
 #     return config
 
-@app.route('/api/config', methods=['GET'])
-def get_config():
-    """Get the standard Vitessce config using Python generator"""
-    logger.info("Request received for /api/config [GET]")
+# @app.route('/api/config', methods=['GET'])
+# def get_config():
+#     """Get the standard Vitessce config using Python generator"""
+#     logger.info("Request received for /api/config [GET]")
     
-    try:
-        config = generate_vitessce_config()
-        return jsonify(config)
+#     try:
+#         config = generate_vitessce_config()
+#         return jsonify(config)
         
-    except Exception as e:
-        logger.error(f"Error generating config: {e}", exc_info=True)
-        return jsonify({"error": f"Failed to generate config: {e}"}), 500
+#     except Exception as e:
+#         logger.error(f"Error generating config: {e}", exc_info=True)
+#         return jsonify({"error": f"Failed to generate config: {e}"}), 500
 
-@app.route('/api/config', methods=['POST'])
-def update_config():
-    """Update the Vitessce config based on selected interaction types"""
-    logger.info("Request received for /api/config [POST]")
+# @app.route('/api/config', methods=['POST'])
+# def update_config():
+#     """Update the Vitessce config based on selected interaction types"""
+#     logger.info("Request received for /api/config [POST]")
     
-    try:
-        data = request.get_json()
-        selected_groups = data.get('selectedGroups', [])
+#     try:
+#         data = request.get_json()
+#         selected_groups = data.get('selectedGroups', [])
         
-        logger.info(f"Updating config with selected groups: {selected_groups}")
+#         logger.info(f"Updating config with selected groups: {selected_groups}")
         
-        # Generate config based on selected groups
-        config = generate_vitessce_config()
-        return jsonify(config)
+#         # Generate config based on selected groups
+#         config = generate_vitessce_config()
+#         return jsonify(config)
         
-    except Exception as e:
-        logger.error(f"Error updating config: {e}", exc_info=True)
-        return jsonify({"error": f"Failed to update config: {e}"}), 500
+#     except Exception as e:
+#         logger.error(f"Error updating config: {e}", exc_info=True)
+#         return jsonify({"error": f"Failed to update config: {e}"}), 500
 
 @app.route('/api/roi_segmentation_B-cell_infiltration.json', methods=['GET'])
 def get_roi_segmentation_b_cell():
