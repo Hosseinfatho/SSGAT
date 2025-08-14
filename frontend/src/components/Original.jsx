@@ -15,12 +15,12 @@ const INTERACTION_TYPES = {
 
 // Constants for Image Channels
 const IMAGE_CHANNELS = {
-  'CD31': { 'id': 'cd31', 'color': [0, 255, 0], 'window': [300, 10000], 'targetC': 19 },      // Green
-  'CD20': { 'id': 'cd20', 'color': [255, 255, 0], 'window': [1000, 5000], 'targetC': 27 },    // Yellow
-  'CD11b': { 'id': 'cd11b', 'color': [148, 0, 211], 'window': [700, 4000], 'targetC': 37 },   // Violet
-  'CD4': { 'id': 'cd4', 'color': [135, 206, 235], 'window': [1638, 5000], 'targetC': 25 },   // Sky Blue
-  'CD11c': { 'id': 'cd11c', 'color': [255, 165, 0], 'window': [370, 1000], 'targetC': 42 },   // Orange
-  'Catalase': { 'id': 'catalase', 'color': [255, 0, 0], 'window': [1000, 4000], 'targetC': 59 } // Red
+  'CD31': { 'id': 'cd31', 'color': [228, 26, 28], 'window': [300, 6000], 'targetC': 19 },      // Green
+  'CD20': { 'id': 'cd20', 'color': [55, 126, 184], 'window': [1000, 5000], 'targetC': 27 },    // Yellow
+  'CD11b': { 'id': 'cd11b', 'color': [77, 175, 74], 'window': [700, 4000], 'targetC': 37 },   // Violet
+  'CD4': { 'id': 'cd4', 'color': [152, 78, 163], 'window': [1638, 5000], 'targetC': 25 },   // Sky Blue
+  'CD11c': { 'id': 'cd11c', 'color': [255, 127, 0], 'window': [370, 1000], 'targetC': 42 },   // Orange
+  'Catalase': { 'id': 'catalase', 'color': [166, 86, 40], 'window': [1000, 4000], 'targetC': 59 } // Red
 };
 
 // Constants for Interaction Type to ROI Mapping - updated
@@ -64,11 +64,11 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
     'imageLayer': { "image": "image" },
     'imageChannel': {},
     'spatialChannelColor': {"A": [255, 100, 100]},
-    'spatialChannelOpacity': {"obsType": .11 },
+    'spatialChannelOpacity': {"obsType": .5 },
     'spatialChannelVisible': {},
     'spatialChannelWindow': {},
     'spatialTargetC': {},
-    'spatialLayerOpacity': { "image":1.0 },
+    'spatialLayerOpacity': { "obsType":0.5 },
     'spatialLayerVisible': { "image": true },
     'spatialRenderingMode': { "image": "3D" },
     'spatialTargetX': { "A": 5454 },
@@ -110,7 +110,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
 
           "spatialChannelColor": {},
           "spatialChannelVisible": {},
-          "spatialChannelOpacity": {},
+          "spatialChannelOpacity": {"obsType":0.5},
           "spatialChannelWindow": {}
         }
       }
@@ -119,7 +119,6 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
 
   // Add image channels
   Object.entries(IMAGE_CHANNELS).forEach(([chName, chProps]) => {
-    coordination_space['imageChannel'][chName] = "__dummy__";
     coordination_space['spatialChannelColor'][chName] = chProps['color'];
     coordination_space['spatialChannelOpacity'][chName] = 0.5;
     coordination_space['spatialChannelVisible'][chName] = true;

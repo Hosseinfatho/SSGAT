@@ -7,7 +7,7 @@ function InteractionHeatmaps({ currentROI, onInteractionResults }) {
     setIsAnalyzingInteractionHeatmap(true);
     try {
       const factor = 1;
-      const roiSize = 200;
+      const roiSize = 100;
 
       const x = Number(currentROI.x) || 0;
       const y = Number(currentROI.y) || 0;
