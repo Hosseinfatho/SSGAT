@@ -312,3 +312,10 @@
  TAB ...................................... Complete filename & cycle.
  SHIFT-TAB ...................... ESC-TAB   Complete filename & reverse cycle.
  ctrl-L ................................... Complete filename, list all.
+* [32mgh-pages[m
+  main[m
+  [31mremotes/origin/HEAD[m -> origin/main
+  [31mremotes/origin/Nafiul[m
+  [31mremotes/origin/Siyuan[m
+  [31mremotes/origin/gh-pages[m
+  [31mremotes/origin/main[m
