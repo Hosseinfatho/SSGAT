@@ -1,0 +1,73 @@
+{
+  "interaction_name": "B-cell infiltration",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "position": {
+        "x": 324.0,
+        "y": 554.0,
+        "z": 28.0
+      },
+      "scores": {
+        "combined_score": 0.7355500012636185,
+        "intensity_score": 0.47110000252723694,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "B-cell infiltration",
+      "tooltip_name": "B-cell infiltration_1_Score:0.736"
+    },
+    {
+      "roi_id": 2,
+      "position": {
+        "x": 820.0,
+        "y": 286.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.6657499969005585,
+        "intensity_score": 0.33149999380111694,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "B-cell infiltration",
+      "tooltip_name": "B-cell infiltration_2_Score:0.666"
+    },
+    {
+      "roi_id": 3,
+      "position": {
+        "x": 676.0,
+        "y": 435.0,
+        "z": 86.0
+      },
+      "scores": {
+        "combined_score": 0.6508499979972839,
+        "intensity_score": 0.30169999599456787,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "B-cell infiltration",
+      "tooltip_name": "B-cell infiltration_3_Score:0.651"
+    },
+    {
+      "roi_id": 4,
+      "position": {
+        "x": 616.0,
+        "y": 82.0,
+        "z": 153.0
+      },
+      "scores": {
+        "combined_score": 0.420912504196167,
+        "intensity_score": 0.341825008392334,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2,
+      "interaction": "B-cell infiltration",
+      "tooltip_name": "B-cell infiltration_4_Score:0.421"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "interaction_name": "Inflammatory zone",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "position": {
+        "x": 1083.0,
+        "y": 272.0,
+        "z": 84.0
+      },
+      "scores": {
+        "combined_score": 0.6592250019311905,
+        "intensity_score": 0.318450003862381,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Inflammatory zone",
+      "tooltip_name": "Inflammatory zone_1_Score:0.659"
+    },
+    {
+      "roi_id": 2,
+      "position": {
+        "x": 616.0,
+        "y": 371.0,
+        "z": 80.0
+      },
+      "scores": {
+        "combined_score": 0.411812499165535,
+        "intensity_score": 0.32362499833106995,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2,
+      "interaction": "Inflammatory zone",
+      "tooltip_name": "Inflammatory zone_2_Score:0.412"
+    },
+    {
+      "roi_id": 3,
+      "position": {
+        "x": 653.0,
+        "y": 310.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.3428273946046829,
+        "intensity_score": 0.25708332657814026,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4,
+      "interaction": "Inflammatory zone",
+      "tooltip_name": "Inflammatory zone_3_Score:0.343"
+    },
+    {
+      "roi_id": 4,
+      "position": {
+        "x": 950.0,
+        "y": 450.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.3200000000000000,
+        "intensity_score": 0.2500000000000000,
+        "attention_score": 0.3900000000000000
+      },
+      "num_nodes": 2,
+      "num_edges": 3,
+      "interaction": "Inflammatory zone",
+      "tooltip_name": "Inflammatory zone_4_Score:0.320"
+    }
+  ]
+}

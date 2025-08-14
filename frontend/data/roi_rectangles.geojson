@@ -1,0 +1,1605 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              815.0,
+              226.0
+            ],
+            [
+              855.0,
+              226.0
+            ],
+            [
+              855.0,
+              266.0
+            ],
+            [
+              815.0,
+              266.0
+            ],
+            [
+              815.0,
+              226.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_0",
+        "name": "ROI_0",
+        "score": 0.39121250808238983,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.28242501616477966,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -13.0,
+              474.0
+            ],
+            [
+              27.0,
+              474.0
+            ],
+            [
+              27.0,
+              514.0
+            ],
+            [
+              -13.0,
+              514.0
+            ],
+            [
+              -13.0,
+              474.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_1",
+        "name": "ROI_1",
+        "score": 0.36726875603199005,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.3345375061035156,
+        "attention_score": 0.4000000059604645,
+        "num_nodes": 4,
+        "num_edges": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              412.0,
+              408.0
+            ],
+            [
+              452.0,
+              408.0
+            ],
+            [
+              452.0,
+              448.0
+            ],
+            [
+              412.0,
+              448.0
+            ],
+            [
+              412.0,
+              408.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_2",
+        "name": "ROI_2",
+        "score": 0.35745833814144135,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.3815833330154419,
+        "attention_score": 0.3333333432674408,
+        "num_nodes": 3,
+        "num_edges": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              299.0,
+              421.0
+            ],
+            [
+              339.0,
+              421.0
+            ],
+            [
+              339.0,
+              461.0
+            ],
+            [
+              299.0,
+              461.0
+            ],
+            [
+              299.0,
+              421.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_3",
+        "name": "ROI_3",
+        "score": 0.34858573973178864,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.2686000168323517,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              405.0,
+              412.0
+            ],
+            [
+              445.0,
+              412.0
+            ],
+            [
+              445.0,
+              452.0
+            ],
+            [
+              405.0,
+              452.0
+            ],
+            [
+              405.0,
+              412.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_4",
+        "name": "ROI_4",
+        "score": 0.3459440618753433,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.26331666111946106,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              921.0,
+              208.0
+            ],
+            [
+              961.0,
+              208.0
+            ],
+            [
+              961.0,
+              248.0
+            ],
+            [
+              921.0,
+              248.0
+            ],
+            [
+              921.0,
+              208.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_5",
+        "name": "ROI_5",
+        "score": 0.3453940749168396,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.2622166872024536,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              274.0,
+              559.0
+            ],
+            [
+              314.0,
+              559.0
+            ],
+            [
+              314.0,
+              599.0
+            ],
+            [
+              274.0,
+              599.0
+            ],
+            [
+              274.0,
+              559.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_6",
+        "name": "ROI_6",
+        "score": 0.3440440595149994,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.2595166563987732,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1112.0,
+              246.0
+            ],
+            [
+              1152.0,
+              246.0
+            ],
+            [
+              1152.0,
+              286.0
+            ],
+            [
+              1112.0,
+              286.0
+            ],
+            [
+              1112.0,
+              246.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_7",
+        "name": "ROI_7",
+        "score": 0.33593573421239853,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.24330000579357147,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              845.0,
+              194.0
+            ],
+            [
+              885.0,
+              194.0
+            ],
+            [
+              885.0,
+              234.0
+            ],
+            [
+              845.0,
+              234.0
+            ],
+            [
+              845.0,
+              194.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_8",
+        "name": "ROI_8",
+        "score": 0.3346500024199486,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.16930000483989716,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              304.0,
+              534.0
+            ],
+            [
+              344.0,
+              534.0
+            ],
+            [
+              344.0,
+              574.0
+            ],
+            [
+              304.0,
+              574.0
+            ],
+            [
+              304.0,
+              534.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_9",
+        "name": "ROI_9",
+        "score": 0.3332524001598358,
+        "interaction": "B-cell infiltration",
+        "intensity_score": 0.23793333768844604,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              304.0,
+              534.0
+            ],
+            [
+              344.0,
+              534.0
+            ],
+            [
+              344.0,
+              574.0
+            ],
+            [
+              304.0,
+              574.0
+            ],
+            [
+              304.0,
+              534.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_10",
+        "name": "ROI_10",
+        "score": 0.37175239622592926,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.31493332982063293,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -13.0,
+              474.0
+            ],
+            [
+              27.0,
+              474.0
+            ],
+            [
+              27.0,
+              514.0
+            ],
+            [
+              -13.0,
+              514.0
+            ],
+            [
+              -13.0,
+              474.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_11",
+        "name": "ROI_11",
+        "score": 0.33797499537467957,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.27595001459121704,
+        "attention_score": 0.3999999761581421,
+        "num_nodes": 4,
+        "num_edges": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1063.0,
+              252.0
+            ],
+            [
+              1103.0,
+              252.0
+            ],
+            [
+              1103.0,
+              292.0
+            ],
+            [
+              1063.0,
+              292.0
+            ],
+            [
+              1063.0,
+              252.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_12",
+        "name": "ROI_12",
+        "score": 0.32979999482631683,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.15959998965263367,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              299.0,
+              421.0
+            ],
+            [
+              339.0,
+              421.0
+            ],
+            [
+              339.0,
+              461.0
+            ],
+            [
+              299.0,
+              461.0
+            ],
+            [
+              299.0,
+              421.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_13",
+        "name": "ROI_13",
+        "score": 0.32229405641555786,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.21601665019989014,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              227.0,
+              497.0
+            ],
+            [
+              267.0,
+              497.0
+            ],
+            [
+              267.0,
+              537.0
+            ],
+            [
+              227.0,
+              537.0
+            ],
+            [
+              227.0,
+              497.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_14",
+        "name": "ROI_14",
+        "score": 0.3068416714668274,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.280349999666214,
+        "attention_score": 0.3333333432674408,
+        "num_nodes": 4,
+        "num_edges": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1061.0,
+              252.0
+            ],
+            [
+              1101.0,
+              252.0
+            ],
+            [
+              1101.0,
+              292.0
+            ],
+            [
+              1061.0,
+              292.0
+            ],
+            [
+              1061.0,
+              252.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_15",
+        "name": "ROI_15",
+        "score": 0.3024875074625015,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.20497500896453857,
+        "attention_score": 0.4000000059604645,
+        "num_nodes": 4,
+        "num_edges": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              596.0,
+              62.0
+            ],
+            [
+              636.0,
+              62.0
+            ],
+            [
+              636.0,
+              102.0
+            ],
+            [
+              596.0,
+              102.0
+            ],
+            [
+              596.0,
+              62.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_16",
+        "name": "ROI_16",
+        "score": 0.29401666671037674,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.21303333342075348,
+        "attention_score": 0.375,
+        "num_nodes": 6,
+        "num_edges": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1300.0,
+              209.0
+            ],
+            [
+              1340.0,
+              209.0
+            ],
+            [
+              1340.0,
+              249.0
+            ],
+            [
+              1300.0,
+              249.0
+            ],
+            [
+              1300.0,
+              209.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_17",
+        "name": "ROI_17",
+        "score": 0.2900416702032089,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.24674999713897705,
+        "attention_score": 0.3333333432674408,
+        "num_nodes": 4,
+        "num_edges": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1331.0,
+              196.0
+            ],
+            [
+              1371.0,
+              196.0
+            ],
+            [
+              1371.0,
+              236.0
+            ],
+            [
+              1331.0,
+              236.0
+            ],
+            [
+              1331.0,
+              196.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_18",
+        "name": "ROI_18",
+        "score": 0.2900416702032089,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.24674999713897705,
+        "attention_score": 0.3333333432674408,
+        "num_nodes": 4,
+        "num_edges": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              354.0,
+              447.0
+            ],
+            [
+              394.0,
+              447.0
+            ],
+            [
+              394.0,
+              487.0
+            ],
+            [
+              354.0,
+              487.0
+            ],
+            [
+              354.0,
+              447.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_19",
+        "name": "ROI_19",
+        "score": 0.28171780705451965,
+        "interaction": "Inflammatory zone",
+        "intensity_score": 0.2907083332538605,
+        "attention_score": 0.27272728085517883,
+        "num_nodes": 6,
+        "num_edges": 16
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1212.0,
+              207.0
+            ],
+            [
+              1252.0,
+              207.0
+            ],
+            [
+              1252.0,
+              247.0
+            ],
+            [
+              1212.0,
+              247.0
+            ],
+            [
+              1212.0,
+              207.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_20",
+        "name": "ROI_20",
+        "score": 0.6980250030755997,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.39605000615119934,
+        "attention_score": 1.0,
+        "num_nodes": 1,
+        "num_edges": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              669.0,
+              609.0
+            ],
+            [
+              709.0,
+              609.0
+            ],
+            [
+              709.0,
+              649.0
+            ],
+            [
+              669.0,
+              649.0
+            ],
+            [
+              669.0,
+              609.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_21",
+        "name": "ROI_21",
+        "score": 0.6826249957084656,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.36524999141693115,
+        "attention_score": 1.0,
+        "num_nodes": 1,
+        "num_edges": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              59.0,
+              390.0
+            ],
+            [
+              99.0,
+              390.0
+            ],
+            [
+              99.0,
+              430.0
+            ],
+            [
+              59.0,
+              430.0
+            ],
+            [
+              59.0,
+              390.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_22",
+        "name": "ROI_22",
+        "score": 0.6772249937057495,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.354449987411499,
+        "attention_score": 1.0,
+        "num_nodes": 1,
+        "num_edges": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              960.0,
+              293.0
+            ],
+            [
+              1000.0,
+              293.0
+            ],
+            [
+              1000.0,
+              333.0
+            ],
+            [
+              960.0,
+              333.0
+            ],
+            [
+              960.0,
+              293.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_23",
+        "name": "ROI_23",
+        "score": 0.46681249141693115,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.4336249828338623,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1124.0,
+              259.0
+            ],
+            [
+              1164.0,
+              259.0
+            ],
+            [
+              1164.0,
+              299.0
+            ],
+            [
+              1124.0,
+              299.0
+            ],
+            [
+              1124.0,
+              259.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_24",
+        "name": "ROI_24",
+        "score": 0.46092499792575836,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.4218499958515167,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              859.0,
+              82.0
+            ],
+            [
+              899.0,
+              82.0
+            ],
+            [
+              899.0,
+              122.0
+            ],
+            [
+              859.0,
+              122.0
+            ],
+            [
+              859.0,
+              82.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_25",
+        "name": "ROI_25",
+        "score": 0.3828773945569992,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.3371833264827728,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              951.0,
+              329.0
+            ],
+            [
+              991.0,
+              329.0
+            ],
+            [
+              991.0,
+              369.0
+            ],
+            [
+              951.0,
+              369.0
+            ],
+            [
+              951.0,
+              329.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_26",
+        "name": "ROI_26",
+        "score": 0.36650240421295166,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.30443334579467773,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              982.0,
+              201.0
+            ],
+            [
+              1022.0,
+              201.0
+            ],
+            [
+              1022.0,
+              241.0
+            ],
+            [
+              982.0,
+              241.0
+            ],
+            [
+              982.0,
+              201.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_27",
+        "name": "ROI_27",
+        "score": 0.3655875027179718,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.2311750054359436,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              396.0,
+              466.0
+            ],
+            [
+              436.0,
+              466.0
+            ],
+            [
+              436.0,
+              506.0
+            ],
+            [
+              396.0,
+              506.0
+            ],
+            [
+              396.0,
+              466.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_28",
+        "name": "ROI_28",
+        "score": 0.3546999990940094,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.2093999981880188,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              296.0,
+              563.0
+            ],
+            [
+              336.0,
+              563.0
+            ],
+            [
+              336.0,
+              603.0
+            ],
+            [
+              296.0,
+              603.0
+            ],
+            [
+              296.0,
+              563.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_29",
+        "name": "ROI_29",
+        "score": 0.3524499982595444,
+        "interaction": "Oxidative stress niche",
+        "intensity_score": 0.20489999651908875,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              815.0,
+              226.0
+            ],
+            [
+              855.0,
+              226.0
+            ],
+            [
+              855.0,
+              266.0
+            ],
+            [
+              815.0,
+              266.0
+            ],
+            [
+              815.0,
+              226.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_30",
+        "name": "ROI_30",
+        "score": 0.37601250410079956,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.2520250082015991,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              800.0,
+              266.0
+            ],
+            [
+              840.0,
+              266.0
+            ],
+            [
+              840.0,
+              306.0
+            ],
+            [
+              800.0,
+              306.0
+            ],
+            [
+              800.0,
+              266.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_31",
+        "name": "ROI_31",
+        "score": 0.33044999837875366,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.16089999675750732,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1112.0,
+              246.0
+            ],
+            [
+              1152.0,
+              246.0
+            ],
+            [
+              1152.0,
+              286.0
+            ],
+            [
+              1112.0,
+              286.0
+            ],
+            [
+              1112.0,
+              246.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_32",
+        "name": "ROI_32",
+        "score": 0.32881907373666763,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.22906668484210968,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              274.0,
+              559.0
+            ],
+            [
+              314.0,
+              559.0
+            ],
+            [
+              314.0,
+              599.0
+            ],
+            [
+              274.0,
+              599.0
+            ],
+            [
+              274.0,
+              559.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_33",
+        "name": "ROI_33",
+        "score": 0.32653573155403137,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.22450000047683716,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              412.0,
+              408.0
+            ],
+            [
+              452.0,
+              408.0
+            ],
+            [
+              452.0,
+              448.0
+            ],
+            [
+              412.0,
+              448.0
+            ],
+            [
+              412.0,
+              408.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_34",
+        "name": "ROI_34",
+        "score": 0.32477501034736633,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.31621667742729187,
+        "attention_score": 0.3333333432674408,
+        "num_nodes": 3,
+        "num_edges": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              921.0,
+              208.0
+            ],
+            [
+              961.0,
+              208.0
+            ],
+            [
+              961.0,
+              248.0
+            ],
+            [
+              921.0,
+              248.0
+            ],
+            [
+              921.0,
+              208.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_35",
+        "name": "ROI_35",
+        "score": 0.32366905361413956,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.21876664459705353,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              845.0,
+              194.0
+            ],
+            [
+              885.0,
+              194.0
+            ],
+            [
+              885.0,
+              234.0
+            ],
+            [
+              845.0,
+              234.0
+            ],
+            [
+              845.0,
+              194.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_36",
+        "name": "ROI_36",
+        "score": 0.322562500834465,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.14512500166893005,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1230.0,
+              183.0
+            ],
+            [
+              1270.0,
+              183.0
+            ],
+            [
+              1270.0,
+              223.0
+            ],
+            [
+              1230.0,
+              223.0
+            ],
+            [
+              1230.0,
+              183.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_37",
+        "name": "ROI_37",
+        "score": 0.32017499953508377,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.14034999907016754,
+        "attention_score": 0.5,
+        "num_nodes": 2,
+        "num_edges": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              405.0,
+              412.0
+            ],
+            [
+              445.0,
+              412.0
+            ],
+            [
+              445.0,
+              452.0
+            ],
+            [
+              405.0,
+              452.0
+            ],
+            [
+              405.0,
+              412.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_38",
+        "name": "ROI_38",
+        "score": 0.3153357282280922,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.2020999938249588,
+        "attention_score": 0.4285714626312256,
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              342.0,
+              444.0
+            ],
+            [
+              382.0,
+              444.0
+            ],
+            [
+              382.0,
+              484.0
+            ],
+            [
+              342.0,
+              484.0
+            ],
+            [
+              342.0,
+              444.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ROI_39",
+        "name": "ROI_39",
+        "score": 0.3123476952314377,
+        "interaction": "T-cell entry site",
+        "intensity_score": 0.24007999897003174,
+        "attention_score": 0.38461539149284363,
+        "num_nodes": 5,
+        "num_edges": 8
+      }
+    }
+  ]
+}

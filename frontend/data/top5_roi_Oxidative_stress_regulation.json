@@ -1,0 +1,124 @@
+{
+  "interaction_name": "Oxidative stress regulation",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "position": {
+        "x": 213.0,
+        "y": 515.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.7525500059127808,
+        "intensity_score": 0.5051000118255615,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_1_Score:0.753"
+    },
+    {
+      "roi_id": 2,
+      "position": {
+        "x": 689.0,
+        "y": 415.0,
+        "z": 83.0
+      },
+      "scores": {
+        "combined_score": 0.738999992609024,
+        "intensity_score": 0.4779999852180481,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_2_Score:0.739"
+    },
+    {
+      "roi_id": 3,
+      "position": {
+        "x": 108.0,
+        "y": 573.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.7381249964237213,
+        "intensity_score": 0.4762499928474426,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_3_Score:0.738"
+    },
+    {
+      "roi_id": 4,
+      "position": {
+        "x": 1002.0,
+        "y": 221.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.7311750054359436,
+        "intensity_score": 0.4623500108718872,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_4_Score:0.731"
+    },
+    {
+      "roi_id": 5,
+      "position": {
+        "x": 715.0,
+        "y": 233.0,
+        "z": 59.0
+      },
+      "scores": {
+        "combined_score": 0.7222750037908554,
+        "intensity_score": 0.4445500075817108,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_5_Score:0.722"
+    },
+    {
+      "roi_id": 6,
+      "position": {
+        "x": 651.0,
+        "y": 415.0,
+        "z": 141.0
+      },
+      "scores": {
+        "combined_score": 0.7217749953269958,
+        "intensity_score": 0.4435499906539917,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_6_Score:0.722"
+    },
+    {
+      "roi_id": 7,
+      "position": {
+        "x": 416.0,
+        "y": 486.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.7093999981880188,
+        "intensity_score": 0.4187999963760376,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "Oxidative stress regulation",
+      "tooltip_name": "Oxidative stress regulation_7_Score:0.709"
+    }
+  ]
+}

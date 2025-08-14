@@ -1,0 +1,90 @@
+{
+  "interaction_name": "T-cell maturation",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "position": {
+        "x": 820.0,
+        "y": 286.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.6608999967575073,
+        "intensity_score": 0.32179999351501465,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "T-cell maturation",
+      "tooltip_name": "T-cell maturation_1_Score:0.661"
+    },
+    {
+      "roi_id": 2,
+      "position": {
+        "x": 1250.0,
+        "y": 203.0,
+        "z": 101.0
+      },
+      "scores": {
+        "combined_score": 0.6403499990701675,
+        "intensity_score": 0.2806999981403351,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "T-cell maturation",
+      "tooltip_name": "T-cell maturation_2_Score:0.640"
+    },
+    {
+      "roi_id": 3,
+      "position": {
+        "x": 513.0,
+        "y": 520.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.6221249997615814,
+        "intensity_score": 0.24424999952316284,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "T-cell maturation",
+      "tooltip_name": "T-cell maturation_3_Score:0.622"
+    },
+    {
+      "roi_id": 4,
+      "position": {
+        "x": 324.0,
+        "y": 554.0,
+        "z": 30.0
+      },
+      "scores": {
+        "combined_score": 0.5595999993383884,
+        "intensity_score": 0.11919999867677689,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0,
+      "interaction": "T-cell maturation",
+      "tooltip_name": "T-cell maturation_4_Score:0.560"
+    },
+    {
+      "roi_id": 5,
+      "position": {
+        "x": 1132.0,
+        "y": 266.0,
+        "z": 76.0
+      },
+      "scores": {
+        "combined_score": 0.42179998755455017,
+        "intensity_score": 0.34360000491142273,
+        "attention_score": 0.4999999701976776
+      },
+      "num_nodes": 2,
+      "num_edges": 2,
+      "interaction": "T-cell maturation",
+      "tooltip_name": "T-cell maturation_5_Score:0.422"
+    }
+  ]
+}
