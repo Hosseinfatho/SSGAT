@@ -1,1 +1,0 @@
-import{x as f}from"./index-lTYlbRye.js";class c extends f{decodeBlock(n){const r=new DataView(n),s=[];for(let e=0;e<n.byteLength;++e){let t=r.getInt8(e);if(t<0){const o=r.getUint8(e+1);t=-t;for(let a=0;a<=t;++a)s.push(o);e+=1}else{for(let o=0;o<=t;++o)s.push(r.getUint8(e+o+1));e+=t+1}}return new Uint8Array(s).buffer}}export{c as default};
