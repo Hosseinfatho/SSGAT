@@ -43,14 +43,14 @@ def create_hollow_circle_polygon(center_x, center_y, radius=200, stroke_width=25
     hollow_polygon = outer_polygon + inner_polygon[::-1]
     return hollow_polygon
 
-def create_stem_polygon(center_x, center_y, stem_number, stem_width=100, stem_height=300, spacing=150):
+def create_stem_polygon(center_x, center_y, stem_number, stem_width=50, stem_height=200, spacing=100):
     """
     Create a simple rectangular stem positioned below the circle
     Returns a list of coordinate pairs forming the stem shape
     """
     # Position the stem below the circle center
     stem_x = round(center_x)
-    stem_y = round(center_y + 500)  # Position below the circle
+    stem_y = round(center_y + 400)  # Position below the circle
     
     # Calculate position based on stem number (1-based)
     # First stem is centered, additional stems are spaced to the right
@@ -92,8 +92,10 @@ def process_roi_file(input_file, output_file, interaction_name):
         if roi_coords and len(roi_coords) > 0:
             # Calculate centroid from polygon coordinates
             coords = roi_coords
-            if isinstance(coords[0], list):  # Handle nested structure
-                coords = coords[0]
+            
+            # Handle nested structure: [[[x, y], [x, y], ...]]
+            if isinstance(coords[0], list) and len(coords[0]) > 0 and isinstance(coords[0][0], list):
+                coords = coords[0]  # Extract the inner list
             
             # Calculate centroid
             x_coords = [coord[0] for coord in coords]
@@ -109,7 +111,7 @@ def process_roi_file(input_file, output_file, interaction_name):
             
             # Create stems based on ROI number
             for stem_num in range(1, roi_count + 1):
-                stem_polygon = create_stem_polygon(center_x, center_y, stem_num, stem_width=100, stem_height=300, spacing=150)
+                stem_polygon = create_stem_polygon(center_x, center_y, stem_num, stem_width=50, stem_height=200, spacing=100)
                 new_format[f"ROI_{roi_count}{stem_num}"] = stem_polygon
             
             roi_count += 1
@@ -127,7 +129,7 @@ def main():
     Main function to process all ROI segmentation files
     """
     # Input and output directories
-    input_dir = Path("../data")
+    input_dir = Path("input")
     output_dir = Path("../data/hollow_circles")
     output_dir.mkdir(exist_ok=True)
     
