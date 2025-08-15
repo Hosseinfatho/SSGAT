@@ -43,29 +43,34 @@ def create_hollow_circle_polygon(center_x, center_y, radius=200, stroke_width=25
     hollow_polygon = outer_polygon + inner_polygon[::-1]
     return hollow_polygon
 
-def create_stem_polygon(center_x, center_y, stem_number, stem_width=50, stem_height=200, spacing=100):
+
+
+def create_stem_polygon_with_offset(center_x, center_y, stem_number, total_stems, stem_width=50, stem_height=200, spacing=100):
     """
-    Create a simple rectangular stem positioned below the circle
-    Returns a list of coordinate pairs forming the stem shape
+    Create a stem polygon with proper offset for symmetric positioning
     """
     # Position the stem below the circle center
-    stem_x = round(center_x)
     stem_y = round(center_y + 400)  # Position below the circle
     
-    # Calculate position based on stem number (1-based)
-    # First stem is centered, additional stems are spaced to the right
-    offset_x = (stem_number - 1) * spacing
+    # Calculate symmetric offset
+    # For total_stems stems, we want them centered around the circle center
+    # The first stem should be at position -(total_stems-1)/2 * spacing
+    # Each subsequent stem moves by spacing
+    start_offset = -(total_stems - 1) / 2 * spacing
+    offset_x = start_offset + (stem_number - 1) * spacing
+    
+    stem_x = round(center_x + offset_x)
     
     # Create rectangle coordinates for the stem
     half_width = stem_width // 2
     half_height = stem_height // 2
     
     stem_polygon = [
-        [stem_x + offset_x - half_width, stem_y - half_height],  # Top-left
-        [stem_x + offset_x + half_width, stem_y - half_height],  # Top-right
-        [stem_x + offset_x + half_width, stem_y + half_height],  # Bottom-right
-        [stem_x + offset_x - half_width, stem_y + half_height],  # Bottom-left
-        [stem_x + offset_x - half_width, stem_y - half_height]   # Back to start
+        [stem_x - half_width, stem_y - half_height],  # Top-left
+        [stem_x + half_width, stem_y - half_height],  # Top-right
+        [stem_x + half_width, stem_y + half_height],  # Bottom-right
+        [stem_x - half_width, stem_y + half_height],  # Bottom-left
+        [stem_x - half_width, stem_y - half_height]   # Back to start
     ]
     
     return stem_polygon
@@ -111,7 +116,7 @@ def process_roi_file(input_file, output_file, interaction_name):
             
             # Create stems based on ROI number
             for stem_num in range(1, roi_count + 1):
-                stem_polygon = create_stem_polygon(center_x, center_y, stem_num, stem_width=50, stem_height=200, spacing=100)
+                stem_polygon = create_stem_polygon_with_offset(center_x, center_y, stem_num, roi_count, stem_width=50, stem_height=200, spacing=100)
                 new_format[f"ROI_{roi_count}{stem_num}"] = stem_polygon
             
             roi_count += 1

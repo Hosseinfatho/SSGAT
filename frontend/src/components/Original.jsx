@@ -74,7 +74,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
     'spatialTargetX': { "A": 5454 },
     'spatialTargetY': { "A": 2600 },
     'spatialTargetZ': { "A": 0 },
-    'spatialZoom': { "A": -3.5 },
+    'spatialZoom': { "A": -3.2 },
     'spatialTargetResolution': { "image": 3 },
     'spatialTargetT': { "image": 0 },
     'photometricInterpretation': { "image": "BlackIsZero" },
@@ -671,8 +671,7 @@ const MainView = ({ onSetView }) => {
                </p>
                
                <p style={{ marginBottom: '20px' }}>
-                 Then, to inspect a specific ROI: in the volume image, hover over that marker to show the specific region's ID, then use the arrows in the ROI Navigator panel to select that specific ROI to zoom into, and click Set View.
-               </p>
+               To inspect a specific ROI, refer to the bars above the rings to identify ROI order. In the volume image, hover over a marker to display its ID, then use the arrows in the ROI Navigator panel to select it, zoom in, and click Set View.               </p>
                
                <div style={{ 
                  backgroundColor: '#f8f9fa', 

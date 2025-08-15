@@ -1,8 +1,5 @@
-roi_id,interaction,interaction_coarse,score_category,pred_interaction,pred_score
-Oxidative stress regulation_1_Score:0.753,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.7525500059127808
-Oxidative stress regulation_2_Score:0.739,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.738999992609024
-Oxidative stress regulation_3_Score:0.738,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.7381249964237213
-Oxidative stress regulation_4_Score:0.731,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.7311750054359436
-Oxidative stress regulation_5_Score:0.722,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.7222750037908554
-Oxidative stress regulation_6_Score:0.722,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.7217749953269958
-Oxidative stress regulation_7_Score:0.709,Oxidative stress regulation,Oxidative,High,Oxidative stress regulation,0.7093999981880188
+roi_id,score_category,pred_score
+ROI_1,High,0.7525500059127808
+ROI_2,High,0.738999992609024
+ROI_3,High,0.7381249964237213
+ROI_4,High,0.7311750054359436
