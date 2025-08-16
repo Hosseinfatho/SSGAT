@@ -1,0 +1,5 @@
+roi_id,score_category,pred_score
+ROI_1,High,0.6592250019311905
+ROI_2,Medium,0.411812499165535
+ROI_3,Medium,0.3428273946046829
+ROI_4,Medium,0.32

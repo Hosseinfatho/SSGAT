@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/vitessce/dist/index.min.js"],
-  "sourcesContent": ["import { bR as n, bM as s, bK as t, bL as c, bV as r, bW as d, bN as p, c2 as b, c0 as l, b_ as C, c1 as u, b$ as T, bJ as g, bZ as y, bO as S, bI as P, bH as I, bT as N, bS as m, bU as _, bY as f, bX as F, bQ as V, c7 as M, ca as O, c4 as x, cb as H, cc as L, c5 as w, c8 as A, c9 as E, c6 as U, bP as Y, c3 as v } from \"./index-a280757a.js\";\nimport \"react\";\nimport \"react-dom\";\nexport {\n  n as CoordinationLevel,\n  s as CoordinationType,\n  t as DataType,\n  c as FileType,\n  r as HINTS_CONFIG,\n  d as HINT_TYPE_TO_FILE_TYPE_MAP,\n  p as OldCoordinationType,\n  b as PluginAsyncFunction,\n  l as PluginCoordinationType,\n  C as PluginFileType,\n  u as PluginJointFileType,\n  T as PluginViewType,\n  g as ViewType,\n  y as Vitessce,\n  S as VitessceConfig,\n  P as decodeURLParamsToConf,\n  I as encodeConfInUrl,\n  N as generateConfig,\n  m as getCoordinationSpaceAndScopes,\n  _ as getHintOptions,\n  f as getInitialCoordinationScopeName,\n  F as getInitialCoordinationScopePrefix,\n  V as hconcat,\n  M as useComplexCoordination,\n  O as useComplexCoordinationSecondary,\n  x as useCoordination,\n  H as useCoordinationScopes,\n  L as useCoordinationScopesBy,\n  w as useGridItemSize,\n  A as useMultiCoordinationScopesNonNull,\n  E as useMultiCoordinationScopesSecondaryNonNull,\n  U as usePageModeView,\n  Y as vconcat,\n  v as z\n};\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,mBAAO;AACP,uBAAO;",
-  "names": []
-}

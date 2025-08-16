@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/vitessce/dist/packbits-980ba63d.js"],
-  "sourcesContent": ["import { aQ as i } from \"./index-a280757a.js\";\nimport \"react\";\nimport \"react-dom\";\nclass p extends i {\n  decodeBlock(n) {\n    const r = new DataView(n), a = [];\n    for (let e = 0; e < n.byteLength; ++e) {\n      let t = r.getInt8(e);\n      if (t < 0) {\n        const o = r.getUint8(e + 1);\n        t = -t;\n        for (let s = 0; s <= t; ++s)\n          a.push(o);\n        e += 1;\n      } else {\n        for (let o = 0; o <= t; ++o)\n          a.push(r.getUint8(e + o + 1));\n        e += t + 1;\n      }\n    }\n    return new Uint8Array(a).buffer;\n  }\n}\nexport {\n  p as default\n};\n"],
-  "mappings": ";;;;;;;;;;;;;;AACA,mBAAO;AACP,uBAAO;AACP,IAAM,IAAN,cAAgB,IAAE;AAAA,EAChB,YAAY,GAAG;AACb,UAAM,IAAI,IAAI,SAAS,CAAC,GAAG,IAAI,CAAC;AAChC,aAAS,IAAI,GAAG,IAAI,EAAE,YAAY,EAAE,GAAG;AACrC,UAAI,IAAI,EAAE,QAAQ,CAAC;AACnB,UAAI,IAAI,GAAG;AACT,cAAM,IAAI,EAAE,SAAS,IAAI,CAAC;AAC1B,YAAI,CAAC;AACL,iBAAS,IAAI,GAAG,KAAK,GAAG,EAAE;AACxB,YAAE,KAAK,CAAC;AACV,aAAK;AAAA,MACP,OAAO;AACL,iBAAS,IAAI,GAAG,KAAK,GAAG,EAAE;AACxB,YAAE,KAAK,EAAE,SAAS,IAAI,IAAI,CAAC,CAAC;AAC9B,aAAK,IAAI;AAAA,MACX;AAAA,IACF;AACA,WAAO,IAAI,WAAW,CAAC,EAAE;AAAA,EAC3B;AACF;",
-  "names": []
-}

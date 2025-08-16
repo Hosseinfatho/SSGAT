@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/vitessce/dist/gzip-61747bf5.js"],
-  "sourcesContent": ["var o = Object.defineProperty;\nvar a = (t, e, i) => e in t ? o(t, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : t[e] = i;\nvar n = (t, e, i) => (a(t, typeof e != \"symbol\" ? e + \"\" : e, i), i);\nimport { g as s, a as c } from \"./browser-554eb095.js\";\nvar r, l = (r = class {\n  constructor(e = 1) {\n    n(this, \"level\");\n    if (e < 0 || e > 9)\n      throw new Error(\"Invalid gzip compression level, it should be between 0 and 9\");\n    this.level = e;\n  }\n  static fromConfig({ level: e }) {\n    return new r(e);\n  }\n  encode(e) {\n    return s(e, { level: this.level });\n  }\n  decode(e) {\n    return c(e);\n  }\n}, n(r, \"codecId\", \"gzip\"), r), u = l;\nexport {\n  u as default\n};\n"],
-  "mappings": ";;;;;;;AAAA,IAAI,IAAI,OAAO;AACf,IAAI,IAAI,CAAC,GAAG,GAAG,MAAM,KAAK,IAAI,EAAE,GAAG,GAAG,EAAE,YAAY,MAAI,cAAc,MAAI,UAAU,MAAI,OAAO,EAAE,CAAC,IAAI,EAAE,CAAC,IAAI;AAC7G,IAAI,IAAI,CAAC,GAAG,GAAG,OAAO,EAAE,GAAG,OAAO,KAAK,WAAW,IAAI,KAAK,GAAG,CAAC,GAAG;AAElE,IAAI;AAAJ,IAAO,KAAK,IAAI,MAAM;AAAA,EACpB,YAAY,IAAI,GAAG;AACjB,MAAE,MAAM,OAAO;AACf,QAAI,IAAI,KAAK,IAAI;AACf,YAAM,IAAI,MAAM,8DAA8D;AAChF,SAAK,QAAQ;AAAA,EACf;AAAA,EACA,OAAO,WAAW,EAAE,OAAO,EAAE,GAAG;AAC9B,WAAO,IAAI,EAAE,CAAC;AAAA,EAChB;AAAA,EACA,OAAO,GAAG;AACR,WAAO,GAAE,GAAG,EAAE,OAAO,KAAK,MAAM,CAAC;AAAA,EACnC;AAAA,EACA,OAAO,GAAG;AACR,WAAO,GAAE,CAAC;AAAA,EACZ;AACF,GAAG,EAAE,GAAG,WAAW,MAAM,GAAG;AAhB5B,IAgBgC,IAAI;",
-  "names": []
-}
