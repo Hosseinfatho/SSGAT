@@ -1,0 +1,14 @@
+{
+  "name": "biomedvis-backend",
+  "version": "1.0.0",
+  "description": "Backend for BioMedVis Challenge",
+  "main": "server.py",
+  "scripts": {
+    "start": "python server.py"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": ["vitessce", "biomedvis", "visualization"],
+  "author": "",
+  "license": "MIT"
+}
