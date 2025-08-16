@@ -1,0 +1,61 @@
+{
+  "zarr_path": "../Globally Sclerotic Glomeruli.adata.zarr",
+  "main_attributes": {
+    "encoding-type": "anndata",
+    "encoding-version": "0.1.0"
+  },
+  "structure": {
+    "obs": {
+      "attributes": {
+        "_index": "_index",
+        "column-order": [
+          "Area",
+          "Mesangial Area",
+          "Mesangial Fraction"
+        ],
+        "encoding-type": "dataframe",
+        "encoding-version": "0.2.0"
+      },
+      "datasets": {
+        "Area": {
+          "shape": [
+            19
+          ],
+          "dtype": "float64"
+        },
+        "Mesangial Area": {
+          "shape": [
+            19
+          ],
+          "dtype": "float64"
+        },
+        "Mesangial Fraction": {
+          "shape": [
+            19
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    "var": {
+      "attributes": {
+        "_index": "_index",
+        "column-order": [],
+        "encoding-type": "dataframe",
+        "encoding-version": "0.2.0"
+      },
+      "datasets": {}
+    },
+    "X": {
+      "shape": [
+        19,
+        3
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "encoding-type": "array",
+        "encoding-version": "0.2.0"
+      }
+    }
+  }
+}
