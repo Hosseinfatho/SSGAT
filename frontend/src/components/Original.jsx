@@ -176,7 +176,7 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false, 
         roiUrl = `http://localhost:5000/api/${roi_info["file"]}?t=${Date.now()}`;
       } else {
         // Use local JSON files for GitHub Pages
-                    roiUrl = `./data/${roi_info["file"]}`;
+                    roiUrl = `./${roi_info["file"]}`;
       }
             
       files.push({
