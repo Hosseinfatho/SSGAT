@@ -1,0 +1,2742 @@
+{
+  "rois": [
+    {
+      "roi_id": 131,
+      "position": {
+        "x": 213.0,
+        "y": 515.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.7525500059127808,
+        "intensity_score": 0.5051000118255615,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 97,
+      "position": {
+        "x": 689.0,
+        "y": 415.0,
+        "z": 83.0
+      },
+      "scores": {
+        "combined_score": 0.738999992609024,
+        "intensity_score": 0.4779999852180481,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 142,
+      "position": {
+        "x": 108.0,
+        "y": 573.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.7381249964237213,
+        "intensity_score": 0.4762499928474426,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 89,
+      "position": {
+        "x": 1002.0,
+        "y": 221.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.7311750054359436,
+        "intensity_score": 0.4623500108718872,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 148,
+      "position": {
+        "x": 715.0,
+        "y": 233.0,
+        "z": 59.0
+      },
+      "scores": {
+        "combined_score": 0.7222750037908554,
+        "intensity_score": 0.4445500075817108,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 77,
+      "position": {
+        "x": 651.0,
+        "y": 415.0,
+        "z": 141.0
+      },
+      "scores": {
+        "combined_score": 0.7217749953269958,
+        "intensity_score": 0.4435499906539917,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 113,
+      "position": {
+        "x": 416.0,
+        "y": 486.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.7093999981880188,
+        "intensity_score": 0.4187999963760376,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 78,
+      "position": {
+        "x": 316.0,
+        "y": 583.0,
+        "z": 141.0
+      },
+      "scores": {
+        "combined_score": 0.7048999965190887,
+        "intensity_score": 0.4097999930381775,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 95,
+      "position": {
+        "x": 712.0,
+        "y": 271.0,
+        "z": 80.0
+      },
+      "scores": {
+        "combined_score": 0.7018000036478043,
+        "intensity_score": 0.4036000072956085,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 136,
+      "position": {
+        "x": 604.0,
+        "y": 488.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.6993499994277954,
+        "intensity_score": 0.3986999988555908,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 74,
+      "position": {
+        "x": 356.0,
+        "y": 365.0,
+        "z": 45.0
+      },
+      "scores": {
+        "combined_score": 0.6992000043392181,
+        "intensity_score": 0.3984000086784363,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 119,
+      "position": {
+        "x": 1232.0,
+        "y": 227.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.6980250030755997,
+        "intensity_score": 0.39605000615119934,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 102,
+      "position": {
+        "x": 390.0,
+        "y": 681.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.6971249878406525,
+        "intensity_score": 0.39424997568130493,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 125,
+      "position": {
+        "x": 878.0,
+        "y": 383.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.6961999982595444,
+        "intensity_score": 0.39239999651908875,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 116,
+      "position": {
+        "x": 647.0,
+        "y": 442.0,
+        "z": 91.0
+      },
+      "scores": {
+        "combined_score": 0.691550001502037,
+        "intensity_score": 0.3831000030040741,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 178,
+      "position": {
+        "x": 496.0,
+        "y": 471.0,
+        "z": 129.0
+      },
+      "scores": {
+        "combined_score": 0.6899000108242035,
+        "intensity_score": 0.379800021648407,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 103,
+      "position": {
+        "x": 837.0,
+        "y": 374.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.6828249990940094,
+        "intensity_score": 0.3656499981880188,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 163,
+      "position": {
+        "x": 689.0,
+        "y": 629.0,
+        "z": 118.0
+      },
+      "scores": {
+        "combined_score": 0.6826249957084656,
+        "intensity_score": 0.36524999141693115,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 108,
+      "position": {
+        "x": 79.0,
+        "y": 410.0,
+        "z": 116.0
+      },
+      "scores": {
+        "combined_score": 0.6772249937057495,
+        "intensity_score": 0.354449987411499,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 144,
+      "position": {
+        "x": 273.0,
+        "y": 575.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.6746249943971634,
+        "intensity_score": 0.3492499887943268,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 129,
+      "position": {
+        "x": 350.0,
+        "y": 601.0,
+        "z": 99.0
+      },
+      "scores": {
+        "combined_score": 0.6713500022888184,
+        "intensity_score": 0.3427000045776367,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 22,
+      "position": {
+        "x": 1083.0,
+        "y": 272.0,
+        "z": 84.0
+      },
+      "scores": {
+        "combined_score": 0.6671499907970428,
+        "intensity_score": 0.3342999815940857,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 123,
+      "position": {
+        "x": 974.0,
+        "y": 494.0,
+        "z": 102.0
+      },
+      "scores": {
+        "combined_score": 0.655799999833107,
+        "intensity_score": 0.311599999666214,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 109,
+      "position": {
+        "x": 797.0,
+        "y": 412.0,
+        "z": 86.0
+      },
+      "scores": {
+        "combined_score": 0.6486999988555908,
+        "intensity_score": 0.29739999771118164,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 0,
+      "position": {
+        "x": 1087.0,
+        "y": 285.0,
+        "z": 38.0
+      },
+      "scores": {
+        "combined_score": 0.5872749984264374,
+        "intensity_score": 0.17454999685287476,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 137,
+      "position": {
+        "x": 879.0,
+        "y": 102.0,
+        "z": 58.0
+      },
+      "scores": {
+        "combined_score": 0.502887487411499,
+        "intensity_score": 0.505774974822998,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 153,
+      "position": {
+        "x": 176.0,
+        "y": 661.0,
+        "z": 106.0
+      },
+      "scores": {
+        "combined_score": 0.48954999446868896,
+        "intensity_score": 0.47909998893737793,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 155,
+      "position": {
+        "x": 1049.0,
+        "y": 219.0,
+        "z": 105.0
+      },
+      "scores": {
+        "combined_score": 0.48481249809265137,
+        "intensity_score": 0.46962499618530273,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 152,
+      "position": {
+        "x": 969.0,
+        "y": 349.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.4783250093460083,
+        "intensity_score": 0.4566500186920166,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 166,
+      "position": {
+        "x": 971.0,
+        "y": 349.0,
+        "z": 128.0
+      },
+      "scores": {
+        "combined_score": 0.4783250093460083,
+        "intensity_score": 0.4566500186920166,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 81,
+      "position": {
+        "x": 815.0,
+        "y": 386.0,
+        "z": 147.0
+      },
+      "scores": {
+        "combined_score": 0.47468750178813934,
+        "intensity_score": 0.4493750035762787,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 170,
+      "position": {
+        "x": 980.0,
+        "y": 313.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.46681249141693115,
+        "intensity_score": 0.4336249828338623,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 117,
+      "position": {
+        "x": 345.0,
+        "y": 547.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.46460001170635223,
+        "intensity_score": 0.42920002341270447,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 84,
+      "position": {
+        "x": 1144.0,
+        "y": 279.0,
+        "z": 72.0
+      },
+      "scores": {
+        "combined_score": 0.46092499792575836,
+        "intensity_score": 0.4218499958515167,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 79,
+      "position": {
+        "x": 779.0,
+        "y": 333.0,
+        "z": 143.0
+      },
+      "scores": {
+        "combined_score": 0.46037501096725464,
+        "intensity_score": 0.4207500219345093,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 67,
+      "position": {
+        "x": 1081.0,
+        "y": 272.0,
+        "z": 130.0
+      },
+      "scores": {
+        "combined_score": 0.4338250011205673,
+        "intensity_score": 0.36765000224113464,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 26,
+      "position": {
+        "x": 616.0,
+        "y": 371.0,
+        "z": 80.0
+      },
+      "scores": {
+        "combined_score": 0.4327374994754791,
+        "intensity_score": 0.36547499895095825,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 138,
+      "position": {
+        "x": 400.0,
+        "y": 535.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.41923750936985016,
+        "intensity_score": 0.3384750187397003,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 115,
+      "position": {
+        "x": 1286.0,
+        "y": 350.0,
+        "z": 65.0
+      },
+      "scores": {
+        "combined_score": 0.4162124842405319,
+        "intensity_score": 0.33242499828338623,
+        "attention_score": 0.4999999701976776
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 83,
+      "position": {
+        "x": 60.0,
+        "y": 445.0,
+        "z": 156.0
+      },
+      "scores": {
+        "combined_score": 0.414124995470047,
+        "intensity_score": 0.328249990940094,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 112,
+      "position": {
+        "x": 109.0,
+        "y": 437.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.41288749873638153,
+        "intensity_score": 0.32577499747276306,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 164,
+      "position": {
+        "x": 1074.0,
+        "y": 309.0,
+        "z": 115.0
+      },
+      "scores": {
+        "combined_score": 0.40689998865127563,
+        "intensity_score": 0.31379997730255127,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 80,
+      "position": {
+        "x": 1201.0,
+        "y": 224.0,
+        "z": 147.0
+      },
+      "scores": {
+        "combined_score": 0.4065999984741211,
+        "intensity_score": 0.3131999969482422,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 157,
+      "position": {
+        "x": 198.0,
+        "y": 637.0,
+        "z": 114.0
+      },
+      "scores": {
+        "combined_score": 0.40644167363643646,
+        "intensity_score": 0.47955000400543213,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 104,
+      "position": {
+        "x": 927.0,
+        "y": 99.0,
+        "z": 57.0
+      },
+      "scores": {
+        "combined_score": 0.40334999561309814,
+        "intensity_score": 0.3066999912261963,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 114,
+      "position": {
+        "x": 1274.0,
+        "y": 186.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.399849995970726,
+        "intensity_score": 0.299699991941452,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 158,
+      "position": {
+        "x": 1063.0,
+        "y": 267.0,
+        "z": 117.0
+      },
+      "scores": {
+        "combined_score": 0.39467500150203705,
+        "intensity_score": 0.4560166597366333,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 118,
+      "position": {
+        "x": 67.0,
+        "y": 597.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.3943749964237213,
+        "intensity_score": 0.2887499928474426,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 63,
+      "position": {
+        "x": 498.0,
+        "y": 665.0,
+        "z": 114.0
+      },
+      "scores": {
+        "combined_score": 0.390585720539093,
+        "intensity_score": 0.35259997844696045,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 134,
+      "position": {
+        "x": 132.0,
+        "y": 641.0,
+        "z": 100.0
+      },
+      "scores": {
+        "combined_score": 0.38994167745113373,
+        "intensity_score": 0.44655001163482666,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 161,
+      "position": {
+        "x": 1021.0,
+        "y": 299.0,
+        "z": 114.0
+      },
+      "scores": {
+        "combined_score": 0.38795003294944763,
+        "intensity_score": 0.44256672263145447,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 174,
+      "position": {
+        "x": 1044.0,
+        "y": 227.0,
+        "z": 128.0
+      },
+      "scores": {
+        "combined_score": 0.384016677737236,
+        "intensity_score": 0.43470001220703125,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 61,
+      "position": {
+        "x": 131.0,
+        "y": 496.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.3794499933719635,
+        "intensity_score": 0.258899986743927,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 159,
+      "position": {
+        "x": 496.0,
+        "y": 413.0,
+        "z": 70.0
+      },
+      "scores": {
+        "combined_score": 0.37896667420864105,
+        "intensity_score": 0.4246000051498413,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 88,
+      "position": {
+        "x": 996.0,
+        "y": 305.0,
+        "z": 78.0
+      },
+      "scores": {
+        "combined_score": 0.37724167108535767,
+        "intensity_score": 0.42114999890327454,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 175,
+      "position": {
+        "x": 1008.0,
+        "y": 208.0,
+        "z": 132.0
+      },
+      "scores": {
+        "combined_score": 0.3760499954223633,
+        "intensity_score": 0.41876664757728577,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 167,
+      "position": {
+        "x": 1087.0,
+        "y": 230.0,
+        "z": 124.0
+      },
+      "scores": {
+        "combined_score": 0.3752624839544296,
+        "intensity_score": 0.25052499771118164,
+        "attention_score": 0.4999999701976776
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 101,
+      "position": {
+        "x": 163.0,
+        "y": 601.0,
+        "z": 85.0
+      },
+      "scores": {
+        "combined_score": 0.3728500008583069,
+        "intensity_score": 0.49570000171661377,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 120,
+      "position": {
+        "x": 169.0,
+        "y": 610.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.3728500008583069,
+        "intensity_score": 0.49570000171661377,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 76,
+      "position": {
+        "x": 858.0,
+        "y": 390.0,
+        "z": 136.0
+      },
+      "scores": {
+        "combined_score": 0.3705250024795532,
+        "intensity_score": 0.40771666169166565,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 173,
+      "position": {
+        "x": 860.0,
+        "y": 384.0,
+        "z": 132.0
+      },
+      "scores": {
+        "combined_score": 0.3705250024795532,
+        "intensity_score": 0.40771666169166565,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 121,
+      "position": {
+        "x": 807.0,
+        "y": 274.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.36881667375564575,
+        "intensity_score": 0.4043000042438507,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 124,
+      "position": {
+        "x": 163.0,
+        "y": 538.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.3681875020265579,
+        "intensity_score": 0.23637500405311584,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 106,
+      "position": {
+        "x": 1145.0,
+        "y": 243.0,
+        "z": 82.0
+      },
+      "scores": {
+        "combined_score": 0.3651000112295151,
+        "intensity_score": 0.39686667919158936,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 146,
+      "position": {
+        "x": 380.0,
+        "y": 543.0,
+        "z": 108.0
+      },
+      "scores": {
+        "combined_score": 0.36338333785533905,
+        "intensity_score": 0.3934333324432373,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 145,
+      "position": {
+        "x": 1007.0,
+        "y": 187.0,
+        "z": 101.0
+      },
+      "scores": {
+        "combined_score": 0.3628607243299484,
+        "intensity_score": 0.29714998602867126,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 180,
+      "position": {
+        "x": 383.0,
+        "y": 595.0,
+        "z": 134.0
+      },
+      "scores": {
+        "combined_score": 0.3604250028729439,
+        "intensity_score": 0.22085000574588776,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 24,
+      "position": {
+        "x": 257.0,
+        "y": 417.0,
+        "z": 76.0
+      },
+      "scores": {
+        "combined_score": 0.358269065618515,
+        "intensity_score": 0.28796666860580444,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 19,
+      "position": {
+        "x": 334.0,
+        "y": 672.0,
+        "z": 75.0
+      },
+      "scores": {
+        "combined_score": 0.3579249978065491,
+        "intensity_score": 0.21584999561309814,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 177,
+      "position": {
+        "x": 1008.0,
+        "y": 222.0,
+        "z": 134.0
+      },
+      "scores": {
+        "combined_score": 0.35740000009536743,
+        "intensity_score": 0.38146665692329407,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 57,
+      "position": {
+        "x": 49.0,
+        "y": 569.0,
+        "z": 106.0
+      },
+      "scores": {
+        "combined_score": 0.35733750462532043,
+        "intensity_score": 0.21467500925064087,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 96,
+      "position": {
+        "x": 1097.0,
+        "y": 277.0,
+        "z": 89.0
+      },
+      "scores": {
+        "combined_score": 0.3569166660308838,
+        "intensity_score": 0.3804999887943268,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 105,
+      "position": {
+        "x": 1099.0,
+        "y": 179.0,
+        "z": 89.0
+      },
+      "scores": {
+        "combined_score": 0.3552083373069763,
+        "intensity_score": 0.37708333134651184,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 141,
+      "position": {
+        "x": 1101.0,
+        "y": 170.0,
+        "z": 111.0
+      },
+      "scores": {
+        "combined_score": 0.3552083373069763,
+        "intensity_score": 0.37708333134651184,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 149,
+      "position": {
+        "x": 1108.0,
+        "y": 166.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.3552083373069763,
+        "intensity_score": 0.37708333134651184,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 82,
+      "position": {
+        "x": 824.0,
+        "y": 321.0,
+        "z": 149.0
+      },
+      "scores": {
+        "combined_score": 0.3543500006198883,
+        "intensity_score": 0.3753666579723358,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 87,
+      "position": {
+        "x": 851.0,
+        "y": 122.0,
+        "z": 71.0
+      },
+      "scores": {
+        "combined_score": 0.3539479225873947,
+        "intensity_score": 0.37456250190734863,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 94,
+      "position": {
+        "x": 1112.0,
+        "y": 258.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.3538166731595993,
+        "intensity_score": 0.3743000030517578,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 98,
+      "position": {
+        "x": 1056.0,
+        "y": 277.0,
+        "z": 79.0
+      },
+      "scores": {
+        "combined_score": 0.34553124010562897,
+        "intensity_score": 0.44106248021125793,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 70,
+      "position": {
+        "x": 356.0,
+        "y": 526.0,
+        "z": 143.0
+      },
+      "scores": {
+        "combined_score": 0.3449690639972687,
+        "intensity_score": 0.26136666536331177,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 135,
+      "position": {
+        "x": 130.0,
+        "y": 650.0,
+        "z": 100.0
+      },
+      "scores": {
+        "combined_score": 0.3432687520980835,
+        "intensity_score": 0.436537504196167,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 154,
+      "position": {
+        "x": 127.0,
+        "y": 663.0,
+        "z": 114.0
+      },
+      "scores": {
+        "combined_score": 0.3432687520980835,
+        "intensity_score": 0.436537504196167,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 133,
+      "position": {
+        "x": 176.0,
+        "y": 611.0,
+        "z": 98.0
+      },
+      "scores": {
+        "combined_score": 0.34252500534057617,
+        "intensity_score": 0.4850500226020813,
+        "attention_score": 0.19999998807907104
+      },
+      "num_nodes": 5,
+      "num_edges": 20
+    },
+    {
+      "roi_id": 21,
+      "position": {
+        "x": 653.0,
+        "y": 310.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.34144407510757446,
+        "intensity_score": 0.25431668758392334,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 171,
+      "position": {
+        "x": 775.0,
+        "y": 335.0,
+        "z": 129.0
+      },
+      "scores": {
+        "combined_score": 0.3402625024318695,
+        "intensity_score": 0.430525004863739,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 52,
+      "position": {
+        "x": 182.0,
+        "y": 606.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.33933572471141815,
+        "intensity_score": 0.2500999867916107,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 31,
+      "position": {
+        "x": 630.0,
+        "y": 375.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.3361107334494591,
+        "intensity_score": 0.24365000426769257,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 99,
+      "position": {
+        "x": 1023.0,
+        "y": 294.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.33516499400138855,
+        "intensity_score": 0.47032999992370605,
+        "attention_score": 0.19999998807907104
+      },
+      "num_nodes": 5,
+      "num_edges": 20
+    },
+    {
+      "roi_id": 56,
+      "position": {
+        "x": 949.0,
+        "y": 209.0,
+        "z": 99.0
+      },
+      "scores": {
+        "combined_score": 0.33406250178813934,
+        "intensity_score": 0.1681250035762787,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 68,
+      "position": {
+        "x": 1144.0,
+        "y": 313.0,
+        "z": 128.0
+      },
+      "scores": {
+        "combined_score": 0.3339124992489815,
+        "intensity_score": 0.16782499849796295,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 168,
+      "position": {
+        "x": 1016.0,
+        "y": 299.0,
+        "z": 125.0
+      },
+      "scores": {
+        "combined_score": 0.33262917399406433,
+        "intensity_score": 0.33192500472068787,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 60,
+      "position": {
+        "x": 499.0,
+        "y": 659.0,
+        "z": 104.0
+      },
+      "scores": {
+        "combined_score": 0.3322249948978424,
+        "intensity_score": 0.26444998383522034,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 64,
+      "position": {
+        "x": 409.0,
+        "y": 460.0,
+        "z": 111.0
+      },
+      "scores": {
+        "combined_score": 0.3317854255437851,
+        "intensity_score": 0.3302375078201294,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 73,
+      "position": {
+        "x": 243.0,
+        "y": 441.0,
+        "z": 62.0
+      },
+      "scores": {
+        "combined_score": 0.3317541629076004,
+        "intensity_score": 0.33017498254776,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 71,
+      "position": {
+        "x": 1065.0,
+        "y": 242.0,
+        "z": 144.0
+      },
+      "scores": {
+        "combined_score": 0.33084166049957275,
+        "intensity_score": 0.3283499777317047,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 140,
+      "position": {
+        "x": 162.0,
+        "y": 607.0,
+        "z": 98.0
+      },
+      "scores": {
+        "combined_score": 0.3298589587211609,
+        "intensity_score": 0.39656001329421997,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 85,
+      "position": {
+        "x": 929.0,
+        "y": 346.0,
+        "z": 79.0
+      },
+      "scores": {
+        "combined_score": 0.32971668243408203,
+        "intensity_score": 0.32610002160072327,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 86,
+      "position": {
+        "x": 942.0,
+        "y": 365.0,
+        "z": 83.0
+      },
+      "scores": {
+        "combined_score": 0.32971668243408203,
+        "intensity_score": 0.32610002160072327,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 92,
+      "position": {
+        "x": 913.0,
+        "y": 348.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.32971668243408203,
+        "intensity_score": 0.32610002160072327,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 3,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 46,
+      "position": {
+        "x": 347.0,
+        "y": 499.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.3284190595149994,
+        "intensity_score": 0.2282666563987732,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 147,
+      "position": {
+        "x": 115.0,
+        "y": 682.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.32789792120456696,
+        "intensity_score": 0.3224624991416931,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 93,
+      "position": {
+        "x": 496.0,
+        "y": 407.0,
+        "z": 55.0
+      },
+      "scores": {
+        "combined_score": 0.3258916735649109,
+        "intensity_score": 0.318450003862381,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 50,
+      "position": {
+        "x": 381.0,
+        "y": 668.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.323735736310482,
+        "intensity_score": 0.21890000998973846,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 91,
+      "position": {
+        "x": 818.0,
+        "y": 151.0,
+        "z": 72.0
+      },
+      "scores": {
+        "combined_score": 0.3222375065088272,
+        "intensity_score": 0.14447501301765442,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 14,
+      "position": {
+        "x": 695.0,
+        "y": 205.0,
+        "z": 72.0
+      },
+      "scores": {
+        "combined_score": 0.32178395986557007,
+        "intensity_score": 0.38041001558303833,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 122,
+      "position": {
+        "x": 770.0,
+        "y": 286.0,
+        "z": 97.0
+      },
+      "scores": {
+        "combined_score": 0.32159373909235,
+        "intensity_score": 0.3931874930858612,
+        "attention_score": 0.2499999850988388
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 150,
+      "position": {
+        "x": 785.0,
+        "y": 293.0,
+        "z": 104.0
+      },
+      "scores": {
+        "combined_score": 0.32159373909235,
+        "intensity_score": 0.3931874930858612,
+        "attention_score": 0.2499999850988388
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 28,
+      "position": {
+        "x": 568.0,
+        "y": 646.0,
+        "z": 84.0
+      },
+      "scores": {
+        "combined_score": 0.3190250024199486,
+        "intensity_score": 0.23804999887943268,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 176,
+      "position": {
+        "x": 713.0,
+        "y": 342.0,
+        "z": 129.0
+      },
+      "scores": {
+        "combined_score": 0.31844793260097504,
+        "intensity_score": 0.3035625219345093,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 18,
+      "position": {
+        "x": 222.0,
+        "y": 443.0,
+        "z": 70.0
+      },
+      "scores": {
+        "combined_score": 0.31786875426769257,
+        "intensity_score": 0.23573750257492065,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 6,
+      "position": {
+        "x": 845.0,
+        "y": 127.0,
+        "z": 65.0
+      },
+      "scores": {
+        "combined_score": 0.31522394716739655,
+        "intensity_score": 0.3672899901866913,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 44,
+      "position": {
+        "x": 864.0,
+        "y": 109.0,
+        "z": 59.0
+      },
+      "scores": {
+        "combined_score": 0.31522394716739655,
+        "intensity_score": 0.3672899901866913,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 126,
+      "position": {
+        "x": 505.0,
+        "y": 411.0,
+        "z": 71.0
+      },
+      "scores": {
+        "combined_score": 0.31434375047683716,
+        "intensity_score": 0.3786875009536743,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 9,
+      "position": {
+        "x": 682.0,
+        "y": 244.0,
+        "z": 69.0
+      },
+      "scores": {
+        "combined_score": 0.3120216578245163,
+        "intensity_score": 0.2907099723815918,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 36,
+      "position": {
+        "x": 596.0,
+        "y": 638.0,
+        "z": 89.0
+      },
+      "scores": {
+        "combined_score": 0.3118089586496353,
+        "intensity_score": 0.3604600131511688,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 10,
+      "position": {
+        "x": 853.0,
+        "y": 171.0,
+        "z": 74.0
+      },
+      "scores": {
+        "combined_score": 0.3103189468383789,
+        "intensity_score": 0.357479989528656,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 13,
+      "position": {
+        "x": 851.0,
+        "y": 190.0,
+        "z": 72.0
+      },
+      "scores": {
+        "combined_score": 0.3103189468383789,
+        "intensity_score": 0.357479989528656,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 66,
+      "position": {
+        "x": 646.0,
+        "y": 225.0,
+        "z": 57.0
+      },
+      "scores": {
+        "combined_score": 0.3100116699934006,
+        "intensity_score": 0.28668999671936035,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 37,
+      "position": {
+        "x": 418.0,
+        "y": 422.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.3091229051351547,
+        "intensity_score": 0.28491249680519104,
+        "attention_score": 0.3333333134651184
+      },
+      "num_nodes": 4,
+      "num_edges": 8
+    },
+    {
+      "roi_id": 1,
+      "position": {
+        "x": 894.0,
+        "y": 424.0,
+        "z": 68.0
+      },
+      "scores": {
+        "combined_score": 0.3086312562227249,
+        "intensity_score": 0.21726250648498535,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 2,
+      "position": {
+        "x": 911.0,
+        "y": 432.0,
+        "z": 59.0
+      },
+      "scores": {
+        "combined_score": 0.3086312562227249,
+        "intensity_score": 0.21726250648498535,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 40,
+      "position": {
+        "x": 776.0,
+        "y": 158.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.3061625063419342,
+        "intensity_score": 0.21232500672340393,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 4,
+      "position": {
+        "x": 851.0,
+        "y": 122.0,
+        "z": 68.0
+      },
+      "scores": {
+        "combined_score": 0.3036386966705322,
+        "intensity_score": 0.39299166202545166,
+        "attention_score": 0.2142857313156128
+      },
+      "num_nodes": 6,
+      "num_edges": 22
+    },
+    {
+      "roi_id": 5,
+      "position": {
+        "x": 673.0,
+        "y": 206.0,
+        "z": 68.0
+      },
+      "scores": {
+        "combined_score": 0.30228452384471893,
+        "intensity_score": 0.3902833163738251,
+        "attention_score": 0.2142857313156128
+      },
+      "num_nodes": 6,
+      "num_edges": 22
+    },
+    {
+      "roi_id": 128,
+      "position": {
+        "x": 726.0,
+        "y": 400.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.30168747156858444,
+        "intensity_score": 0.3533749580383301,
+        "attention_score": 0.2499999850988388
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 35,
+      "position": {
+        "x": 526.0,
+        "y": 573.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.3014690652489662,
+        "intensity_score": 0.17436666786670685,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 49,
+      "position": {
+        "x": 677.0,
+        "y": 337.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.30111396312713623,
+        "intensity_score": 0.33907002210617065,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 45,
+      "position": {
+        "x": 622.0,
+        "y": 614.0,
+        "z": 89.0
+      },
+      "scores": {
+        "combined_score": 0.3010066747665405,
+        "intensity_score": 0.26868000626564026,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 62,
+      "position": {
+        "x": 615.0,
+        "y": 637.0,
+        "z": 106.0
+      },
+      "scores": {
+        "combined_score": 0.3010066747665405,
+        "intensity_score": 0.26868000626564026,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 75,
+      "position": {
+        "x": 1074.0,
+        "y": 271.0,
+        "z": 85.0
+      },
+      "scores": {
+        "combined_score": 0.30000895261764526,
+        "intensity_score": 0.3368600010871887,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 11,
+      "position": {
+        "x": 387.0,
+        "y": 355.0,
+        "z": 50.0
+      },
+      "scores": {
+        "combined_score": 0.298152394592762,
+        "intensity_score": 0.1677333265542984,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 69,
+      "position": {
+        "x": 353.0,
+        "y": 529.0,
+        "z": 130.0
+      },
+      "scores": {
+        "combined_score": 0.29801250249147415,
+        "intensity_score": 0.19602499902248383,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 151,
+      "position": {
+        "x": 880.0,
+        "y": 328.0,
+        "z": 114.0
+      },
+      "scores": {
+        "combined_score": 0.29685625433921814,
+        "intensity_score": 0.3437125086784363,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 20,
+      "position": {
+        "x": 1019.0,
+        "y": 133.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.2962857261300087,
+        "intensity_score": 0.1639999896287918,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 90,
+      "position": {
+        "x": 726.0,
+        "y": 388.0,
+        "z": 80.0
+      },
+      "scores": {
+        "combined_score": 0.2946949899196625,
+        "intensity_score": 0.3893899917602539,
+        "attention_score": 0.19999998807907104
+      },
+      "num_nodes": 5,
+      "num_edges": 20
+    },
+    {
+      "roi_id": 179,
+      "position": {
+        "x": 850.0,
+        "y": 389.0,
+        "z": 132.0
+      },
+      "scores": {
+        "combined_score": 0.29438894987106323,
+        "intensity_score": 0.32561999559402466,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 41,
+      "position": {
+        "x": 751.0,
+        "y": 209.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.29434165358543396,
+        "intensity_score": 0.2553499639034271,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 58,
+      "position": {
+        "x": 178.0,
+        "y": 576.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.29378750175237656,
+        "intensity_score": 0.18757499754428864,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 110,
+      "position": {
+        "x": 749.0,
+        "y": 357.0,
+        "z": 92.0
+      },
+      "scores": {
+        "combined_score": 0.29364582151174545,
+        "intensity_score": 0.4206249713897705,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 65,
+      "position": {
+        "x": 418.0,
+        "y": 425.0,
+        "z": 113.0
+      },
+      "scores": {
+        "combined_score": 0.29363393783569336,
+        "intensity_score": 0.3241099715232849,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 29,
+      "position": {
+        "x": 1134.0,
+        "y": 255.0,
+        "z": 86.0
+      },
+      "scores": {
+        "combined_score": 0.2933273985981941,
+        "intensity_score": 0.15808333456516266,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 132,
+      "position": {
+        "x": 725.0,
+        "y": 319.0,
+        "z": 97.0
+      },
+      "scores": {
+        "combined_score": 0.2931549996137619,
+        "intensity_score": 0.38631001114845276,
+        "attention_score": 0.19999998807907104
+      },
+      "num_nodes": 5,
+      "num_edges": 20
+    },
+    {
+      "roi_id": 43,
+      "position": {
+        "x": 728.0,
+        "y": 399.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.29311250150203705,
+        "intensity_score": 0.18622499704360962,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 162,
+      "position": {
+        "x": 719.0,
+        "y": 343.0,
+        "z": 116.0
+      },
+      "scores": {
+        "combined_score": 0.2925458177924156,
+        "intensity_score": 0.41842496395111084,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 39,
+      "position": {
+        "x": 1192.0,
+        "y": 136.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.2903023958206177,
+        "intensity_score": 0.15203332901000977,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 3,
+      "position": {
+        "x": 841.0,
+        "y": 126.0,
+        "z": 60.0
+      },
+      "scores": {
+        "combined_score": 0.2894011437892914,
+        "intensity_score": 0.30607500672340393,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 59,
+      "position": {
+        "x": 174.0,
+        "y": 650.0,
+        "z": 108.0
+      },
+      "scores": {
+        "combined_score": 0.28856073319911957,
+        "intensity_score": 0.14855000376701355,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 32,
+      "position": {
+        "x": 741.0,
+        "y": 266.0,
+        "z": 86.0
+      },
+      "scores": {
+        "combined_score": 0.2877190634608269,
+        "intensity_score": 0.14686666429042816,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 38,
+      "position": {
+        "x": 349.0,
+        "y": 501.0,
+        "z": 86.0
+      },
+      "scores": {
+        "combined_score": 0.285599984228611,
+        "intensity_score": 0.1711999922990799,
+        "attention_score": 0.3999999761581421
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 107,
+      "position": {
+        "x": 720.0,
+        "y": 354.0,
+        "z": 85.0
+      },
+      "scores": {
+        "combined_score": 0.28539999574422836,
+        "intensity_score": 0.40413331985473633,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 12,
+      "position": {
+        "x": 863.0,
+        "y": 188.0,
+        "z": 68.0
+      },
+      "scores": {
+        "combined_score": 0.2853136360645294,
+        "intensity_score": 0.29789999127388,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 17,
+      "position": {
+        "x": 875.0,
+        "y": 202.0,
+        "z": 71.0
+      },
+      "scores": {
+        "combined_score": 0.2853136360645294,
+        "intensity_score": 0.29789999127388,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 130,
+      "position": {
+        "x": 770.0,
+        "y": 355.0,
+        "z": 95.0
+      },
+      "scores": {
+        "combined_score": 0.2838166579604149,
+        "intensity_score": 0.4009666442871094,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 127,
+      "position": {
+        "x": 761.0,
+        "y": 307.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.2833789587020874,
+        "intensity_score": 0.303600013256073,
+        "attention_score": 0.2631579041481018
+      },
+      "num_nodes": 5,
+      "num_edges": 14
+    },
+    {
+      "roi_id": 172,
+      "position": {
+        "x": 736.0,
+        "y": 342.0,
+        "z": 127.0
+      },
+      "scores": {
+        "combined_score": 0.28271665424108505,
+        "intensity_score": 0.3987666368484497,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 47,
+      "position": {
+        "x": 383.0,
+        "y": 656.0,
+        "z": 91.0
+      },
+      "scores": {
+        "combined_score": 0.282087504863739,
+        "intensity_score": 0.16417500376701355,
+        "attention_score": 0.4000000059604645
+      },
+      "num_nodes": 4,
+      "num_edges": 6
+    },
+    {
+      "roi_id": 100,
+      "position": {
+        "x": 759.0,
+        "y": 368.0,
+        "z": 87.0
+      },
+      "scores": {
+        "combined_score": 0.2812291607260704,
+        "intensity_score": 0.3957916498184204,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 72,
+      "position": {
+        "x": 491.0,
+        "y": 415.0,
+        "z": 69.0
+      },
+      "scores": {
+        "combined_score": 0.28106874227523804,
+        "intensity_score": 0.3121374845504761,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 7,
+      "position": {
+        "x": 726.0,
+        "y": 202.0,
+        "z": 68.0
+      },
+      "scores": {
+        "combined_score": 0.2805011421442032,
+        "intensity_score": 0.28827500343322754,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 15,
+      "position": {
+        "x": 683.0,
+        "y": 234.0,
+        "z": 67.0
+      },
+      "scores": {
+        "combined_score": 0.28016749024391174,
+        "intensity_score": 0.33452853560447693,
+        "attention_score": 0.22580644488334656
+      },
+      "num_nodes": 7,
+      "num_edges": 24
+    },
+    {
+      "roi_id": 33,
+      "position": {
+        "x": 521.0,
+        "y": 418.0,
+        "z": 60.0
+      },
+      "scores": {
+        "combined_score": 0.2787250131368637,
+        "intensity_score": 0.3074500262737274,
+        "attention_score": 0.25
+      },
+      "num_nodes": 4,
+      "num_edges": 12
+    },
+    {
+      "roi_id": 16,
+      "position": {
+        "x": 755.0,
+        "y": 181.0,
+        "z": 70.0
+      },
+      "scores": {
+        "combined_score": 0.27821363508701324,
+        "intensity_score": 0.28369998931884766,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 34,
+      "position": {
+        "x": 673.0,
+        "y": 341.0,
+        "z": 89.0
+      },
+      "scores": {
+        "combined_score": 0.2776428163051605,
+        "intensity_score": 0.2825583517551422,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 53,
+      "position": {
+        "x": 694.0,
+        "y": 310.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.2776428163051605,
+        "intensity_score": 0.2825583517551422,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 51,
+      "position": {
+        "x": 258.0,
+        "y": 490.0,
+        "z": 96.0
+      },
+      "scores": {
+        "combined_score": 0.2764523960649967,
+        "intensity_score": 0.12433332949876785,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 111,
+      "position": {
+        "x": 757.0,
+        "y": 377.0,
+        "z": 90.0
+      },
+      "scores": {
+        "combined_score": 0.2721678465604782,
+        "intensity_score": 0.4014785587787628,
+        "attention_score": 0.1428571343421936
+      },
+      "num_nodes": 7,
+      "num_edges": 42
+    },
+    {
+      "roi_id": 25,
+      "position": {
+        "x": 665.0,
+        "y": 676.0,
+        "z": 81.0
+      },
+      "scores": {
+        "combined_score": 0.27144406363368034,
+        "intensity_score": 0.1143166646361351,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 54,
+      "position": {
+        "x": 419.0,
+        "y": 453.0,
+        "z": 97.0
+      },
+      "scores": {
+        "combined_score": 0.27140946686267853,
+        "intensity_score": 0.2700916528701782,
+        "attention_score": 0.27272728085517883
+      },
+      "num_nodes": 6,
+      "num_edges": 16
+    },
+    {
+      "roi_id": 30,
+      "position": {
+        "x": 1195.0,
+        "y": 284.0,
+        "z": 85.0
+      },
+      "scores": {
+        "combined_score": 0.2707357294857502,
+        "intensity_score": 0.11289999634027481,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 8,
+      "position": {
+        "x": 1002.0,
+        "y": 368.0,
+        "z": 67.0
+      },
+      "scores": {
+        "combined_score": 0.26863570138812065,
+        "intensity_score": 0.10869999974966049,
+        "attention_score": 0.4285714030265808
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 165,
+      "position": {
+        "x": 829.0,
+        "y": 316.0,
+        "z": 126.0
+      },
+      "scores": {
+        "combined_score": 0.2672208324074745,
+        "intensity_score": 0.36777499318122864,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 169,
+      "position": {
+        "x": 843.0,
+        "y": 318.0,
+        "z": 137.0
+      },
+      "scores": {
+        "combined_score": 0.2672208324074745,
+        "intensity_score": 0.36777499318122864,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 156,
+      "position": {
+        "x": 747.0,
+        "y": 358.0,
+        "z": 106.0
+      },
+      "scores": {
+        "combined_score": 0.26699063181877136,
+        "intensity_score": 0.4089812636375427,
+        "attention_score": 0.125
+      },
+      "num_nodes": 8,
+      "num_edges": 56
+    },
+    {
+      "roi_id": 23,
+      "position": {
+        "x": 529.0,
+        "y": 431.0,
+        "z": 74.0
+      },
+      "scores": {
+        "combined_score": 0.2649266719818115,
+        "intensity_score": 0.19652000069618225,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 42,
+      "position": {
+        "x": 234.0,
+        "y": 667.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.26456906273961067,
+        "intensity_score": 0.10056666284799576,
+        "attention_score": 0.4285714626312256
+      },
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    {
+      "roi_id": 27,
+      "position": {
+        "x": 470.0,
+        "y": 429.0,
+        "z": 82.0
+      },
+      "scores": {
+        "combined_score": 0.2641966715455055,
+        "intensity_score": 0.19505999982357025,
+        "attention_score": 0.3333333432674408
+      },
+      "num_nodes": 5,
+      "num_edges": 10
+    },
+    {
+      "roi_id": 139,
+      "position": {
+        "x": 850.0,
+        "y": 315.0,
+        "z": 101.0
+      },
+      "scores": {
+        "combined_score": 0.2603375092148781,
+        "intensity_score": 0.35400834679603577,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 143,
+      "position": {
+        "x": 864.0,
+        "y": 314.0,
+        "z": 109.0
+      },
+      "scores": {
+        "combined_score": 0.2603375092148781,
+        "intensity_score": 0.35400834679603577,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 160,
+      "position": {
+        "x": 861.0,
+        "y": 320.0,
+        "z": 118.0
+      },
+      "scores": {
+        "combined_score": 0.2603375092148781,
+        "intensity_score": 0.35400834679603577,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    },
+    {
+      "roi_id": 48,
+      "position": {
+        "x": 672.0,
+        "y": 336.0,
+        "z": 91.0
+      },
+      "scores": {
+        "combined_score": 0.2573389485478401,
+        "intensity_score": 0.2888714373111725,
+        "attention_score": 0.22580645978450775
+      },
+      "num_nodes": 7,
+      "num_edges": 24
+    },
+    {
+      "roi_id": 55,
+      "position": {
+        "x": 503.0,
+        "y": 413.0,
+        "z": 70.0
+      },
+      "scores": {
+        "combined_score": 0.2536875084042549,
+        "intensity_score": 0.34070834517478943,
+        "attention_score": 0.1666666716337204
+      },
+      "num_nodes": 6,
+      "num_edges": 30
+    }
+  ],
+  "statistics": {
+    "total_rois": 181,
+    "score_ranges": {
+      "combined": {
+        "min": 0.2536875084042549,
+        "max": 0.7525500059127808
+      },
+      "intensity": {
+        "min": 0.10056666284799576,
+        "max": 0.505774974822998
+      },
+      "attention": {
+        "min": 0.125,
+        "max": 1.0
+      }
+    },
+    "score_means": {
+      "combined": 0.3841569018833216,
+      "intensity": 0.33219360733065156,
+      "attention": 0.4361201964359916
+    }
+  },
+  "method": "intensity_attention_combined"
+}
