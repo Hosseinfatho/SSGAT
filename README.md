@@ -35,7 +35,7 @@ SSGAT analyzes spatial biological data to discover cellular interactions using:
 - **Interactive Visualization** with Vitessce
 - **Multi-marker Analysis** for cellular interactions
 
-## 🔬 Key Features
+##  Key Features
 
 - **Interactive ROI Selection** - Navigate through regions of interest
 - **Cellular Interaction Analysis** - B-cell infiltration, T-cell maturation, etc.
@@ -85,4 +85,4 @@ SSGAT/
 
 ---
 
-** Built for spatial biology research | 🚀 Deployed on GitHub Pages**
+** Built for spatial biology research |  Deployed on GitHub Pages**
