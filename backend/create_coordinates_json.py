@@ -3,67 +3,77 @@ from pathlib import Path
 
 def create_coordinates_json():
     """
-    Create a JSON file with 50x50 pixel squares on a grid.
-    Each square is centered at coordinates that are 200 pixels apart.
-    Format: "x,y": [[x-25, y-25], [x+25, y-25], [x+25, y+25], [x-25, y+25], [x-25, y-25]]
+    Create a JSON file with filled 20x20 pixel squares only on x=0 and y=0 axes.
+    Each square is centered at coordinates that are 50 pixels apart.
+    Format: "x,y": [[x-10, y-10], [x+10, y-10], [x+10, y+10], [x-10, y+10], [x-10, y-10]]
     """
     # Image dimensions (based on the codebase)
     IMAGE_WIDTH = 10908
     IMAGE_HEIGHT = 5508
     
-    # Grid spacing (400 pixels between centers)
-    SPACING = 400
+    # Grid spacing (100 pixels between centers)
+    SPACING = 100
     
-    # Square size (200x200 pixels, so 100 pixels on each side of center)
-    SQUARE_HALF_SIZE = 100
+    # Square size (100x100 pixels, so 50 pixels on each side of center)
+    SQUARE_HALF_SIZE = 50
     
     coordinates = {}
     
-    # Generate grid points
-    # Start from (100, 100) to avoid negative coordinates for 50x50 squares
-    x = 100
+    # Generate squares only on x=0 axis (vertical line)
+    # For y-axis (x=0), use only y coordinate as key (e.g., "1000" instead of "0,1000")
+    y = 0
+    while y < IMAGE_HEIGHT:
+        x = 0
+        # Clamp coordinates to image bounds
+        top_left_x = max(0, x - SQUARE_HALF_SIZE)
+        top_left_y = max(0, y - SQUARE_HALF_SIZE)
+        bottom_right_x = min(IMAGE_WIDTH - 1, x + SQUARE_HALF_SIZE)
+        bottom_right_y = min(IMAGE_HEIGHT - 1, y + SQUARE_HALF_SIZE)
+        
+        # Create filled square (closed polygon)
+        square = [
+            [top_left_x, top_left_y],           # Top-left
+            [bottom_right_x, top_left_y],       # Top-right
+            [bottom_right_x, bottom_right_y],   # Bottom-right
+            [top_left_x, bottom_right_y],       # Bottom-left
+            [top_left_x, top_left_y]            # Close the polygon
+        ]
+        
+        # Use only y coordinate as key for y-axis (x=0)
+        # Add a space before the number to distinguish from x-axis
+        # For (0,0), use "0", for others use " y" (e.g., " 1000")
+        if y == 0:
+            key = "0"
+        else:
+            key = f" {y}"  # Add space before y coordinate
+        coordinates[key] = square
+        
+        y += SPACING
+    
+    # Generate squares only on y=0 axis (horizontal line), but skip (0,0) since we already added it
+    # For x-axis (y=0), use only x coordinate as key (e.g., "1000" instead of "1000,0")
+    x = SPACING
     while x < IMAGE_WIDTH:
-        y = 100
-        while y < IMAGE_HEIGHT:
-            # Create a square with thickness (outline/unfilled) similar to ROI format
-            # Outer square (200x200)
-            outer_half = SQUARE_HALF_SIZE
-            # Inner square (for thickness of 5, inner square is 190x190)
-            thickness = 5
-            inner_half = SQUARE_HALF_SIZE - thickness
-            
-            # Clamp coordinates to image bounds
-            outer_top_left_x = max(0, x - outer_half)
-            outer_top_left_y = max(0, y - outer_half)
-            outer_bottom_right_x = min(IMAGE_WIDTH - 1, x + outer_half)
-            outer_bottom_right_y = min(IMAGE_HEIGHT - 1, y + outer_half)
-            
-            inner_top_left_x = max(0, x - inner_half)
-            inner_top_left_y = max(0, y - inner_half)
-            inner_bottom_right_x = min(IMAGE_WIDTH - 1, x + inner_half)
-            inner_bottom_right_y = min(IMAGE_HEIGHT - 1, y + inner_half)
-            
-            # Create outline: outer square (clockwise) + inner square (counter-clockwise)
-            # Outer square: top-left -> top-right -> bottom-right -> bottom-left -> back to top-left
-            square = [
-                [outer_top_left_x, outer_top_left_y],           # Outer top-left
-                [outer_bottom_right_x, outer_top_left_y],       # Outer top-right
-                [outer_bottom_right_x, outer_bottom_right_y],   # Outer bottom-right
-                [outer_top_left_x, outer_bottom_right_y],       # Outer bottom-left
-                [outer_top_left_x, outer_top_left_y],           # Back to outer top-left
-                # Inner square (counter-clockwise to create hole)
-                [inner_top_left_x, inner_top_left_y],           # Inner top-left
-                [inner_top_left_x, inner_bottom_right_y],       # Inner bottom-left
-                [inner_bottom_right_x, inner_bottom_right_y],   # Inner bottom-right
-                [inner_bottom_right_x, inner_top_left_y],       # Inner top-right
-                [inner_top_left_x, inner_top_left_y]            # Back to inner top-left
-            ]
-            
-            # Use center coordinates as key (format: "x,y")
-            key = f"{x},{y}"
-            coordinates[key] = square
-            
-            y += SPACING
+        y = 0
+        # Clamp coordinates to image bounds
+        top_left_x = max(0, x - SQUARE_HALF_SIZE)
+        top_left_y = max(0, y - SQUARE_HALF_SIZE)
+        bottom_right_x = min(IMAGE_WIDTH - 1, x + SQUARE_HALF_SIZE)
+        bottom_right_y = min(IMAGE_HEIGHT - 1, y + SQUARE_HALF_SIZE)
+        
+        # Create filled square (closed polygon)
+        square = [
+            [top_left_x, top_left_y],           # Top-left
+            [bottom_right_x, top_left_y],       # Top-right
+            [bottom_right_x, bottom_right_y],   # Bottom-right
+            [top_left_x, bottom_right_y],       # Bottom-left
+            [top_left_x, top_left_y]            # Close the polygon
+        ]
+        
+        # Use only x coordinate as key for x-axis (y=0)
+        key = str(x)
+        coordinates[key] = square
+        
         x += SPACING
     
     # Save to output directory
@@ -78,7 +88,8 @@ def create_coordinates_json():
     print(f"Created coordinates JSON file: {output_file}")
     print(f"Total squares: {len(coordinates)}")
     print(f"Grid spacing: {SPACING} pixels")
-    print(f"Square size: 50x50 pixels")
+    print(f"Square size: 100x100 pixels (filled)")
+    print(f"Location: Only on x=0 and y=0 axes")
     print(f"Image dimensions: {IMAGE_WIDTH} x {IMAGE_HEIGHT}")
     
     # Print a sample

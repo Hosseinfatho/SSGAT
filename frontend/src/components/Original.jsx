@@ -175,7 +175,7 @@ const MainView = ({ onSetView }) => {
   const [channelHeatmapResults, setChannelHeatmapResults] = useState(null);
   const [activeGroups, setActiveGroups] = useState({ 1: true, 2: true, 3: true, 4: true });
   const [configKey, setConfigKey] = useState(0);
-  const [selectedGroups, setSelectedGroups] = useState(['B-cell infiltration']);
+  const [selectedGroups, setSelectedGroups] = useState(['coordinates']);
   const vitessceRef = useRef(null);
 
   const groupColors = { 1: '#d7191c', 2: '#fdae61', 3: '#abdda4', 4: '#2b83ba' };

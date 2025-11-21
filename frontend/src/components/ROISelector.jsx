@@ -7,7 +7,7 @@ import InteractionHeatmaps from './InteractionHeatmaps';
 function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGroupSelection }) {
   const [rois, setRois] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedGroups, setSelectedGroups] = useState(['B-cell infiltration']);
+  const [selectedGroups, setSelectedGroups] = useState(['coordinates']);
   const [interactionGroups, setInteractionGroups] = useState([]);
 
   // Notify parent component when selectedGroups changes
