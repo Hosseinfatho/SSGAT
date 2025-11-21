@@ -177,6 +177,8 @@ const MainView = ({ onSetView }) => {
   const [configKey, setConfigKey] = useState(0);
   const [selectedGroups, setSelectedGroups] = useState(['coordinates']);
   const vitessceRef = useRef(null);
+  const [mouseCoords, setMouseCoords] = useState(null);
+  const containerRef = useRef(null);
 
   const groupColors = { 1: '#d7191c', 2: '#fdae61', 3: '#abdda4', 4: '#2b83ba' };
   const groupNames = { 1: 'B-cell infiltration', 2: 'T-cell maturation', 3: 'Inflammatory zone', 4: 'Oxidative stress regulation' };
@@ -207,6 +209,92 @@ const MainView = ({ onSetView }) => {
       updateConfig(selectedGroups, true);
     }
   }, [selectedGroups]);
+
+  // Calculate world coordinates from mouse position
+  useEffect(() => {
+    if (!config || !containerRef.current) return;
+
+    const calculateWorldCoords = (clientX, clientY) => {
+      const container = containerRef.current;
+      if (!container) return null;
+
+      const canvas = container.querySelector('canvas');
+      if (!canvas) return null;
+
+      const canvasRect = canvas.getBoundingClientRect();
+      const canvasX = clientX - canvasRect.left;
+      const canvasY = clientY - canvasRect.top;
+
+      if (canvasX < 0 || canvasY < 0 || canvasX > canvasRect.width || canvasY > canvasRect.height) {
+        return null;
+      }
+
+      // Get view state from config
+      const cs = config?.coordinationSpace || {};
+      const targetX = cs.spatialTargetX?.A ?? 5454;
+      const targetY = cs.spatialTargetY?.A ?? 2600;
+      const zoom = cs.spatialZoom?.A ?? -3.2;
+
+      // Calculate scale: zoom = -log2(scale), so scale = 2^(-zoom)
+      const scale = Math.pow(2, -zoom);
+
+      // Get canvas dimensions
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+      const displayWidth = canvasRect.width;
+      const displayHeight = canvasRect.height;
+
+      // Account for device pixel ratio
+      const pixelRatio = canvasWidth / displayWidth;
+      const actualX = canvasX * pixelRatio;
+      const actualY = canvasY * pixelRatio;
+
+      // Calculate center of canvas
+      const centerX = canvasWidth / 2;
+      const centerY = canvasHeight / 2;
+
+      // Calculate offset from center in pixels
+      const offsetXPixels = actualX - centerX;
+      const offsetYPixels = actualY - centerY;
+
+      // Convert pixel offset to world coordinates
+      const offsetX = offsetXPixels / scale;
+      const offsetY = offsetYPixels / scale;
+
+      // Calculate world coordinates
+      const worldX = Math.round(targetX + offsetX);
+      const worldY = Math.round(targetY + offsetY);
+
+      // Clamp to image bounds
+      const clampedX = Math.max(0, Math.min(10908, worldX));
+      const clampedY = Math.max(0, Math.min(5508, worldY));
+
+      return { x: clampedX, y: clampedY };
+    };
+
+    const handleMouseMove = (e) => {
+      const coords = calculateWorldCoords(e.clientX, e.clientY);
+      setMouseCoords(coords);
+    };
+
+    const handleMouseLeave = () => {
+      setMouseCoords(null);
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      const timeoutId = setTimeout(() => {
+        container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('mouseleave', handleMouseLeave);
+      }, 500);
+
+      return () => {
+        clearTimeout(timeoutId);
+        container.removeEventListener('mousemove', handleMouseMove);
+        container.removeEventListener('mouseleave', handleMouseLeave);
+      };
+    }
+  }, [config]);
 
   const handleSetView = (roiView) => {
     if (roiView.refreshConfig) {
@@ -368,7 +456,11 @@ const MainView = ({ onSetView }) => {
       )}
       
       <div className="main-container" style={{ display: 'flex', height: '100vh', width: '100%', margin: '0', padding: '0', border: '0', background: '#000' }}>
-        <div className="vitessce-container" style={{ flex: '1 1 auto', position: 'relative', margin: '0', padding: '0', border: '0', background: '#000' }}>
+        <div 
+          ref={containerRef}
+          className="vitessce-container" 
+          style={{ flex: '1 1 auto', position: 'relative', margin: '0', padding: '0', border: '0', background: '#000' }}
+        >
           <Vitessce
             ref={vitessceRef}
             key={`${configKey}-${JSON.stringify(config?.datasets?.[0]?.files?.map(f => f.url))}`}
@@ -378,6 +470,32 @@ const MainView = ({ onSetView }) => {
             height={null}
             width={null}
           />
+          {mouseCoords && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '10%',
+                right: '10px',
+                transform: 'translateY(-50%)',
+                padding: '8px 12px',
+                backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                color: '#00ff00',
+                fontSize: '13px',
+                fontFamily: 'monospace',
+                pointerEvents: 'none',
+                zIndex: 10000,
+                whiteSpace: 'nowrap',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                border: '1px solid rgba(0, 255, 0, 0.5)',
+                borderRadius: '4px',
+                fontWeight: '500',
+                minWidth: '200px'
+              }}
+            >
+              <div>X: {mouseCoords.x.toLocaleString()}</div>
+              <div>Y: {mouseCoords.y.toLocaleString()}</div>
+            </div>
+          )}
         </div>
 
         <button
