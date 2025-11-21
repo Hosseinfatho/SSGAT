@@ -749,6 +749,27 @@ def get_roi_segmentation_oxidative():
         logger.error(f"Error serving Oxidative stress regulation ROI segmentation: {e}", exc_info=True)
         return jsonify({"error": f"Failed to serve Oxidative stress regulation ROI segmentation: {e}"}), 500
 
+@app.route('/api/roi_segmentation_coordinates.json', methods=['GET'])
+def get_roi_segmentation_coordinates():
+    """Serve the coordinates ROI segmentation JSON file"""
+    logger.info("Request received for /api/roi_segmentation_coordinates.json [GET]")
+    
+    try:
+        roi_file_path = Path(__file__).parent / 'output' / 'roi_segmentation_coordinates.json'
+        
+        if not roi_file_path.exists():
+            logger.error(f"Coordinates ROI segmentation file not found: {roi_file_path}")
+            return jsonify({"error": "Coordinates ROI segmentation file not found"}), 404
+        
+        with open(roi_file_path, 'r') as f:
+            roi_data = json.load(f)
+        
+        return jsonify(roi_data)
+        
+    except Exception as e:
+        logger.error(f"Error serving coordinates ROI segmentation: {e}", exc_info=True)
+        return jsonify({"error": f"Failed to serve coordinates ROI segmentation: {e}"}), 500
+
 @app.route('/api/roi_segmentation_Oxidative_stress_regulation.json', methods=['GET'])
 def get_roi_segmentation_oxidative_regulation():
     """Serve the Oxidative stress regulation ROI segmentation JSON file"""

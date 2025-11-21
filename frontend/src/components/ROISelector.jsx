@@ -36,7 +36,8 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       'B-cell infiltration',
       'T-cell maturation',
       'Inflammatory zone', 
-      'Oxidative stress regulation'
+      'Oxidative stress regulation',
+      'coordinates'
     ];
     
     setInteractionGroups(interactionTypes);
@@ -56,8 +57,11 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
 
   // Separate useEffect to load initial ROI data
   useEffect(() => {
-    if (selectedGroups.length > 0) {
+    if (selectedGroups.length > 0 && selectedGroups[0] !== 'coordinates') {
       loadROIData(selectedGroups[0]);
+    } else if (selectedGroups[0] === 'coordinates') {
+      // Coordinates don't have ROI data to load
+      setRois([]);
     }
   }, [selectedGroups]);
   
@@ -262,10 +266,14 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     setSelectedGroups(newSelectedGroups);
     setCurrentIndex(0);
     
-    // Always load ROI data when selecting a group
-    if (newSelectedGroups.length > 0) {
+    // Always load ROI data when selecting a group (except coordinates)
+    if (newSelectedGroups.length > 0 && newSelectedGroups[0] !== 'coordinates') {
       console.log('ROISelector: About to call loadROIData with:', newSelectedGroups[0]);
       loadROIData(newSelectedGroups[0]);
+    } else if (newSelectedGroups[0] === 'coordinates') {
+      // Coordinates don't have ROI data to load
+      setRois([]);
+      console.log('ROISelector: Coordinates selected, no ROI data to load');
     } else {
       console.log('ROISelector: No groups selected, not calling loadROIData');
     }

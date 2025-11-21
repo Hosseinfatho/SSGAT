@@ -17,9 +17,11 @@ const INTERACTION_TO_ROI = {
   'B-cell infiltration': { file: 'roi_segmentation_B-cell_infiltration.json', obsType: 'ROI_B-cell', color: [255, 180, 180] },
   'T-cell maturation': { file: 'roi_segmentation_T-cell_maturation.json', obsType: 'ROI_T-cell', color: [180, 180, 255] },
   'Inflammatory zone': { file: 'roi_segmentation_Inflammatory_zone.json', obsType: 'ROI_Inflammatory', color: [180, 255, 180] },
-  'Oxidative stress regulation': { file: 'roi_segmentation_Oxidative_stress_regulation.json', obsType: 'ROI_Oxidative', color: [255, 255, 180] }
+  'Oxidative stress regulation': { file: 'roi_segmentation_Oxidative_stress_regulation.json', obsType: 'ROI_Oxidative', color: [255, 255, 180] },
+  'coordinates': { file: 'roi_segmentation_coordinates.json', obsType: 'ROI_Coordinates', color: [255, 255, 255] }
 };
 const ROI_DEFAULTS = { strokeWidth: 16, defaultOpacity: 0.5 };
+const COORDINATES_DEFAULTS = { strokeWidth: 2, defaultOpacity: 0.3 };
 
 const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false) => {
   const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
@@ -109,10 +111,13 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false) 
     
     const { obsType, color, file } = roi;
     
+    // Use different defaults for coordinates
+    const defaults = group === 'coordinates' ? COORDINATES_DEFAULTS : ROI_DEFAULTS;
+    
     Object.entries({
       'spatialSegmentationFilled': true,
-      'spatialSegmentationStrokeWidth': ROI_DEFAULTS.strokeWidth,
-      'spatialLayerOpacity': ROI_DEFAULTS.defaultOpacity,
+      'spatialSegmentationStrokeWidth': defaults.strokeWidth,
+      'spatialLayerOpacity': defaults.defaultOpacity,
       'spatialLayerVisible': true,
       [CoordinationType.TOOLTIPS_VISIBLE]: true,
       'spatialChannelColor': color
