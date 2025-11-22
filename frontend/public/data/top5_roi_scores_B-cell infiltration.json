@@ -1,0 +1,111 @@
+{
+  "interaction_name": "B-cell infiltration",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 1008.0,
+        "y": 366.0,
+        "z": 28.0
+      },
+      "scores": {
+        "combined_score": 0.7355500012636185,
+        "intensity_score": 0.47110000252723694,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 2,
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 493.0,
+        "y": 172.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.6657499969005585,
+        "intensity_score": 0.33149999380111694,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 3,
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 793.0,
+        "y": 332.0,
+        "z": 86.0
+      },
+      "scores": {
+        "combined_score": 0.6508499979972839,
+        "intensity_score": 0.30169999599456787,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 4,
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 171.0,
+        "y": 279.0,
+        "z": 76.0
+      },
+      "scores": {
+        "combined_score": 0.4324750006198883,
+        "intensity_score": 0.3649500012397766,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 5,
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 315.0,
+        "y": 136.0,
+        "z": 76.0
+      },
+      "scores": {
+        "combined_score": 0.4324750006198883,
+        "intensity_score": 0.3649500012397766,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    }
+
+  ],
+  "total_rois": 583,
+  "top_count": 5,
+  "statistics": {
+    "total_rois": 583,
+    "score_ranges": {
+      "combined": {
+        "min": 0.2003454901278019,
+        "max": 0.7355500012636185
+      },
+      "intensity": {
+        "min": 0.13774999976158142,
+        "max": 0.47110000252723694
+      },
+      "attention": {
+        "min": 0.0416666679084301,
+        "max": 1.0
+      }
+    },
+    "score_means": {
+      "combined": 0.26104775166353067,
+      "intensity": 0.33879669092429443,
+      "attention": 0.18329881240276694
+    }
+  },
+  "method": "intensity_attention_combined"
+}

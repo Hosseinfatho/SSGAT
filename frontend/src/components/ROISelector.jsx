@@ -98,7 +98,9 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       // Use local JSON files for GitHub Pages
       // Convert underscores back to spaces for filename matching
       const filenameWithSpaces = filename.replace(/_/g, ' ');
-      url = `./top5_roi_scores_${filenameWithSpaces}.json`;
+      // Use base path for GitHub Pages (/SSGAT/) and add cache busting
+      const basePath = import.meta.env.BASE_URL || '/SSGAT/';
+      url = `${basePath}top5_roi_scores_${filenameWithSpaces}.json?t=${Date.now()}`;
     }
     
     console.log('ROISelector: Generated URL:', url);

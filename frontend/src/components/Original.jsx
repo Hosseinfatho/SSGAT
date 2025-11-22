@@ -216,7 +216,7 @@ const generateVitessceConfig = (selectedGroups = [], selectedROIGroups = [], has
     
     files.push({
       'fileType': 'obsSegmentations.json',
-      'url': isLocalhost ? `http://localhost:5000/api/${file}?t=${Date.now()}` : `./${file}`,
+      'url': isLocalhost ? `http://localhost:5000/api/${file}?t=${Date.now()}` : `${import.meta.env.BASE_URL || '/SSGAT/'}${file}?t=${Date.now()}`,
       'coordinationValues': { 'obsType': obsType }
     });
   });
