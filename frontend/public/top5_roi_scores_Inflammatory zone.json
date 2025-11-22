@@ -1,0 +1,110 @@
+{
+  "interaction_name": "Inflammatory zone",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 58.0,
+        "y": 48.0,
+        "z": 0.0
+      },
+      "scores": {
+        "combined_score": 0.6836108267307281,
+        "intensity_score": 0.3672216534614563,
+        "attention_score": 1.0
+      },
+      "num_nodes": 30,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 2,
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 98.0,
+        "y": 128.0,
+        "z": 84.0
+      },
+      "scores": {
+        "combined_score": 0.6592250019311905,
+        "intensity_score": 0.318450003862381,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 3,
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 1110.0,
+        "y": 408.0,
+        "z": 38.0
+      },
+      "scores": {
+        "combined_score": 0.5872749984264374,
+        "intensity_score": 0.17454999685287476,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 4,
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 506.0,
+        "y": 284.0,
+        "z": 130.0
+      },
+      "scores": {
+        "combined_score": 0.45991250872612,
+        "intensity_score": 0.41982501745224,
+        "attention_score": 0.5
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    {
+      "roi_id": 5,
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 616.0,
+        "y": 371.0,
+        "z": 80.0
+      },
+      "scores": {
+        "combined_score": 0.4118124842643738,
+        "intensity_score": 0.32362499833106995,
+        "attention_score": 0.4999999701976776
+      },
+      "num_nodes": 2,
+      "num_edges": 2
+    }
+  ],
+  "total_rois": 75,
+  "top_count": 5,
+  "statistics": {
+    "total_rois": 75,
+    "score_ranges": {
+      "combined": {
+        "min": 0.23706787079572678,
+        "max": 0.6836108267307281
+      },
+      "intensity": {
+        "min": 0.09741666913032532,
+        "max": 0.41982501745224
+      },
+      "attention": {
+        "min": 0.1666666865348816,
+        "max": 1.0
+      }
+    },
+    "score_means": {
+      "combined": 0.300309399664402,
+      "intensity": 0.21432509541511535,
+      "attention": 0.38629370391368867
+    }
+  },
+  "method": "intensity_attention_combined"
+}

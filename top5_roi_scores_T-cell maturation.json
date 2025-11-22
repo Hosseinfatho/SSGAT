@@ -1,0 +1,110 @@
+{
+  "interaction_name": "T-cell maturation",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "interaction": "T-cell maturation",
+      "position": {
+        "x": 791.0,
+        "y": 351.0,
+        "z": 88.0
+      },
+      "scores": {
+        "combined_score": 0.6608999967575073,
+        "intensity_score": 0.32179999351501465,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 2,
+      "interaction": "T-cell maturation",
+      "position": {
+        "x": 1086.0,
+        "y": 422.0,
+        "z": 101.0
+      },
+      "scores": {
+        "combined_score": 0.6403499990701675,
+        "intensity_score": 0.2806999981403351,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 3,
+      "interaction": "T-cell maturation",
+      "position": {
+        "x": 306.0,
+        "y": 151.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.6221249997615814,
+        "intensity_score": 0.24424999952316284,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 4,
+      "interaction": "T-cell maturation",
+      "position": {
+        "x": 77.0,
+        "y": 130.0,
+        "z": 25.0
+      },
+      "scores": {
+        "combined_score": 0.5622749999165535,
+        "intensity_score": 0.124549999833107,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 5,
+      "interaction": "T-cell maturation",
+      "position": {
+        "x": 1291.0,
+        "y": 554.0,
+        "z": 30.0
+      },
+      "scores": {
+        "combined_score": 0.5395999993383884,
+        "intensity_score": 0.11919999867677689,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    }
+  ],
+  "total_rois": 164,
+  "top_count": 5,
+  "statistics": {
+    "total_rois": 164,
+    "score_ranges": {
+      "combined": {
+        "min": 0.18478302285075188,
+        "max": 0.6608999967575073
+      },
+      "intensity": {
+        "min": 0.11453333497047424,
+        "max": 0.3438499867916107
+      },
+      "attention": {
+        "min": 0.08139535039663315,
+        "max": 1.0
+      }
+    },
+    "score_means": {
+      "combined": 0.266386749881615,
+      "intensity": 0.24620674009911897,
+      "attention": 0.28656675966411105
+    }
+  },
+  "method": "intensity_attention_combined"
+}

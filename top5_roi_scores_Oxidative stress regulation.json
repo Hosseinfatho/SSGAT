@@ -1,0 +1,110 @@
+{
+  "interaction_name": "Oxidative stress regulation",
+  "top_rois": [
+    {
+      "roi_id": 1,
+      "interaction": "Oxidative stress regulation",
+      "position": {
+        "x": 50.0,
+        "y": 45.0,
+        "z": 75.0
+      },
+      "scores": {
+        "combined_score": 0.7825500059127808,
+        "intensity_score": 0.5851000118255615,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 2,
+      "interaction": "Oxidative stress regulation",
+      "position": {
+        "x": 64.0,
+        "y": 122.0,
+        "z": 93.0
+      },
+      "scores": {
+        "combined_score": 0.7525500059127808,
+        "intensity_score": 0.5051000118255615,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 3,
+      "interaction": "Oxidative stress regulation",
+      "position": {
+        "x": 732.0,
+        "y": 445.0,
+        "z": 83.0
+      },
+      "scores": {
+        "combined_score": 0.738999992609024,
+        "intensity_score": 0.4779999852180481,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 4,
+      "interaction": "Oxidative stress regulation",
+      "position": {
+        "x": 269.0,
+        "y": 261.0,
+        "z": 103.0
+      },
+      "scores": {
+        "combined_score": 0.7381249964237213,
+        "intensity_score": 0.4762499928474426,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    {
+      "roi_id": 5,
+      "interaction": "Oxidative stress regulation",
+      "position": {
+        "x": 1288.0,
+        "y": 592.0,
+        "z": 73.0
+      },
+      "scores": {
+        "combined_score": 0.7311750054359436,
+        "intensity_score": 0.4623500108718872,
+        "attention_score": 1.0
+      },
+      "num_nodes": 1,
+      "num_edges": 0
+    }
+  ],
+  "total_rois": 181,
+  "top_count": 5,
+  "statistics": {
+    "total_rois": 181,
+    "score_ranges": {
+      "combined": {
+        "min": 0.2536875158548355,
+        "max": 0.7525500059127808
+      },
+      "intensity": {
+        "min": 0.10056666284799576,
+        "max": 0.505774974822998
+      },
+      "attention": {
+        "min": 0.125,
+        "max": 1.0
+      }
+    },
+    "score_means": {
+      "combined": 0.384156900195621,
+      "intensity": 0.33219360733065156,
+      "attention": 0.4361201930605904
+    }
+  },
+  "method": "intensity_attention_combined"
+}
