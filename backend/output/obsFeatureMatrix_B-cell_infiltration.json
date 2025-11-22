@@ -24,8 +24,8 @@
       "num_edges": 0
     },
     "ROI_4": {
-      "score": 0.420912504196167,
-      "intensity_score": 0.341825008392334,
+      "score": 0.4324750006198883,
+      "intensity_score": 0.3649500012397766,
       "attention_score": 0.5,
       "num_nodes": 2,
       "num_edges": 2

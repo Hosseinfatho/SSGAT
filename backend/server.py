@@ -953,6 +953,34 @@ def serve_top5_roi_oxidative():
         logger.error(f"Error serving top5 ROI Oxidative stress regulation: {e}", exc_info=True)
         return jsonify({"error": f"Failed to serve top5 ROI Oxidative stress regulation: {e}"}), 500
 
+@app.route('/api/top5_roi_scores_<path:interaction_type>.json', methods=['GET'])
+def serve_top5_roi_scores(interaction_type):
+    """Serve the top5 ROI scores JSON file for a specific interaction type"""
+    logger.info(f"Request received for /api/top5_roi_scores_{interaction_type}.json [GET]")
+    
+    try:
+        # The interaction_type may have underscores, convert them back to spaces for filename matching
+        # Files use spaces: "B-cell infiltration", "Inflammatory zone", etc.
+        filename_with_spaces = interaction_type.replace('_', ' ')
+        roi_file_path = Path(__file__).parent / 'output' / f'top5_roi_scores_{filename_with_spaces}.json'
+        
+        # Also try with underscores in case the file uses underscores
+        if not roi_file_path.exists():
+            roi_file_path = Path(__file__).parent / 'output' / f'top5_roi_scores_{interaction_type}.json'
+        
+        if not roi_file_path.exists():
+            logger.error(f"Top5 ROI scores file not found: {roi_file_path}")
+            return jsonify({"error": f"Top5 ROI scores file not found for {interaction_type}"}), 404
+        
+        with open(roi_file_path, 'r') as f:
+            roi_data = json.load(f)
+        
+        return jsonify(roi_data)
+        
+    except Exception as e:
+        logger.error(f"Error serving top5 ROI scores for {interaction_type}: {e}", exc_info=True)
+        return jsonify({"error": f"Failed to serve top5 ROI scores for {interaction_type}: {e}"}), 500
+
 @app.route('/api/roi_rectangles_annotation', methods=['GET'])
 def serve_roi_rectangles_annotation():
     try:

@@ -4,13 +4,83 @@ import ROISelector from './ROISelector';
 import HeatmapResults from './HeatmapResults';
 import InteractionHeatmap from './InteractionHeatmap';
 
+// Channel list from 0 to 69
+const CHANNEL_LIST = [
+  "Hoechst", "5'hmC", "MX1", "MART1", "Hoechst", "CD3E (do not use)", "MHC-I", "SOX10", "Hoechst", "S100B",
+  "MITF", "GranzymeB (do not use)", "Hoechst", "pan-cytokeratin", "lamin-ABC", "PDL1", "Hoechst", "PD1 (do not use)",
+  "S100A", "CD31", "Hoechst", "CD206", "pMLC2", "CD11b (do not use)", "Hoechst", "CD4", "LAG3", "CD20",
+  "Hoechst", "PRAME", "CD163", "IRF1", "Hoechst", "B-catenin", "CD3E", "CD8a", "Hoechst", "CD11b",
+  "FOXP3", "PD1", "Hoechst", "Ki67", "CD11c", "COX-IV", "Hoechst", "LysozymeC", "SOX9", "PMEL",
+  "CD103", "Hoechst", "CyclinD1", "BAF1", "Hoechst", "B-actin", "Mast cell tryptase", "CD15", "Podoplanin", "Hoechst",
+  "B-tubulin", "Catalase", "y-H2AX", "Hoechst", "E-cadherin", "Vimentin", "Neurofilament L (do not use)", "GranzymeB", "Hoechst", "MHC-II",
+  "H3K27me3", "Collagen (SHG)"
+];
+
+// Helper function to find channel index by name
+const getChannelIndex = (channelName) => {
+  return CHANNEL_LIST.findIndex(ch => ch === channelName || ch.includes(channelName.split(' ')[0]));
+};
+
+// Default channels configuration (all available channels)
 const IMAGE_CHANNELS = {
-  'CD31': { 'color': [228, 26, 28], 'window': [300, 6000], 'targetC': 19 },
-  'CD20': { 'color': [55, 126, 184], 'window': [1000, 5000], 'targetC': 27 },
-  'CD11b': { 'color': [77, 175, 74], 'window': [700, 4000], 'targetC': 37 },
-  'CD4': { 'color': [152, 78, 163], 'window': [1638, 5000], 'targetC': 25 },
-  'CD11c': { 'color': [255, 127, 0], 'window': [370, 1000], 'targetC': 42 },
-  'Catalase': { 'color': [166, 86, 40], 'window': [1000, 4000], 'targetC': 59 }
+  'CD31': { 'color': [141,211,199], 'window': [300, 6000], 'targetC': 19 },
+  'CD20': { 'color': [191,91,23], 'window': [3000, 5000], 'targetC': 27 },
+  'CD11b': { 'color': [190,186,218], 'window': [700, 4000], 'targetC': 37 },
+  'CD4': { 'color': [251,128,114], 'window': [1638, 5000], 'targetC': 25 },
+  'CD11c': { 'color': [128,177,211], 'window': [370, 1000], 'targetC': 42 },
+  'Catalase': { 'color': [253,180,98], 'window': [1000, 4000], 'targetC': 59 }
+};
+
+// T-cell maturation channels
+const T_CELL_MATURATION_CHANNELS = {
+  'CD3E': { 'color': [179,222,105], 'window': [1000, 5000], 'targetC': 34},
+  'CD4': { 'color': [251,128,114], 'window': [1638, 5000], 'targetC': 25 },
+  'CD8a': { 'color': [204,204,204], 'window': [1000, 5000], 'targetC': getChannelIndex('CD8a') },
+  'PD1': { 'color': [255,242,174], 'window': [1000, 3000], 'targetC': 39 },
+  'LAG3': { 'color': [166,206,227], 'window': [1000, 2000], 'targetC': getChannelIndex('LAG3') },
+  'CD103': { 'color': [178,223,138], 'window': [1000, 2000], 'targetC': getChannelIndex('CD103') }
+};
+
+// Inflammatory zone channels
+const INFLAMMATORY_ZONE_CHANNELS = {
+  'CD11b': { 'color': [190,186,218], 'window': [1500, 7500], 'targetC': 37 },
+  'CD11c': { 'color': [128,177,211], 'window': [370, 3200], 'targetC': 42 },
+  'CD163': { 'color': [253,191,111], 'window': [1000, 5000], 'targetC': getChannelIndex('CD163') },
+  'CD31': { 'color': [255,127,0], 'window': [4000, 16000], 'targetC': 19 },
+  'S100A': { 'color': [51,160,44], 'window': [4500, 8500], 'targetC': getChannelIndex('S100A') },
+  'SOX10': { 'color': [31,120,180], 'window': [1500, 4500], 'targetC': getChannelIndex('SOX10') }
+};
+
+// Oxidative stress regulation channels
+const OXIDATIVE_STRESS_CHANNELS = {
+  
+  'COX-IV': { 'color': [251,180,174], 'window': [4000, 16000], 'targetC': getChannelIndex('COX-IV') },
+  'y-H2AX': { 'color': [179,205,227], 'window': [4000, 11000], 'targetC': getChannelIndex('y-H2AX') },
+  'H3K27me3': { 'color': [204,235,197], 'window': [3000, 9000], 'targetC': getChannelIndex('H3K27me3') },
+  'CyclinD1': { 'color': [254,217,166], 'window': [600, 2600], 'targetC': getChannelIndex('CyclinD1') },
+  'B-catenin': { 'color': [255,255,204], 'window': [9000, 12000], 'targetC': getChannelIndex('B-catenin') },
+  'Catalase': { 'color': [253,218,236], 'window': [3500, 13000], 'targetC': 59 }
+};
+
+// B-cell infiltration channels
+const B_CELL_INFILTRATION_CHANNELS = {
+  'CD20': { 'color': [191,91,23], 'window': [3000, 5000], 'targetC': 27 }
+};
+
+// Define channels for each interaction type
+const INTERACTION_CHANNELS = {
+  'T-cell maturation': ['CD3E', 'CD4', 'CD8a', 'PD1', 'LAG3', 'CD103'],
+  'Inflammatory zone': ['CD11b', 'CD11c', 'CD163', 'CD31', 'S100A', 'SOX10'],
+  'Oxidative stress regulation': ['Catalase', 'COX-IV', 'y-H2AX', 'H3K27me3', 'CyclinD1', 'B-catenin'],
+  'B-cell infiltration': ['CD20']
+};
+
+// Map interaction types to their channel configurations
+const INTERACTION_CHANNEL_CONFIGS = {
+  'T-cell maturation': T_CELL_MATURATION_CHANNELS,
+  'Inflammatory zone': INFLAMMATORY_ZONE_CHANNELS,
+  'Oxidative stress regulation': OXIDATIVE_STRESS_CHANNELS,
+  'B-cell infiltration': B_CELL_INFILTRATION_CHANNELS
 };
 
 const INTERACTION_TO_ROI = {
@@ -21,9 +91,30 @@ const INTERACTION_TO_ROI = {
 };
 const ROI_DEFAULTS = { strokeWidth: 16, defaultOpacity: 0.5 };
 
-const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false) => {
+const generateVitessceConfig = (selectedGroups = [], selectedROIGroups = [], hasHeatmapResults = false) => {
   const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-  const channelNames = Object.keys(IMAGE_CHANNELS);
+  
+  // Get active channels based on selected interaction types
+  let activeChannelConfig = {};
+  if (selectedGroups.length > 0) {
+    // Use channels from selected interaction types
+    selectedGroups.forEach(group => {
+      const channelConfig = INTERACTION_CHANNEL_CONFIGS[group] || {};
+      Object.assign(activeChannelConfig, channelConfig);
+    });
+  } else {
+    // If no group selected, use default channels
+    activeChannelConfig = IMAGE_CHANNELS;
+  }
+  
+  let channelNames = Object.keys(activeChannelConfig);
+  
+  // Ensure we have at least one channel
+  if (channelNames.length === 0) {
+    console.warn('No channels found, using default channels');
+    activeChannelConfig = IMAGE_CHANNELS;
+    channelNames = Object.keys(IMAGE_CHANNELS);
+  }
   
   const coordination_space = {
     'dataset': { "A": "bv" },
@@ -85,7 +176,8 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false) 
   const metaChannel = coordination_space['metaCoordinationScopesBy']['metaA']['imageChannel'];
   const metaA = coordination_space['metaCoordinationScopes']['metaA'];
   
-  Object.entries(IMAGE_CHANNELS).forEach(([chName, chProps]) => {
+  // Use activeChannelConfig instead of IMAGE_CHANNELS
+  Object.entries(activeChannelConfig).forEach(([chName, chProps]) => {
     Object.assign(coordination_space['spatialChannelColor'], { [chName]: chProps.color });
     Object.assign(coordination_space['spatialChannelOpacity'], { [chName]: 0.5 });
     Object.assign(coordination_space['spatialChannelVisible'], { [chName]: true });
@@ -103,7 +195,8 @@ const generateVitessceConfig = (selectedGroups = [], hasHeatmapResults = false) 
     'url': 'https://lsp-public-data.s3.amazonaws.com/biomedvis-challenge-2025/Dataset1-LSP13626-melanoma-in-situ/0',
   }];
 
-  selectedGroups.forEach(group => {
+  // Only add ROI overlay files if selected in ROI Navigator
+  selectedROIGroups.forEach(group => {
     const roi = INTERACTION_TO_ROI[group];
     if (!roi) return;
     
@@ -178,8 +271,8 @@ const MainView = ({ onSetView }) => {
   const groupColors = { 1: '#d7191c', 2: '#fdae61', 3: '#abdda4', 4: '#2b83ba' };
   const groupNames = { 1: 'B-cell infiltration', 2: 'T-cell maturation', 3: 'Inflammatory zone', 4: 'Oxidative stress regulation' };
 
-  const updateConfig = (groups, preserveView = false) => {
-    const newConfig = generateVitessceConfig(groups, !!interactionHeatmapResult);
+  const updateConfig = (channelGroups, roiOverlayGroups = [], preserveView = false) => {
+    const newConfig = generateVitessceConfig(channelGroups, roiOverlayGroups, !!interactionHeatmapResult);
     const spatial = newConfig.coordinationSpace;
     
     if (preserveView && config?.coordinationSpace) {
@@ -193,15 +286,23 @@ const MainView = ({ onSetView }) => {
   };
 
   useEffect(() => {
-    updateConfig([]);
+    // Initialize with default channels (B-cell infiltration)
+    updateConfig(['B-cell infiltration'], []);
     if (!localStorage.getItem('hasSeenInstructions')) {
       setShowInstructions(true);
     }
   }, []);
 
   useEffect(() => {
-    if (selectedGroups.length > 0) {
-      updateConfig(selectedGroups, true);
+    // Update config when channel or ROI overlay selection changes
+    if (selectedGroups && typeof selectedGroups === 'object' && !Array.isArray(selectedGroups)) {
+      // New format: { channels: [], roiOverlay: [] }
+      const channelGroups = selectedGroups.channels || [];
+      const roiOverlayGroups = selectedGroups.roiOverlay || [];
+      updateConfig(channelGroups, roiOverlayGroups, true);
+    } else if (Array.isArray(selectedGroups)) {
+      // Old format: just array of groups (for backward compatibility)
+      updateConfig(selectedGroups, [], true);
     }
   }, [selectedGroups]);
 
@@ -293,8 +394,11 @@ const MainView = ({ onSetView }) => {
 
   const handleSetView = (roiView) => {
     if (roiView.refreshConfig) {
+      const channelGroups = roiView.currentROIGroup ? [roiView.currentROIGroup] : (roiView.selectedGroups || selectedGroups);
+      const roiOverlayGroups = roiView.selectedROIGroups || [];
       const newConfig = generateVitessceConfig(
-        roiView.currentROIGroup ? [roiView.currentROIGroup] : (roiView.selectedGroups || selectedGroups),
+        channelGroups,
+        roiOverlayGroups,
         !!interactionHeatmapResult
       );
       const spatial = newConfig.coordinationSpace;
@@ -456,15 +560,21 @@ const MainView = ({ onSetView }) => {
           className="vitessce-container" 
           style={{ flex: '1 1 auto', position: 'relative', margin: '0', padding: '0', border: '0', background: '#000' }}
         >
-          <Vitessce
-            ref={vitessceRef}
-            key={`${configKey}-${JSON.stringify(config?.datasets?.[0]?.files?.map(f => f.url))}`}
-            config={config}
-            onConfigChange={setConfig}
-            theme="light"
-            height={null}
-            width={null}
-          />
+          {config ? (
+            <Vitessce
+              ref={vitessceRef}
+              key={`${configKey}-${JSON.stringify(config?.datasets?.[0]?.files?.map(f => f.url))}`}
+              config={config}
+              onConfigChange={setConfig}
+              theme="light"
+              height={null}
+              width={null}
+            />
+          ) : (
+            <div style={{ padding: '20px', color: '#fff', textAlign: 'center' }}>
+              Loading configuration...
+            </div>
+          )}
           {mouseCoords && (
             <div
               style={{

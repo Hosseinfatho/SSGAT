@@ -371,7 +371,7 @@ def save_interaction_results(interaction_name, roi_scores, output_dir):
     top_count = min(7, len(serializable_rois))
     top_rois = serializable_rois[:top_count]
     
-    top_output_file = os.path.join(output_dir, f"top_roi_scores_{interaction_name}.json")
+    top_output_file = os.path.join(output_dir, f"top5_roi_scores_{interaction_name}.json")
     with open(top_output_file, 'w') as f:
         json.dump({
             'interaction_name': interaction_name,

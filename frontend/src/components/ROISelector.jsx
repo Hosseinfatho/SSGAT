@@ -7,20 +7,35 @@ import InteractionHeatmaps from './InteractionHeatmaps';
 function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGroupSelection }) {
   const [rois, setRois] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedGroups, setSelectedGroups] = useState(['B-cell infiltration']);
+  const [selectedGroups, setSelectedGroups] = useState(['B-cell infiltration']); // For Tissue Microenvironment (channels)
+  const [selectedROIGroups, setSelectedROIGroups] = useState([]); // For ROI Navigator (overlay)
   const [interactionGroups, setInteractionGroups] = useState([]);
 
-  // Notify parent component when selectedGroups changes
+  // Notify parent component when selectedGroups (Tissue Microenvironment) changes
   useEffect(() => {
-    console.log('ROISelector: selectedGroups changed to:', selectedGroups);
+    console.log('ROISelector: selectedGroups (Tissue Microenvironment) changed to:', selectedGroups);
     
-    // Notify parent component about group selection
+    // Notify parent component about group selection for channels
     if (onGroupSelection) {
       onGroupSelection(selectedGroups);
     }
     
     // Don't trigger config refresh here - only when Set View is pressed
   }, [selectedGroups, onGroupSelection]);
+
+  // Notify parent component when selectedROIGroups (ROI Navigator) changes
+  useEffect(() => {
+    console.log('ROISelector: selectedROIGroups (ROI Navigator) changed to:', selectedROIGroups);
+    
+    // Notify parent about ROI overlay selection
+    if (onGroupSelection) {
+      // Pass both channel selection and ROI overlay selection
+      onGroupSelection({
+        channels: selectedGroups,
+        roiOverlay: selectedROIGroups
+      });
+    }
+  }, [selectedROIGroups, selectedGroups, onGroupSelection]);
 
   const computeCentroid = (allCoords) => {
     const flatCoords = allCoords.flat();
@@ -76,12 +91,14 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     
     let url;
     if (isLocalhost) {
-      // Use API for local development - load from top5_roi files
+      // Use API for local development - load from top5_roi_scores files
       const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
-      url = `${apiBaseUrl}/api/top5_roi_${filename}.json`;
+      url = `${apiBaseUrl}/api/top5_roi_scores_${filename}.json`;
     } else {
       // Use local JSON files for GitHub Pages
-              url = `./top5_roi_${filename}.json`;
+      // Convert underscores back to spaces for filename matching
+      const filenameWithSpaces = filename.replace(/_/g, ' ');
+      url = `./top5_roi_scores_${filenameWithSpaces}.json`;
     }
     
     console.log('ROISelector: Generated URL:', url);
@@ -122,8 +139,8 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
         console.log("ROISelector: Processing", roisArray.length, "ROI features");
         console.log("ROISelector: First ROI sample:", roisArray[0]);
 
-        // Use ROIs in original order from file (no sorting)
-        const sortedRois = roisArray.slice(0, 4);
+        // Use ROIs in original order from file (no sorting) - take top 5
+        const sortedRois = roisArray.slice(0, 5);
         console.log("ROISelector: ROIs in original order:", sortedRois);
         
         const extracted = sortedRois.map((roi, index) => {
@@ -133,7 +150,8 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
           console.log("ROISelector: ROI position x:", roi.position?.x, "y:", roi.position?.y);
           
           // Add safety checks for missing data
-          const score = roi.scores?.combined_score || 0;
+          // Use nullish coalescing to only default to 0 if score is null/undefined, not if it's 0
+          const score = roi.scores?.combined_score ?? 0;
           const x = roi.position?.x || 0;
           const y = roi.position?.y || 0;
           
@@ -214,7 +232,7 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
       // Find the interaction group for the current ROI
       const currentROIGroup = currentROI.interactions && currentROI.interactions.length > 0 
         ? currentROI.interactions[0] 
-        : null;
+        : (selectedROIGroups.length > 0 ? selectedROIGroups[0] : null);
       
       console.log('ROISelector: Set View for ROI:', {
         roi_id: currentROI.roi_id,
@@ -231,6 +249,7 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
         spatialZoom: -1.0,  // Moderate zoom to show ROI with range x±200, y±200
         refreshConfig: true,  // Only refresh config when Set View is pressed
         currentROIGroup: currentROIGroup, // Pass the current ROI group
+        selectedROIGroups: selectedROIGroups.length > 0 ? selectedROIGroups : (currentROIGroup ? [currentROIGroup] : []), // Pass ROI overlay groups to show circles
         useSegmentationFile: true, // Flag to indicate we want to use segmentation file
         selectedROI: currentROI  // Pass the full ROI data for interaction calculations
       };
@@ -245,39 +264,53 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
 
 
   const toggleGroup = (group) => {
-    
+    // Toggle for Tissue Microenvironment (channels)
     let newSelectedGroups;
     
     if (selectedGroups.includes(group)) {
-      // If the group is already selected, unselect it
       newSelectedGroups = selectedGroups.filter(g => g !== group);
-      console.log('ROISelector: Unselecting group, newSelectedGroups:', newSelectedGroups);
     } else {
-      // If selecting a new group, unselect all others and select only this one
       newSelectedGroups = [group];
-      console.log('ROISelector: Selecting new group, newSelectedGroups:', newSelectedGroups);
     }
     
-    console.log('ROISelector: Setting new selectedGroups:', newSelectedGroups);
     setSelectedGroups(newSelectedGroups);
+    
+    // Notify parent about channel selection
+    if (onGroupSelection) {
+      onGroupSelection({
+        channels: newSelectedGroups,
+        roiOverlay: selectedROIGroups
+      });
+    }
+  };
+
+  const toggleROIGroup = (group) => {
+    // Toggle for ROI Navigator (overlay)
+    let newSelectedROIGroups;
+    
+    if (selectedROIGroups.includes(group)) {
+      newSelectedROIGroups = selectedROIGroups.filter(g => g !== group);
+      console.log('ROISelector: Unselecting ROI group, newSelectedROIGroups:', newSelectedROIGroups);
+    } else {
+      newSelectedROIGroups = [group];
+      console.log('ROISelector: Selecting ROI group, newSelectedROIGroups:', newSelectedROIGroups);
+    }
+    
+    setSelectedROIGroups(newSelectedROIGroups);
     setCurrentIndex(0);
     
-    // Always load ROI data when selecting a group
-    if (newSelectedGroups.length > 0) {
-      console.log('ROISelector: About to call loadROIData with:', newSelectedGroups[0]);
-      loadROIData(newSelectedGroups[0]);
-    } else {
-      console.log('ROISelector: No groups selected, not calling loadROIData');
+    // Notify parent about ROI overlay selection
+    if (onGroupSelection) {
+      onGroupSelection({
+        channels: selectedGroups,
+        roiOverlay: newSelectedROIGroups
+      });
     }
     
-    // Only notify parent about group selection change, don't refresh config
-    console.log('ROISelector: Calling onSetView with group selection only');
-    
     onSetView({
-      selectedGroups: newSelectedGroups,
-      refreshConfig: false  // Don't refresh config when changing interaction type
+      selectedROIGroups: newSelectedROIGroups,
+      refreshConfig: true  // Refresh config to show/hide overlay
     });
-    
   };
 
   const next = () => {
@@ -323,55 +356,94 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
     );
   }
 
+  // Define interaction order and labels with their channels
+  const interactionOrder = [
+    { id: 1, name: 'T-cell maturation', channels: ['CD3E', 'CD4', 'CD8a', 'PD1', 'LAG3', 'CD103'] },
+    { id: 2, name: 'Inflammatory zone', channels: ['CD11b', 'CD11c', 'CD163', 'CD31', 'S100A', 'SOX10'] },
+    { id: 3, name: 'Oxidative stress regulation', channels: ['Catalase', 'COX-IV', 'y-H2AX', 'H3K27me3', 'CyclinD1', 'B-catenin'] },
+    { id: 4, name: 'B-cell infiltration', channels: ['CD20'] }
+  ];
+
   return (
     <div className="roi-selector-container" style={{ width: '100%', height: '100%' }}>
-      <h4 style={{ fontSize: '16px', marginBottom: '2px', fontWeight: '600', color: '#000' }}>ROI Navigator</h4>
-             <p style={{ fontSize: '14px', marginBottom: '2px', color: '#000' }}>Select Interaction Type </p>
-             {interactionGroups.map(group => {
-  
-               return (
-         <div 
-           key={group} 
-           onClick={() => {
-
-             toggleGroup(group);
-             console.log('ROISelector: ===== DIV CLICK ND =====');
-           }}
-           style={{ 
-             fontSize: '14px', 
-             marginBottom: '1px', 
-             color: '#000',
-             cursor: 'pointer',
-             padding: '1px 4px',
-             backgroundColor: selectedGroups.includes(group) ? '#e0e0e0' : 'transparent',
-             border: selectedGroups.includes(group) ? '1px solid #999' : '1px solid transparent',
-             borderRadius: '3px'
-           }}
-         >
-           <input
-             type="radio"
-             name="interactionType"
-             value={group}
-             checked={selectedGroups.includes(group)}
-             readOnly
-             style={{ marginRight: '4px', pointerEvents: 'none' }}
-           />
-           {group}
-         </div>
-       );
-       })}
+      <h4 style={{ fontSize: '16px', marginBottom: '4px', fontWeight: '600', color: '#000' }}>Tissue Microenvironment</h4>
+      {interactionOrder.map(({ id, name }) => {
+        const isSelected = selectedGroups.includes(name);
+        return (
+          <div 
+            key={name} 
+            onClick={() => {
+              toggleGroup(name);
+              console.log('ROISelector: ===== DIV CLICK ND =====');
+            }}
+            style={{ 
+              fontSize: '13px', 
+              marginBottom: '2px', 
+              color: '#000',
+              cursor: 'pointer',
+              padding: '2px 6px',
+              backgroundColor: isSelected ? '#e0e0e0' : 'transparent',
+              border: isSelected ? '1px solid #999' : '1px solid transparent',
+              borderRadius: '3px'
+            }}
+          >
+            <input
+              type="radio"
+              name="interactionType"
+              value={name}
+              checked={isSelected}
+              readOnly
+              style={{ marginRight: '6px', pointerEvents: 'none' }}
+            />
+            <span>{name}</span>
+          </div>
+        );
+      })}
       
+      <hr style={{ borderColor: "rgba(0, 0, 0, 0.2)", margin: '6px 0' }} />
+      
+      <h4 style={{ fontSize: '16px', marginBottom: '4px', fontWeight: '600', color: '#000' }}>ROI Navigator</h4>
+      {interactionOrder.map(({ id, name }) => {
+        const isSelected = selectedROIGroups.includes(name);
+        return (
+          <div 
+            key={`roi-${name}`} 
+            onClick={() => {
+              toggleROIGroup(name);
+            }}
+            style={{ 
+              fontSize: '13px', 
+              marginBottom: '2px', 
+              color: '#000',
+              cursor: 'pointer',
+              padding: '2px 6px',
+              backgroundColor: isSelected ? '#e0e0e0' : 'transparent',
+              border: isSelected ? '1px solid #999' : '1px solid transparent',
+              borderRadius: '3px'
+            }}
+          >
+            <input
+              type="radio"
+              name="roiNavigator"
+              value={name}
+              checked={isSelected}
+              readOnly
+              style={{ marginRight: '6px', pointerEvents: 'none' }}
+            />
+            <span>{name}</span>
+          </div>
+        );
+      })}
 
-
-      <hr style={{ borderColor: "rgba(255, 255, 255, 0.2)" }} />
-      {selectedGroups.length > 0 ? (
+      <hr style={{ borderColor: "rgba(255, 255, 255, 0.2)", margin: '12px 0' }} />
+      {selectedROIGroups.length > 0 ? (
         <>
                      <div className="text-center" style={{ marginBottom: "3px", display: "flex", justifyContent: "center", alignItems: "center", gap: "6px" }}>
              <span style={{ fontSize: "14px", fontWeight: "600", color: "#000" }}>
                {currentROI.roi_id ? `ROI ${currentROI.roi_id}` : `ROI ${currentIndex + 1}`}
              </span>
              <span style={{ fontSize: "12px", fontWeight: "bold", color: "#000" }}>
-               Score: {currentROI.score ? currentROI.score.toFixed(3) : "0.000"}
+               Score: {currentROI.score !== undefined && currentROI.score !== null ? currentROI.score.toFixed(3) : (currentROI.raw?.scores?.combined_score !== undefined ? currentROI.raw.scores.combined_score.toFixed(3) : "0.000")}
              </span>
            </div>
 
@@ -404,7 +476,7 @@ function ROISelector({ onSetView, onHeatmapResults, onInteractionResults, onGrou
                  <Heatmaps 
                    currentROI={currentROI}
                    onHeatmapResults={onHeatmapResults}
-                   selectedInteractionType={selectedGroups[0]}
+                   selectedInteractionType={selectedROIGroups[0] || selectedGroups[0]}
                    selectedROIIndex={currentIndex}
                  />
                  <InteractionHeatmaps 
