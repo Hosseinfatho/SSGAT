@@ -69,3 +69,4 @@ SPA/
 *.npy
 *.png
 *.pt
+\subgraphs_list.pt
