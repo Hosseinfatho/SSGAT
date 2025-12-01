@@ -68,3 +68,4 @@ Input/
 SPA/
 *.npy
 *.png
+*.pt
