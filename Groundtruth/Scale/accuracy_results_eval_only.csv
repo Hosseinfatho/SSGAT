@@ -1,2 +1,0 @@
-Scale Name,Scale,GT File,Matches,Model Points,GT Points,Precision,Recall,F1 Score,Accuracy
-original,"1x,1x,1x",groundtruthoriginal.npy,91,100,100,0.9100,0.9100,0.9100,0.8349
