@@ -21,8 +21,8 @@
       "roi_id": 2,
       "interaction": "B-cell infiltration",
       "position": {
-        "x": 493.0,
-        "y": 172.0,
+        "x": 513.0,
+        "y": 182.0,
         "z": 88.0
       },
       "scores": {
@@ -69,8 +69,8 @@
       "roi_id": 5,
       "interaction": "B-cell infiltration",
       "position": {
-        "x": 315.0,
-        "y": 136.0,
+        "x": 325.0,
+        "y": 146.0,
         "z": 76.0
       },
       "scores": {

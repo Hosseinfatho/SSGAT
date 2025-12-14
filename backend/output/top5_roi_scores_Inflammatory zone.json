@@ -53,8 +53,8 @@
       "roi_id": 4,
       "interaction": "Inflammatory zone",
       "position": {
-        "x": 506.0,
-        "y": 284.0,
+        "x": 310.0,
+        "y": 254.0,
         "z": 130.0
       },
       "scores": {
@@ -69,8 +69,8 @@
       "roi_id": 5,
       "interaction": "Inflammatory zone",
       "position": {
-        "x": 616.0,
-        "y": 371.0,
+        "x": 416.0,
+        "y": 271.0,
         "z": 80.0
       },
       "scores": {

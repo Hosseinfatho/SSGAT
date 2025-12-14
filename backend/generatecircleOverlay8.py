@@ -72,7 +72,7 @@ def process_roi_file(input_file_path, output_file_path):
         # Rank 1 = 1 counting circle, Rank 5 = 5 counting circles
         num_counting_circles = idx
         counting_circle_radius = 25
-        distance_above = 300  # 300 pixels above center
+        distance_above = 200  # 300 pixels above center
         spacing = 75  # Distance between centers of counting circles
         
         # Calculate starting position to center the circles
