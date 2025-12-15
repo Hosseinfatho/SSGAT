@@ -1,0 +1,5 @@
+Texture,GT File,Matches,Model Points,GT Points,Precision,Recall,F1 Score,Accuracy
+texture1,groundtruth_texture1.npy,86,100,100,0.8600,0.8600,0.8600,0.7544
+texture2,groundtruth_texture2.npy,80,100,100,0.8000,0.8000,0.8000,0.6667
+texture3,groundtruth_texture3.npy,33,34,34,0.9706,0.9706,0.9706,0.9429
+texture4,groundtruth_texture4.npy,86,100,100,0.8600,0.8600,0.8600,0.7544

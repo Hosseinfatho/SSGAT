@@ -1,0 +1,5 @@
+Scale Name,Scale,GT File,Matches,Model Points,GT Points,Precision,Recall,F1 Score,Accuracy
+original,"1x,1x,1x",groundtruth_original.npy,90,100,100,0.9000,0.9000,0.9000,0.8182
+3x2y1z,"3x,2x,1x",groundtruth_3x2y1z.npy,84,100,100,0.8400,0.8400,0.8400,0.7241
+2x3y1z,"2x,3x,1x",groundtruth_2x3y1z.npy,81,100,100,0.8100,0.8100,0.8100,0.6807
+2x2y2z,"2x,2x,2x",groundtruth_2x2y2z.npy,89,100,100,0.8900,0.8900,0.8900,0.8018

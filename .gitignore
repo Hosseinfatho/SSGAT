@@ -69,7 +69,6 @@ SPA/
 *.npy
 *.png
 *.pt
-*.csv
 
 \subgraphs_list.pt
 Groundtruth\Scale\
@@ -82,7 +81,6 @@ Groundtruth\Scale\
 *.gif
 *.bmp
 *.tiff
-*.csv
 
 
 
