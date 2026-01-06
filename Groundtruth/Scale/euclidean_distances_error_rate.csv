@@ -1,0 +1,5 @@
+Scale Name,Mean Euclidean Distance,Std Euclidean Distance,Median Euclidean Distance,Min Euclidean Distance,Max Euclidean Distance
+original,0.3,1.1874342087037917,0.0,0.0,5.0
+original,0.05,0.49749371855331,0.0,0.0,5.0
+2x1y1z,0.8,1.833030277982336,0.0,0.0,5.0
+1x2y1z,0.25,1.0897247358851685,0.0,0.0,5.0

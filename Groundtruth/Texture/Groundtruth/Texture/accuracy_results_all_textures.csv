@@ -1,0 +1,2 @@
+Texture,Model Points,GT Points,"('Threshold 2', 'F1')","('Threshold 2', 'Accuracy')","('Threshold 4', 'F1')","('Threshold 4', 'Accuracy')","('Threshold 8', 'F1')","('Threshold 8', 'Accuracy')"
+texture1,100,100,0.9900,0.9802,0.9900,0.9802,0.9900,0.9802
