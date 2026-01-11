@@ -66,3 +66,9 @@ backend/input/
 Input/
 # Output/
 SPA/
+*.png
+*.jpg
+*.jpeg
+*.pkl
+*.pt 
+*.npy
