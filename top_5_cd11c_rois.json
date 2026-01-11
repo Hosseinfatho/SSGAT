@@ -1,0 +1,35 @@
+{
+  "interaction_name": "Inflammatory zone",
+  "top_5_rois": [
+    {
+      "roi_id": 0,
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scores": {
+        "intensity_score": 0.3672216534614563,
+        "num_nodes": 30,
+        "mean_intensity": 0.43564334511756897
+      },
+      "num_nodes": 30,
+      "num_edges": 0
+    }
+  ],
+  "total_rois": 1,
+  "statistics": {
+    "total_rois": 1,
+    "score_ranges": {
+      "intensity": {
+        "min": 0.3672216534614563,
+        "max": 0.3672216534614563
+      }
+    },
+    "score_means": {
+      "intensity": 0.3672216534614563
+    }
+  },
+  "method": "cd11c_inflammatory_zone_intensity"
+}
