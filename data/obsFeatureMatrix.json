@@ -1,0 +1,111 @@
+{
+  "version": "0.1.0",
+  "type": "obsFeatureMatrix",
+  "data": {
+    "ROI_1": {
+      "score": 0.7355500012636185,
+      "intensity_score": 0.47110000252723694,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_2": {
+      "score": 0.6657499969005585,
+      "intensity_score": 0.33149999380111694,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_3": {
+      "score": 0.6508499979972839,
+      "intensity_score": 0.30169999599456787,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_4": {
+      "score": 0.6592250019311905,
+      "intensity_score": 0.318450003862381,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_5": {
+      "score": 0.411812499165535,
+      "intensity_score": 0.32362499833106995,
+      "attention_score": 0.5,
+      "num_nodes": 2,
+      "num_edges": 2
+    },
+    "ROI_6": {
+      "score": 0.3428273946046829,
+      "intensity_score": 0.25708332657814026,
+      "attention_score": 0.4285714626312256,
+      "num_nodes": 3,
+      "num_edges": 4
+    },
+    "ROI_7": {
+      "score": 0.32,
+      "intensity_score": 0.25,
+      "attention_score": 0.39,
+      "num_nodes": 2,
+      "num_edges": 3
+    },
+    "ROI_8": {
+      "score": 0.7525500059127808,
+      "intensity_score": 0.5051000118255615,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_9": {
+      "score": 0.738999992609024,
+      "intensity_score": 0.4779999852180481,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_10": {
+      "score": 0.7381249964237213,
+      "intensity_score": 0.4762499928474426,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_11": {
+      "score": 0.7311750054359436,
+      "intensity_score": 0.4623500108718872,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_12": {
+      "score": 0.6608999967575073,
+      "intensity_score": 0.32179999351501465,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_13": {
+      "score": 0.6403499990701675,
+      "intensity_score": 0.2806999981403351,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_14": {
+      "score": 0.6221249997615814,
+      "intensity_score": 0.24424999952316284,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_15": {
+      "score": 0.5595999993383884,
+      "intensity_score": 0.11919999867677689,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "type": "obsFeatureMatrix",
+  "data": {
+    "ROI_1": {
+      "score": 0.7355500012636185,
+      "intensity_score": 0.47110000252723694,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_2": {
+      "score": 0.6657499969005585,
+      "intensity_score": 0.33149999380111694,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_3": {
+      "score": 0.6508499979972839,
+      "intensity_score": 0.30169999599456787,
+      "attention_score": 1.0,
+      "num_nodes": 1,
+      "num_edges": 0
+    },
+    "ROI_4": {
+      "score": 0.420912504196167,
+      "intensity_score": 0.341825008392334,
+      "attention_score": 0.5,
+      "num_nodes": 2,
+      "num_edges": 2
+    }
+  }
+}

@@ -1,0 +1,624 @@
+{
+  "version": "1.0",
+  "name": "SSGAT ROIs",
+  "description": "ROIs generated from SSGAT analysis",
+  "interactions": {
+    "T-cell entry site": {
+      "color": "#FF0000"
+    },
+    "Inflammatory zone": {
+      "color": "#0000FF"
+    },
+    "Oxidative stress niche": {
+      "color": "#00FF00"
+    },
+    "B-cell infiltration": {
+      "color": "#800080"
+    },
+    "Dendritic signal": {
+      "color": "#FFA500"
+    }
+  },
+  "rois": [
+    {
+      "id": "B-cell infiltration_0",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 835.0,
+        "y": 246.0,
+        "z": 81.0
+      },
+      "score": 0.39121250808238983,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.39121250808238983,
+        "z": 81.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_1",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 7.0,
+        "y": 494.0,
+        "z": 146.0
+      },
+      "score": 0.36726875603199005,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.36726875603199005,
+        "z": 146.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_2",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 432.0,
+        "y": 428.0,
+        "z": 96.0
+      },
+      "score": 0.35745833814144135,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.35745833814144135,
+        "z": 96.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_3",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 319.0,
+        "y": 441.0,
+        "z": 84.0
+      },
+      "score": 0.34858573973178864,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.34858573973178864,
+        "z": 84.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_4",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 425.0,
+        "y": 432.0,
+        "z": 149.0
+      },
+      "score": 0.3459440618753433,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.3459440618753433,
+        "z": 149.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_5",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 941.0,
+        "y": 228.0,
+        "z": 87.0
+      },
+      "score": 0.3453940749168396,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.3453940749168396,
+        "z": 87.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_6",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 294.0,
+        "y": 579.0,
+        "z": 104.0
+      },
+      "score": 0.3440440595149994,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.3440440595149994,
+        "z": 104.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_7",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 1132.0,
+        "y": 266.0,
+        "z": 76.0
+      },
+      "score": 0.33593573421239853,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.33593573421239853,
+        "z": 76.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_8",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 865.0,
+        "y": 214.0,
+        "z": 65.0
+      },
+      "score": 0.3346500024199486,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.3346500024199486,
+        "z": 65.0
+      }
+    },
+    {
+      "id": "B-cell infiltration_9",
+      "interaction": "B-cell infiltration",
+      "position": {
+        "x": 324.0,
+        "y": 554.0,
+        "z": 28.0
+      },
+      "score": 0.3332524001598358,
+      "properties": {
+        "interaction": "B-cell infiltration",
+        "score": 0.3332524001598358,
+        "z": 28.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_10",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 324.0,
+        "y": 554.0,
+        "z": 28.0
+      },
+      "score": 0.37175239622592926,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.37175239622592926,
+        "z": 28.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_11",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 7.0,
+        "y": 494.0,
+        "z": 146.0
+      },
+      "score": 0.33797499537467957,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.33797499537467957,
+        "z": 146.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_12",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 1083.0,
+        "y": 272.0,
+        "z": 84.0
+      },
+      "score": 0.32979999482631683,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.32979999482631683,
+        "z": 84.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_13",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 319.0,
+        "y": 441.0,
+        "z": 84.0
+      },
+      "score": 0.32229405641555786,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.32229405641555786,
+        "z": 84.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_14",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 247.0,
+        "y": 517.0,
+        "z": 125.0
+      },
+      "score": 0.3068416714668274,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.3068416714668274,
+        "z": 125.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_15",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 1081.0,
+        "y": 272.0,
+        "z": 130.0
+      },
+      "score": 0.3024875074625015,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.3024875074625015,
+        "z": 130.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_16",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 616.0,
+        "y": 82.0,
+        "z": 153.0
+      },
+      "score": 0.29401666671037674,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.29401666671037674,
+        "z": 153.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_17",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 1320.0,
+        "y": 229.0,
+        "z": 56.0
+      },
+      "score": 0.2900416702032089,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.2900416702032089,
+        "z": 56.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_18",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 1351.0,
+        "y": 216.0,
+        "z": 75.0
+      },
+      "score": 0.2900416702032089,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.2900416702032089,
+        "z": 75.0
+      }
+    },
+    {
+      "id": "Inflammatory zone_19",
+      "interaction": "Inflammatory zone",
+      "position": {
+        "x": 374.0,
+        "y": 467.0,
+        "z": 130.0
+      },
+      "score": 0.28171780705451965,
+      "properties": {
+        "interaction": "Inflammatory zone",
+        "score": 0.28171780705451965,
+        "z": 130.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_20",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 1232.0,
+        "y": 227.0,
+        "z": 93.0
+      },
+      "score": 0.6980250030755997,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.6980250030755997,
+        "z": 93.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_21",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 689.0,
+        "y": 629.0,
+        "z": 118.0
+      },
+      "score": 0.6826249957084656,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.6826249957084656,
+        "z": 118.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_22",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 79.0,
+        "y": 410.0,
+        "z": 116.0
+      },
+      "score": 0.6772249937057495,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.6772249937057495,
+        "z": 116.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_23",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 980.0,
+        "y": 313.0,
+        "z": 73.0
+      },
+      "score": 0.46681249141693115,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.46681249141693115,
+        "z": 73.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_24",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 1144.0,
+        "y": 279.0,
+        "z": 72.0
+      },
+      "score": 0.46092499792575836,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.46092499792575836,
+        "z": 72.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_25",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 879.0,
+        "y": 102.0,
+        "z": 58.0
+      },
+      "score": 0.3828773945569992,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.3828773945569992,
+        "z": 58.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_26",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 971.0,
+        "y": 349.0,
+        "z": 128.0
+      },
+      "score": 0.36650240421295166,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.36650240421295166,
+        "z": 128.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_27",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 1002.0,
+        "y": 221.0,
+        "z": 73.0
+      },
+      "score": 0.3655875027179718,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.3655875027179718,
+        "z": 73.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_28",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 416.0,
+        "y": 486.0,
+        "z": 90.0
+      },
+      "score": 0.3546999990940094,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.3546999990940094,
+        "z": 90.0
+      }
+    },
+    {
+      "id": "Oxidative stress niche_29",
+      "interaction": "Oxidative stress niche",
+      "position": {
+        "x": 316.0,
+        "y": 583.0,
+        "z": 141.0
+      },
+      "score": 0.3524499982595444,
+      "properties": {
+        "interaction": "Oxidative stress niche",
+        "score": 0.3524499982595444,
+        "z": 141.0
+      }
+    },
+    {
+      "id": "T-cell entry site_30",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 835.0,
+        "y": 246.0,
+        "z": 81.0
+      },
+      "score": 0.37601250410079956,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.37601250410079956,
+        "z": 81.0
+      }
+    },
+    {
+      "id": "T-cell entry site_31",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 820.0,
+        "y": 286.0,
+        "z": 88.0
+      },
+      "score": 0.33044999837875366,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.33044999837875366,
+        "z": 88.0
+      }
+    },
+    {
+      "id": "T-cell entry site_32",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 1132.0,
+        "y": 266.0,
+        "z": 76.0
+      },
+      "score": 0.32881907373666763,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.32881907373666763,
+        "z": 76.0
+      }
+    },
+    {
+      "id": "T-cell entry site_33",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 294.0,
+        "y": 579.0,
+        "z": 104.0
+      },
+      "score": 0.32653573155403137,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.32653573155403137,
+        "z": 104.0
+      }
+    },
+    {
+      "id": "T-cell entry site_34",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 432.0,
+        "y": 428.0,
+        "z": 96.0
+      },
+      "score": 0.32477501034736633,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.32477501034736633,
+        "z": 96.0
+      }
+    },
+    {
+      "id": "T-cell entry site_35",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 941.0,
+        "y": 228.0,
+        "z": 87.0
+      },
+      "score": 0.32366905361413956,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.32366905361413956,
+        "z": 87.0
+      }
+    },
+    {
+      "id": "T-cell entry site_36",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 865.0,
+        "y": 214.0,
+        "z": 65.0
+      },
+      "score": 0.322562500834465,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.322562500834465,
+        "z": 65.0
+      }
+    },
+    {
+      "id": "T-cell entry site_37",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 1250.0,
+        "y": 203.0,
+        "z": 101.0
+      },
+      "score": 0.32017499953508377,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.32017499953508377,
+        "z": 101.0
+      }
+    },
+    {
+      "id": "T-cell entry site_38",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 425.0,
+        "y": 432.0,
+        "z": 149.0
+      },
+      "score": 0.3153357282280922,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.3153357282280922,
+        "z": 149.0
+      }
+    },
+    {
+      "id": "T-cell entry site_39",
+      "interaction": "T-cell entry site",
+      "position": {
+        "x": 362.0,
+        "y": 464.0,
+        "z": 103.0
+      },
+      "score": 0.3123476952314377,
+      "properties": {
+        "interaction": "T-cell entry site",
+        "score": 0.3123476952314377,
+        "z": 103.0
+      }
+    }
+  ]
+}

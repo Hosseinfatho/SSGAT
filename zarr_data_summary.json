@@ -1,0 +1,253 @@
+{
+  "zarr_path": "../Globally Sclerotic Glomeruli.adata.zarr",
+  "num_observations": 19,
+  "num_variables": 3,
+  "original_observation_names": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "unique_observation_names": [
+    "Glomerulus_0",
+    "Glomerulus_1",
+    "Glomerulus_2",
+    "Glomerulus_3",
+    "Glomerulus_4",
+    "Glomerulus_5",
+    "Glomerulus_6",
+    "Glomerulus_7",
+    "Glomerulus_8",
+    "Glomerulus_9",
+    "Glomerulus_10",
+    "Glomerulus_11",
+    "Glomerulus_12",
+    "Glomerulus_13",
+    "Glomerulus_14",
+    "Glomerulus_15",
+    "Glomerulus_16",
+    "Glomerulus_17",
+    "Glomerulus_18"
+  ],
+  "variable_names": [
+    "Area",
+    "Mesangial Area",
+    "Mesangial Fraction"
+  ],
+  "data_shape": [
+    19,
+    3
+  ],
+  "data_type": "float32",
+  "obs_data": {
+    "Glomerulus_0": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_1": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_2": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_3": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_4": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_5": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_6": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_7": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_8": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_9": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_10": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_11": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_12": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_13": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_14": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_15": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_16": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_17": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    },
+    "Glomerulus_18": {
+      "Area": 0.0,
+      "Mesangial Area": 0.0,
+      "Mesangial Fraction": 0.0
+    }
+  },
+  "var_data": {},
+  "X_data": [
+    [
+      7491.3125,
+      5825.8125,
+      0.7776758074760437
+    ],
+    [
+      11318.5625,
+      5519.8125,
+      0.4876778721809387
+    ],
+    [
+      11692.3125,
+      8965.625,
+      0.7667965888977051
+    ],
+    [
+      23472.3125,
+      18920.625,
+      0.8060827255249023
+    ],
+    [
+      29911.4375,
+      24769.6875,
+      0.828100860118866
+    ],
+    [
+      9999.375,
+      7727.8125,
+      0.772829532623291
+    ],
+    [
+      4350.5,
+      3532.125,
+      0.8118894100189209
+    ],
+    [
+      25409.75,
+      23017.3125,
+      0.9058457016944885
+    ],
+    [
+      18599.5,
+      14430.75,
+      0.7758676409721375
+    ],
+    [
+      6978.375,
+      4822.625,
+      0.6910814046859741
+    ],
+    [
+      11179.6875,
+      8277.875,
+      0.7404388785362244
+    ],
+    [
+      27734.3125,
+      21094.125,
+      0.7605786323547363
+    ],
+    [
+      8952.4375,
+      2276.9375,
+      0.2543371617794037
+    ],
+    [
+      23774.0625,
+      17284.0625,
+      0.7270134091377258
+    ],
+    [
+      10417.9375,
+      7275.625,
+      0.6983748078346252
+    ],
+    [
+      2333.0,
+      1523.875,
+      0.6531826257705688
+    ],
+    [
+      27343.5625,
+      17612.5625,
+      0.644120991230011
+    ],
+    [
+      26038.0,
+      20950.0,
+      0.8045932650566101
+    ],
+    [
+      20525.125,
+      14772.5,
+      0.719727635383606
+    ]
+  ],
+  "uns_data": {}
+}
