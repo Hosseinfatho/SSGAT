@@ -1,0 +1,6 @@
+Type,Name,Min,Max,Mean,Median,Std
+Texture,texture1,0.0,60.0,3.2218,0.0,8.6672
+Texture,texture2,0.0,75.0,4.8,0.0,11.2009
+Texture,texture3,0.0,15.0,4.5,0.0,6.8739
+Texture,texture4,0.0,21.2132,1.5985,0.0,5.1667
+Texture,texture5,0.0,47.4342,4.234,0.0,8.8782

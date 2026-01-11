@@ -1,5 +1,6 @@
-Scale Name,Mean Euclidean Distance,Std Euclidean Distance,Median Euclidean Distance,Min Euclidean Distance,Max Euclidean Distance
-original,0.3,1.1874342087037917,0.0,0.0,5.0
-original,0.05,0.49749371855331,0.0,0.0,5.0
-2x1y1z,0.8,1.833030277982336,0.0,0.0,5.0
-1x2y1z,0.25,1.0897247358851685,0.0,0.0,5.0
+Type,Name,Mean Euclidean Distance,Std Euclidean Distance,Median Euclidean Distance,Min Euclidean Distance,Max Euclidean Distance
+Texture,texture1,3.2218062996928616,8.667177404856751,0.0,0.0,60.0
+Texture,texture2,4.8,11.200892821556684,0.0,0.0,75.0
+Texture,texture3,4.5,6.87386354243376,0.0,0.0,15.0
+Texture,texture4,1.5985281374238571,5.166692152031532,0.0,0.0,21.213203435596427
+Texture,texture5,4.234015914362154,8.87823795789052,0.0,0.0,47.43416490252569

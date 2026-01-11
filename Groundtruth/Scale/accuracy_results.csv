@@ -1,4 +1,19 @@
-Scale Name,Threshold,F1 Score,Accuracy (IoU)
-original,2,0.9800,0.9608
-original,4,0.9800,0.9608
-original,8,0.9899,1.0000
+Scale Name    Scale        GT File                         Matches  Model Points  GT Points  Precision  Recall  F1 Score  Accuracy
+original     1x,1x,1x     groundtruth_original.npy              91           100        100     0.9100   0.9100   0.9100   0.8349
+2x1y1z       2x,1x,1x     groundtruth_2x1y1z.npy                71           100        100     0.7100   0.7100   0.7100   0.5504
+1x2y1z       1x,2x,1x     groundtruth_1x2y1z.npy                88           100        100     0.8800   0.8800   0.8800   0.7857
+1x1y2z       1x,1x,2x     groundtruth_1x1y2z.npy                92           100        100     0.9200   0.9200   0.9200   0.8519
+2x2y1z       2x,2x,1x     groundtruth_2x2y1z.npy                87           100        100     0.8700   0.8700   0.8700   0.7699
+1x2y2z       1x,2x,2x     groundtruth_1x2y2z.npy                88           100        100     0.8800   0.8800   0.8800   0.7857
+2x2y2z       2x,2x,2x     groundtruth_2x2y2z.npy                81           100        100     0.8100   0.8100   0.8100   0.6807
+3x2y1z       3x,2x,1x     groundtruth_3x2y1z.npy                92           100        100     0.9200   0.9200   0.9200   0.8519
+3x1y2z       3x,1x,2x     groundtruth_3x1y2z.npy                67           100        100     0.6700   0.6700   0.6700   0.5038
+3x2y2z       3x,2x,2x     groundtruth_3x2y2z.npy                69           100        100     0.6900   0.6900   0.6900   0.5268
+
+
+ Texture                  GT File  Matches  Model Points  GT Points Precision Recall F1 Score Accuracy
+texture1 groundtruth_texture1.npy       83           100        100    0.8300 0.8300   0.8300   0.7094
+texture2 groundtruth_texture2.npy       89           100        100    0.8900 0.8900   0.8900   0.8018
+texture3 groundtruth_texture3.npy       79           100        100    0.7900 0.7900   0.7900   0.6529
+texture4 groundtruth_texture4.npy       94           100        100    0.9400 0.9400   0.9400   0.8868
+texture5 groundtruth_texture5.npy       85           100        100    0.8500 0.8500   0.8500   0.7391
