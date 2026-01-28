@@ -1,0 +1,2 @@
+Texture,Scale Name,Scale,GT File,Model Points,GT Points,Mean Euclidean,Median Euclidean,Std Euclidean,Min Euclidean,Max Euclidean
+sinusoid,original,"1x,1x,1x",groundtruth_sinusoid_original.npy,3188,249214,30.619985516343668,22.561028345356956,28.588186883089794,0.0,148.5563866011825

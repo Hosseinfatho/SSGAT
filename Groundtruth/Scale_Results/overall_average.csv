@@ -1,2 +1,2 @@
-Total Experiments,Overall Avg Matches,Overall Avg Euc Mean,Overall Avg Euc Std,Overall Avg Euc Min,Overall Avg Euc Max
-52,395.6923076923077,37.304344689771774,29.956779155576132,1.5134140903733797,103.14667781958586
+Total Experiments,Overall Mean Euclidean,Overall Median Euclidean,Overall Std Euclidean,Overall Min Euclidean,Overall Max Euclidean
+1,30.619985516343668,22.561028345356956,28.588186883089794,0.0,148.5563866011825
