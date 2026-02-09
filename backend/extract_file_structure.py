@@ -1,16 +1,26 @@
+import sys
 import tifffile
 import json
 from pathlib import Path
+from typing import Optional
 
-def extract_file_structure():
-    """Extract and list all components from the original file"""
-    
-    tiff_file = Path("output/vitessce_files/S-1905-017737_PAS_2of2.ome.tif")
-    
+# Default path relative to this script's directory
+DEFAULT_TIFF = Path(__file__).resolve().parent / "output" / "vitessce_files" / "S-1905-017737_PAS_2of2.ome.tif"
+
+
+def extract_file_structure(tiff_file: Optional[Path] = None):
+    """Extract and list all components from the original file."""
+    tiff_file = Path(tiff_file) if tiff_file is not None else DEFAULT_TIFF
+
+    if not tiff_file.exists():
+        print(f"File not found: {tiff_file.resolve()}")
+        print("Usage: python extract_file_structure.py [path/to/file.ome.tif]")
+        sys.exit(1)
+
     print("=" * 80)
     print("COMPLETE STRUCTURE OF ORIGINAL FILE")
     print("=" * 80)
-    
+
     with tifffile.TiffFile(tiff_file) as tif:
         
         # 1. Basic file info
@@ -122,10 +132,14 @@ def extract_file_structure():
             "ome_metadata_available": hasattr(tif, 'ome_metadata') and tif.ome_metadata is not None
         }
         
-        with open("output/vitessce_files/original_file_structure.json", "w") as f:
+        out_dir = tiff_file.parent
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_json = out_dir / "original_file_structure.json"
+        with open(out_json, "w") as f:
             json.dump(structure, f, indent=2)
-        
-        print(f"\nStructure saved to: output/vitessce_files/original_file_structure.json")
+
+        print(f"\nStructure saved to: {out_json}")
 
 if __name__ == "__main__":
-    extract_file_structure() 
+    tiff_path = sys.argv[1] if len(sys.argv) > 1 else None
+    extract_file_structure(tiff_path) 

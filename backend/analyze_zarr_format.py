@@ -1,3 +1,6 @@
+
+
+
 #!/usr/bin/env python3
 """
 Analyze the exact format of Zarr files to understand structure for ROI overlay
@@ -10,7 +13,7 @@ from pathlib import Path
 
 def analyze_zarr_format(zarr_path, output_file=None):
     """Analyze the exact format of a Zarr file"""
-    print(f"\n🔍 Analyzing Zarr format: {zarr_path}")
+    print(f"\n Analyzing Zarr format: {zarr_path}")
     print("="*60)
     
     try:

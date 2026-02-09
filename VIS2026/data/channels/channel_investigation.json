@@ -1,0 +1,912 @@
+[
+  {
+    "channel_index": 0,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 33954.0,
+    "mean": 508.7302324525225,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 1,
+    "name": "5'hmC",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 35962.0,
+    "mean": 131.37701002411237,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 2,
+    "name": "MX1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 33722.0,
+    "mean": 66.30522261253583,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 3,
+    "name": "MART1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31717.0,
+    "mean": 93.1863718780926,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 4,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32882.0,
+    "mean": 181.7030144596756,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 5,
+    "name": "CD3E (do not use)",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 34024.0,
+    "mean": 20.046289480086084,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 6,
+    "name": "MHC-I",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 33172.0,
+    "mean": 63.31904352513034,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 7,
+    "name": "SOX10",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 33134.0,
+    "mean": 9.712158958207693,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 8,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 28813.0,
+    "mean": 174.2766834826582,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 9,
+    "name": "S100B",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 34515.0,
+    "mean": 11.355823071758675,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 10,
+    "name": "MITF",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 7708.0,
+    "mean": 1.827500456793657,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 11,
+    "name": "GranzymeB (do not use)",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32056.0,
+    "mean": 85.20812240732194,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 12,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 24638.0,
+    "mean": 143.6684677230834,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 13,
+    "name": "pan-cytokeratin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 35524.0,
+    "mean": 39.555946133202085,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 14,
+    "name": "lamin-ABC",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 36279.0,
+    "mean": 56.77825691237061,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 15,
+    "name": "PDL1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 15014.0,
+    "mean": 15.1712083970116,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 16,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 20762.0,
+    "mean": 138.96561437338647,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 17,
+    "name": "PD1 (do not use)",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31097.0,
+    "mean": 3.577587194779984,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 18,
+    "name": "S100A",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 27429.0,
+    "mean": 26.16983053483408,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 19,
+    "name": "CD31",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32402.0,
+    "mean": 13.215547922671435,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 20,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 21315.0,
+    "mean": 113.12201653892286,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 21,
+    "name": "CD206",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 38216.0,
+    "mean": 45.2050904284214,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 22,
+    "name": "pMLC2",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31804.0,
+    "mean": 58.10039376229338,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 23,
+    "name": "CD11b (do not use)",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 27029.0,
+    "mean": 62.72587979866577,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 24,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 26717.0,
+    "mean": 129.92664688195643,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 25,
+    "name": "CD4",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 26168.0,
+    "mean": 53.45241382882507,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 26,
+    "name": "LAG3",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32377.0,
+    "mean": 21.998696729850295,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 27,
+    "name": "CD20",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32258.0,
+    "mean": 20.428077596656305,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 28,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 14758.0,
+    "mean": 87.77216747446093,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 29,
+    "name": "PRAME",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 13384.0,
+    "mean": 14.807458459061607,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 30,
+    "name": "CD163",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 19505.0,
+    "mean": 11.354875510966393,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 31,
+    "name": "IRF1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 8140.0,
+    "mean": 37.766755635812764,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 32,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 13043.0,
+    "mean": 70.65249167297729,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 33,
+    "name": "B-catenin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31927.0,
+    "mean": 42.746254578058206,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 34,
+    "name": "CD3E",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 29319.0,
+    "mean": 19.94681018524875,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 35,
+    "name": "CD8a",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 30009.0,
+    "mean": 23.963857302062245,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 36,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 15214.0,
+    "mean": 76.56603806050518,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 37,
+    "name": "CD11b",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32276.0,
+    "mean": 14.200252772359038,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 38,
+    "name": "FOXP3",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 30604.0,
+    "mean": 5.62534246322151,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 39,
+    "name": "PD1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 33127.0,
+    "mean": 15.366953324489668,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 40,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 14123.0,
+    "mean": 78.4304193242552,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 41,
+    "name": "Ki67",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32811.0,
+    "mean": 4.26977920935795,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 42,
+    "name": "CD11c",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 21448.0,
+    "mean": 6.984808574413007,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 43,
+    "name": "COX-IV",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32561.0,
+    "mean": 77.37300449822934,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 44,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 10674.0,
+    "mean": 65.54574053556988,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 45,
+    "name": "LysozymeC",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31936.0,
+    "mean": 18.619767996349875,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 46,
+    "name": "SOX9",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31651.0,
+    "mean": 52.337940172176886,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 47,
+    "name": "PMEL",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31484.0,
+    "mean": 21.390788205816612,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 48,
+    "name": "CD103",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32440.0,
+    "mean": 17.378186949889297,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 49,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 12724.0,
+    "mean": 62.17734120391445,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 50,
+    "name": "CyclinD1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 31577.0,
+    "mean": 15.234419903740639,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 51,
+    "name": "BAF1",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 28116.0,
+    "mean": 18.87307226915726,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 52,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 17234.0,
+    "mean": 100.96487060945603,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 53,
+    "name": "B-actin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 33281.0,
+    "mean": 68.56187776166531,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 54,
+    "name": "Mast cell tryptase",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 18029.0,
+    "mean": 4.204879194360332,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 55,
+    "name": "CD15",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 16000.0,
+    "mean": 3.1778308048616224,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 56,
+    "name": "Podoplanin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 7742.0,
+    "mean": 13.960557914042523,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 57,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 23449.0,
+    "mean": 140.05974757617716,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 58,
+    "name": "B-tubulin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 34303.0,
+    "mean": 173.1090432029984,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 59,
+    "name": "Catalase",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 34383.0,
+    "mean": 29.951866534574968,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 60,
+    "name": "y-H2AX",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 32702.0,
+    "mean": 26.080931602058968,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 61,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 17713.0,
+    "mean": 102.46235846437766,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 62,
+    "name": "E-cadherin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 37487.0,
+    "mean": 32.125174928206825,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 63,
+    "name": "Vimentin",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 35656.0,
+    "mean": 45.60552549577514,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 64,
+    "name": "Neurofilament L (do not use)",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 24280.0,
+    "mean": 7.8373206402786035,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 65,
+    "name": "GranzymeB",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 17440.0,
+    "mean": 3.7787481195767856,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 66,
+    "name": "Hoechst",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 25087.0,
+    "mean": 158.64638423616532,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 67,
+    "name": "MHC-II",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 34460.0,
+    "mean": 38.41029133665745,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 68,
+    "name": "H3K27me3",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 30708.0,
+    "mean": 54.63422192901761,
+    "dtype": ">u2"
+  },
+  {
+    "channel_index": 69,
+    "name": "Collagen (SHG)",
+    "dimension": [
+      194,
+      344,
+      681
+    ],
+    "min": 0.0,
+    "max": 95.0,
+    "mean": 0.788721579777296,
+    "dtype": ">u2"
+  }
+]

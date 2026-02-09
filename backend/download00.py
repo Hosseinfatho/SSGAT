@@ -3,7 +3,9 @@ import numpy as np
 import s3fs
 import logging
 from pathlib import Path
-import os
+from dataclasses import dataclass
+from typing import Tuple
+
 import dask.array as da
 from dask.diagnostics import ProgressBar
 
@@ -11,86 +13,90 @@ from dask.diagnostics import ProgressBar
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# S3 path settings
-ZARR_BASE_URL = "s3://lsp-public-data/biomedvis-challenge-2025/Dataset1-LSP13626-melanoma-in-situ"
-ZARR_IMAGE_GROUP_PATH = "0"
-TARGET_RESOLUTION_PATH = ""  # Using root data directory
 
-# Define channel indices
-CHANNEL_INDICES = {
-    'CD31': 19,
-    'CD20': 27,
-    'CD11b': 37,
-    'CD4': 25,
-    'CD11c': 41,
-    'Catalase': 59,
-}
+@dataclass
+class VolumeConfig:
+    source: str  # "tiff" or "zarr_s3"
+    zarr_url: str
+    zarr_component: int
+    project_root: Path
+    data_dir: Path
+    channels: Tuple[int, ...]
+    base_sx: float
+    base_sy: float
+    base_sz: float
 
-def extract_channels_from_zarr():
-    """Extract selected channels from Zarr using dask"""
+
+def default_config() -> VolumeConfig:
+    project_root = Path(__file__).resolve().parents[2]
+    data_dir = project_root / "data"
+    return VolumeConfig(
+        source="zarr_s3",
+        zarr_url="https://lsp-public-data.s3.amazonaws.com/biomedvis-challenge-2025/Dataset1-LSP13626-melanoma-in-situ/0",
+        zarr_component=5,
+        project_root=project_root,
+        data_dir=data_dir,
+        channels=(0,),
+        base_sx=0.14,
+        base_sy=0.14,
+        base_sz=0.28,
+    )
+
+
+def _zarr_url_to_s3_path(zarr_url: str) -> str:
+    """Convert HTTPS S3 URL to s3:// path for s3fs. Bucket is from hostname (e.g. lsp-public-data.s3.amazonaws.com -> lsp-public-data)."""
+    if zarr_url.startswith("s3://"):
+        return zarr_url
+    if zarr_url.startswith("https://"):
+        # e.g. https://lsp-public-data.s3.amazonaws.com/biomedvis-challenge-2025/.../0
+        after_slash = zarr_url.split("//", 1)[-1]
+        host = after_slash.split("/", 1)[0]
+        path = after_slash.split("/", 1)[1] if "/" in after_slash else ""
+        bucket = host.split(".")[0]
+        return f"s3://{bucket}/{path}"
+    return zarr_url
+
+
+def extract_channels_from_zarr(config: VolumeConfig):
+    """Extract selected channels from Zarr using dask and config."""
     try:
-        # Create S3 filesystem
+        if config.source != "zarr_s3":
+            logger.error(f"Unsupported source: {config.source}")
+            return None, None, None
+
+        s3_path_full = _zarr_url_to_s3_path(config.zarr_url)
+        s3_path = s3_path_full.replace("s3://", "")
+        group_url = s3_path_full
+        component = str(config.zarr_component)
+
         logger.info("Creating S3 filesystem...")
         s3 = s3fs.S3FileSystem(anon=True)
-        
-        # Construct the S3 path
-        s3_path = "lsp-public-data/biomedvis-challenge-2025/Dataset1-LSP13626-melanoma-in-situ/0"
-        logger.info(f"Accessing S3 path: {s3_path}")
-        
-        # List available files to understand structure
-        files = s3.ls(s3_path)
-        logger.info(f"Available files in S3 path: {files}")
-        
-        # Look for the data array in resolution levels
-        data_path = None
-        
-        # Use resolution level 3 specifically
-        resolution = '3'
-        resolution_path = f"{s3_path}/{resolution}"
-        try:
-            resolution_files = s3.ls(resolution_path)
-            logger.info(f"Resolution {resolution} files: {resolution_files}")
-            
-            # Check if this resolution level has a data array
-            for file_path in resolution_files:
-                if file_path.endswith('/data'):
-                    data_path = file_path
-                    logger.info(f"Found data array at: {data_path}")
-                    break
-                elif file_path.endswith('/.zarray'):
-                    # This indicates an array at this level
-                    data_path = file_path.replace('/.zarray', '')
-                    logger.info(f"Found array at: {data_path}")
-                    break
-            
-        except Exception as e:
-            logger.error(f"Could not access resolution {resolution}: {e}")
-            return None, None, None
-        
-        if data_path is None:
-            logger.error("Could not find data array in any resolution level")
-            return None, None, None
-        
-        logger.info(f"Using data path: {data_path}")
-        
-        # Load the data using dask with s3fs
-        logger.info("Loading data using dask...")
-        s3_url = f"s3://{data_path}"
-        logger.info(f"Loading from S3 URL: {s3_url}")
-        dask_array = da.from_zarr(s3_url, storage_options={'anon': True})
+        logger.info(f"Loading from group: {group_url}, component: {component}")
+
+        dask_array = da.from_zarr(
+            group_url,
+            component=component,
+            storage_options={"anon": True},
+        )
         logger.info(f"Dask array shape: {dask_array.shape}")
         logger.info(f"Chunk size: {dask_array.chunksize}")
-        
-        # Select channels
-        channel_indices = list(CHANNEL_INDICES.values())
+
+        channel_indices = list(config.channels)
         logger.info(f"Selecting channels: {channel_indices}")
-        
-        # Create a new dask array with selected channels
-        selected_channels = dask_array[:, channel_indices, :, :, :]
+
+        # Assume shape (t, c, z, y, x) or (c, z, y, x)
+        ndim = dask_array.ndim
+        if ndim == 5:
+            selected_channels = dask_array[:, channel_indices, :, :, :]
+        elif ndim == 4:
+            selected_channels = dask_array[channel_indices, :, :, :]
+        else:
+            logger.error(f"Unexpected array ndim: {ndim}")
+            return None, None, None
+
         logger.info(f"Selected channels shape: {selected_channels.shape}")
-        
         return selected_channels, channel_indices, dask_array.chunksize
-        
+
     except Exception as e:
         logger.error(f"Error extracting channels: {e}", exc_info=True)
         return None, None, None
@@ -136,35 +142,33 @@ def save_as_zarr(data, output_path, channel_names, chunks):
         logger.error(f"Error saving Zarr: {e}", exc_info=True)
         return False
 
-def download_channels():
-    """Download and save selected channels from Zarr data"""
+def download_channels(config: VolumeConfig):
+    """Download and save selected channels from Zarr data using config."""
     try:
-        # Extract channels using dask
-        selected_channels, channel_indices, chunks = extract_channels_from_zarr()
+        selected_channels, channel_indices, chunks = extract_channels_from_zarr(config)
         if selected_channels is None:
             return False
 
-        # Get the absolute path to the backend directory
-        backend_dir = Path(__file__).parent.resolve()
-        input_dir = backend_dir / "input"
-        input_dir.mkdir(parents=True, exist_ok=True)
-        logger.info(f"Created input directory at: {input_dir}")
+        config.data_dir.mkdir(parents=True, exist_ok=True)
+        logger.info(f"Output directory: {config.data_dir}")
 
-        # Save channels as Zarr
-        zarr_path = input_dir / "selected_channels.zarr"
-        channel_names = [name for name in CHANNEL_INDICES.keys()]
+        zarr_path = config.data_dir / "selected_channels.zarr"
+        channel_names = [f"channel_{i}" for i in config.channels]
         save_as_zarr(selected_channels, zarr_path, channel_names, chunks)
 
-        # Save metadata
         metadata = {
-            'shape': selected_channels.shape,
-            'dtype': str(selected_channels.dtype),
-            'channel_indices': channel_indices,
-            'channel_names': CHANNEL_INDICES,
-            'resolution_level': TARGET_RESOLUTION_PATH,
-            'chunks': chunks
+            "shape": selected_channels.shape,
+            "dtype": str(selected_channels.dtype),
+            "channel_indices": channel_indices,
+            "channels": config.channels,
+            "zarr_url": config.zarr_url,
+            "zarr_component": config.zarr_component,
+            "chunks": chunks,
+            "base_sx": config.base_sx,
+            "base_sy": config.base_sy,
+            "base_sz": config.base_sz,
         }
-        metadata_path = input_dir / "metadata.npy"
+        metadata_path = config.data_dir / "metadata.npy"
         np.save(metadata_path, metadata)
         logger.info(f"Metadata saved at: {metadata_path}")
 
@@ -174,9 +178,11 @@ def download_channels():
         logger.error(f"Error downloading channels: {e}", exc_info=True)
         return False
 
+
 if __name__ == "__main__":
+    config = default_config()
     logger.info("Starting channel download...")
-    success = download_channels()
+    success = download_channels(config)
     if success:
         logger.info(" Channel download completed successfully")
     else:

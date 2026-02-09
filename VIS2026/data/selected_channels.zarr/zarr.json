@@ -1,0 +1,24 @@
+{
+  "attributes": {
+    "channel_names": [
+      "channel_0"
+    ],
+    "axes": [
+      "t",
+      "c",
+      "z",
+      "y",
+      "x"
+    ],
+    "dimensions": {
+      "t": 1,
+      "c": 1,
+      "z": 194,
+      "y": 344,
+      "x": 681
+    }
+  },
+  "zarr_format": 3,
+  "consolidated_metadata": null,
+  "node_type": "group"
+}

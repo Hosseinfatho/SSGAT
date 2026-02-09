@@ -1,0 +1,439 @@
+{
+  "channel_names": [
+    "Hoechst",
+    "5'hmC",
+    "MX1",
+    "MART1",
+    "Hoechst",
+    "CD3E (do not use)",
+    "MHC-I",
+    "SOX10",
+    "Hoechst",
+    "S100B",
+    "MITF",
+    "GranzymeB (do not use)",
+    "Hoechst",
+    "pan-cytokeratin",
+    "lamin-ABC",
+    "PDL1",
+    "Hoechst",
+    "PD1 (do not use)",
+    "S100A",
+    "CD31",
+    "Hoechst",
+    "CD206",
+    "pMLC2",
+    "CD11b (do not use)",
+    "Hoechst",
+    "CD4",
+    "LAG3",
+    "CD20",
+    "Hoechst",
+    "PRAME",
+    "CD163",
+    "IRF1",
+    "Hoechst",
+    "B-catenin",
+    "CD3E",
+    "CD8a",
+    "Hoechst",
+    "CD11b",
+    "FOXP3",
+    "PD1",
+    "Hoechst",
+    "Ki67",
+    "CD11c",
+    "COX-IV",
+    "Hoechst",
+    "LysozymeC",
+    "SOX9",
+    "PMEL",
+    "CD103",
+    "Hoechst",
+    "CyclinD1",
+    "BAF1",
+    "Hoechst",
+    "B-actin",
+    "Mast cell tryptase",
+    "CD15",
+    "Podoplanin",
+    "Hoechst",
+    "B-tubulin",
+    "Catalase",
+    "y-H2AX",
+    "Hoechst",
+    "E-cadherin",
+    "Vimentin",
+    "Neurofilament L (do not use)",
+    "GranzymeB",
+    "Hoechst",
+    "MHC-II",
+    "H3K27me3",
+    "Collagen (SHG)"
+  ],
+  "channels": [
+    {
+      "id": "Channel:0:0",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:1",
+      "name": "5'hmC",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:2",
+      "name": "MX1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:3",
+      "name": "MART1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:4",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:5",
+      "name": "CD3E (do not use)",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:6",
+      "name": "MHC-I",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:7",
+      "name": "SOX10",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:8",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:9",
+      "name": "S100B",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:10",
+      "name": "MITF",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:11",
+      "name": "GranzymeB (do not use)",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:12",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:13",
+      "name": "pan-cytokeratin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:14",
+      "name": "lamin-ABC",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:15",
+      "name": "PDL1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:16",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:17",
+      "name": "PD1 (do not use)",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:18",
+      "name": "S100A",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:19",
+      "name": "CD31",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:20",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:21",
+      "name": "CD206",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:22",
+      "name": "pMLC2",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:23",
+      "name": "CD11b (do not use)",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:24",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:25",
+      "name": "CD4",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:26",
+      "name": "LAG3",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:27",
+      "name": "CD20",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:28",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:29",
+      "name": "PRAME",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:30",
+      "name": "CD163",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:31",
+      "name": "IRF1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:32",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:33",
+      "name": "B-catenin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:34",
+      "name": "CD3E",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:35",
+      "name": "CD8a",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:36",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:37",
+      "name": "CD11b",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:38",
+      "name": "FOXP3",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:39",
+      "name": "PD1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:40",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:41",
+      "name": "Ki67",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:42",
+      "name": "CD11c",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:43",
+      "name": "COX-IV",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:44",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:45",
+      "name": "LysozymeC",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:46",
+      "name": "SOX9",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:47",
+      "name": "PMEL",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:48",
+      "name": "CD103",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:49",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:50",
+      "name": "CyclinD1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:51",
+      "name": "BAF1",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:52",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:53",
+      "name": "B-actin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:54",
+      "name": "Mast cell tryptase",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:55",
+      "name": "CD15",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:56",
+      "name": "Podoplanin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:57",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:58",
+      "name": "B-tubulin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:59",
+      "name": "Catalase",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:60",
+      "name": "y-H2AX",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:61",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:62",
+      "name": "E-cadherin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:63",
+      "name": "Vimentin",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:64",
+      "name": "Neurofilament L (do not use)",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:65",
+      "name": "GranzymeB",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:66",
+      "name": "Hoechst",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:67",
+      "name": "MHC-II",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:68",
+      "name": "H3K27me3",
+      "samples_per_pixel": 1
+    },
+    {
+      "id": "Channel:0:69",
+      "name": "Collagen (SHG)",
+      "samples_per_pixel": 1
+    }
+  ],
+  "pixels": {
+    "sizex": 10908,
+    "sizey": 5508,
+    "sizez": 194,
+    "sizec": 70,
+    "sizet": 1,
+    "type": "PixelType.UINT16",
+    "dimension_order": "Pixels_DimensionOrder.XYZCT",
+    "physical_size_x": 0.13999999999999999,
+    "physical_size_y": 0.14,
+    "physical_size_z": 0.28
+  },
+  "image_count": 1
+}

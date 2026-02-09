@@ -1,0 +1,772 @@
+[
+  {
+    "channel_index": 0,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\0.npy"
+  },
+  {
+    "channel_index": 1,
+    "name": "5'hmC",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\1.npy"
+  },
+  {
+    "channel_index": 2,
+    "name": "MX1",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\2.npy"
+  },
+  {
+    "channel_index": 3,
+    "name": "MART1",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\3.npy"
+  },
+  {
+    "channel_index": 4,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\4.npy"
+  },
+  {
+    "channel_index": 5,
+    "name": "CD3E (do not use)",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\5.npy"
+  },
+  {
+    "channel_index": 6,
+    "name": "MHC-I",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\6.npy"
+  },
+  {
+    "channel_index": 7,
+    "name": "SOX10",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\7.npy"
+  },
+  {
+    "channel_index": 8,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\8.npy"
+  },
+  {
+    "channel_index": 9,
+    "name": "S100B",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\9.npy"
+  },
+  {
+    "channel_index": 10,
+    "name": "MITF",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\10.npy"
+  },
+  {
+    "channel_index": 11,
+    "name": "GranzymeB (do not use)",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\11.npy"
+  },
+  {
+    "channel_index": 12,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\12.npy"
+  },
+  {
+    "channel_index": 13,
+    "name": "pan-cytokeratin",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\13.npy"
+  },
+  {
+    "channel_index": 14,
+    "name": "lamin-ABC",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\14.npy"
+  },
+  {
+    "channel_index": 15,
+    "name": "PDL1",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\15.npy"
+  },
+  {
+    "channel_index": 16,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\16.npy"
+  },
+  {
+    "channel_index": 17,
+    "name": "PD1 (do not use)",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\17.npy"
+  },
+  {
+    "channel_index": 18,
+    "name": "S100A",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\18.npy"
+  },
+  {
+    "channel_index": 19,
+    "name": "CD31",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\19.npy"
+  },
+  {
+    "channel_index": 20,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\20.npy"
+  },
+  {
+    "channel_index": 21,
+    "name": "CD206",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\21.npy"
+  },
+  {
+    "channel_index": 22,
+    "name": "pMLC2",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\22.npy"
+  },
+  {
+    "channel_index": 23,
+    "name": "CD11b (do not use)",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\23.npy"
+  },
+  {
+    "channel_index": 24,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\24.npy"
+  },
+  {
+    "channel_index": 25,
+    "name": "CD4",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\25.npy"
+  },
+  {
+    "channel_index": 26,
+    "name": "LAG3",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\26.npy"
+  },
+  {
+    "channel_index": 27,
+    "name": "CD20",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\27.npy"
+  },
+  {
+    "channel_index": 28,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\28.npy"
+  },
+  {
+    "channel_index": 29,
+    "name": "PRAME",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\29.npy"
+  },
+  {
+    "channel_index": 30,
+    "name": "CD163",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\30.npy"
+  },
+  {
+    "channel_index": 31,
+    "name": "IRF1",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\31.npy"
+  },
+  {
+    "channel_index": 32,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\32.npy"
+  },
+  {
+    "channel_index": 33,
+    "name": "B-catenin",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\33.npy"
+  },
+  {
+    "channel_index": 34,
+    "name": "CD3E",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\34.npy"
+  },
+  {
+    "channel_index": 35,
+    "name": "CD8a",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\35.npy"
+  },
+  {
+    "channel_index": 36,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\36.npy"
+  },
+  {
+    "channel_index": 37,
+    "name": "CD11b",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\37.npy"
+  },
+  {
+    "channel_index": 38,
+    "name": "FOXP3",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\38.npy"
+  },
+  {
+    "channel_index": 39,
+    "name": "PD1",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\39.npy"
+  },
+  {
+    "channel_index": 40,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\40.npy"
+  },
+  {
+    "channel_index": 41,
+    "name": "Ki67",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\41.npy"
+  },
+  {
+    "channel_index": 42,
+    "name": "CD11c",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\42.npy"
+  },
+  {
+    "channel_index": 43,
+    "name": "COX-IV",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\43.npy"
+  },
+  {
+    "channel_index": 44,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\44.npy"
+  },
+  {
+    "channel_index": 45,
+    "name": "LysozymeC",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\45.npy"
+  },
+  {
+    "channel_index": 46,
+    "name": "SOX9",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\46.npy"
+  },
+  {
+    "channel_index": 47,
+    "name": "PMEL",
+    "microenvironment": "melanoma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\47.npy"
+  },
+  {
+    "channel_index": 48,
+    "name": "CD103",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\48.npy"
+  },
+  {
+    "channel_index": 49,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\49.npy"
+  },
+  {
+    "channel_index": 50,
+    "name": "CyclinD1",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\50.npy"
+  },
+  {
+    "channel_index": 51,
+    "name": "BAF1",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\51.npy"
+  },
+  {
+    "channel_index": 52,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\52.npy"
+  },
+  {
+    "channel_index": 53,
+    "name": "B-actin",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\53.npy"
+  },
+  {
+    "channel_index": 54,
+    "name": "Mast cell tryptase",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\54.npy"
+  },
+  {
+    "channel_index": 55,
+    "name": "CD15",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\55.npy"
+  },
+  {
+    "channel_index": 56,
+    "name": "Podoplanin",
+    "microenvironment": "immune_checkpoint",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\56.npy"
+  },
+  {
+    "channel_index": 57,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\57.npy"
+  },
+  {
+    "channel_index": 58,
+    "name": "B-tubulin",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\58.npy"
+  },
+  {
+    "channel_index": 59,
+    "name": "Catalase",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\59.npy"
+  },
+  {
+    "channel_index": 60,
+    "name": "y-H2AX",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\60.npy"
+  },
+  {
+    "channel_index": 61,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\61.npy"
+  },
+  {
+    "channel_index": 62,
+    "name": "E-cadherin",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\62.npy"
+  },
+  {
+    "channel_index": 63,
+    "name": "Vimentin",
+    "microenvironment": "epithelium_cytoskeleton",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\63.npy"
+  },
+  {
+    "channel_index": 64,
+    "name": "Neurofilament L (do not use)",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\64.npy"
+  },
+  {
+    "channel_index": 65,
+    "name": "GranzymeB",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\65.npy"
+  },
+  {
+    "channel_index": 66,
+    "name": "Hoechst",
+    "microenvironment": "nuclear",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\66.npy"
+  },
+  {
+    "channel_index": 67,
+    "name": "MHC-II",
+    "microenvironment": "immune",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\67.npy"
+  },
+  {
+    "channel_index": 68,
+    "name": "H3K27me3",
+    "microenvironment": "other",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\68.npy"
+  },
+  {
+    "channel_index": 69,
+    "name": "Collagen (SHG)",
+    "microenvironment": "stroma",
+    "shape": [
+      194,
+      344,
+      681
+    ],
+    "npy_path": "D:\\VIS2025\\BIoVisChallenges\\SSGAT\\VIS2026\\data\\channels\\69.npy"
+  }
+]
